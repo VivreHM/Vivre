@@ -74,7 +74,7 @@ header{
 }
 
 #searchBox{
-    padding:5px 10px;
+    padding:5px 8px;
     border-radius:50px;
     border: 1px solid gray;
     height:30px;
@@ -95,7 +95,7 @@ header{
 nav{
     padding:0% 15%;
     background-color:white;
-    height:80px;
+    height:30px;
 }
 
 nav>ul{
@@ -123,4 +123,41 @@ nav>ul>li:hover{
     background-color: none;
     width:400px;
     outline:none;
+}
+
+main{
+    background-color:#eee;
+}
+
+footer{
+    height:200px;
+    padding:0% 15%;
+    display:flex;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:#555;
+    
+}
+footer h2{
+    font-size: 1em;
+}
+
+footer div{
+    margin-top:5px;
+    margin-bottom: 10px;
+    margin-right:100px;
+}
+footer a{
+    text-decoration: none;
+    color:#555;
+    margin-left:8px;
+}
+
+footer li{
+    list-style:none;
+    margin:5px 0px;
+    cursor: pointer;
+}
+
+footer ul{
+    padding-left:0;
 }

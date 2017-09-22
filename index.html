@@ -7,55 +7,138 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vivre</title>
     <link rel="stylesheet" href="Assets/Style/mainPage.css">
+    <link rel="stylesheet" href="Assets/Style/slideshowStyle.css">
 </head>
 
 <body>
     <div id="container">
+        <!-- Header -->
         <header>
             <div id="topBar">
+                <!-- The purple bar on the top with the: 
+                -shop, about us and contact buttons on the left side (id="mainNav")
+                -sign in and sign up buttons on the right side (id="user")-->
                 <div id="mainNav">
                     <button id="store" autofocus>Магазин</button>
-                    <button id="forUs">За нас</button>
-                    <button id="contacts">Контакти</button>
+                    <button class="forUs">За нас</button>
+                    <button class="contacts">Контакти</button>
                 </div>
                 <div id="user">
-                    <img width="15px" src="Assets/Images/Icons/padlock.png" alt="">
+                    <img width="15px" src="Assets/Images/Icons/padlock.png" alt="Log in">
                     <button #login>Вход</button>
                     <span>/</span>
-                    <img width="15px" src="Assets/Images/Icons/Sign in.png" alt="">
+                    <img width="15px" src="Assets/Images/Icons/Sign in.png" alt="Register">
                     <button #register>Регистрация</button>
                 </div>
             </div>
             <div id="searchBar">
-                <img height=70px src="Assets/Images/logo-vivre.gif" alt="">
+                <!-- The bar with the logo and the search field (id="searchBox"): -->
+                <img height=70px src="Assets/Images/logo-vivre.gif" alt="Vivre logo">
                 <div id="searchBox">
                     <input type="text" name="search" placeholder="Търсене...">
                     <img src="Assets/Images/Icons/magnifying-glass.png" alt="">
                 </div>
             </div>
             <nav>
-
+                <!-- The navigation bar: -->
                 <ul>
-                    <li>Мебели</li>
-                    <li>Декор</li>
-                    <li>Кухня</li>
-                    <li>Спалня</li>
-                    <li>Осветителни тела</li>
-                    <li>Килими</li>
-                    <li>Баня & Организиране</li>
-                    <li>Лайфстайл</li>
+                    <li id="furniture">Мебели</li>
+                    <li id="decorations">Декор</li>
+                    <li id="kitchen">Кухня</li>
+                    <li id="bedroom">Спалня</li>
+                    <li id="lights">Осветителни тела</li>
+                    <li id="carpets">Килими</li>
+                    <li id="baths">Баня & Организиране</li>
+                    <li id="lifestyle">Лайфстайл</li>
                 </ul>
+
+                <!-- Here should go the submenus with more options to choose. 
+                IN PROCESS ... -->
+
             </nav>
             <div id="basket">
                 <img src="" alt="">
             </div>
         </header>
         <main>
+            <div class="slideshow-container">
+                <!-- Slideshow box -->
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="Assets/Images/slideshow images/image1.jpg" style="width:100%">
+                    <button class="more">Виж повече</button>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="Assets/Images/slideshow images/image2.jpg" style="width:100%">
+                    <button class="more">Виж повече</button>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="Assets/Images/slideshow images/image3.jpg" style="width:100%">
+                    <button class="more">Виж повече</button>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+            <script src="Assets/JS/slideshow.js"></script>
 
         </main>
         <footer>
-
-        </footer>
+            <div id="fastLinks">
+                <h2>Бързи линкове</h2>
+                <ul>
+                    <li class="forUs">За нас</li>
+                    <li class="contacts">Контакти</li>
+                    <li id="horWorks">Как работи</li>
+                    <li id="">Връщане на продукт</li>
+                    <li id="">Общи условия</li>
+                    <li id="">Политика на поверителност</li>
+                    <li id="odr">ODR</li>
+                </ul>
+            </div>
+            <div id="downloadApps">
+                <h2>Свали приложението</h2>
+                <ul>
+                    <li>
+                        <img width="30px" src="Assets/Images/Icons/appleLogo.png" alt="Apple Logo">
+                        <a href="">APP Store</a>
+                    </li>
+                    <li>
+                        <img width="30px" src="Assets/Images/Icons/android.png" alt="Android Logo">
+                        <a href="">Google Play </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="contactUsFooter">
+                <h2>Свържи се с нас</h2>
+                <ul>
+                    <li>
+                        <img width="22px" src="Assets/Images/Icons/facebook.png" alt="Facebook Logo">
+                        <a href="">Следете ни във Facebook</a>
+                    </li>
+                    <li>
+                        <img width="22px" src="Assets/Images/Icons/email.png" alt="Email icon">
+                        <a href="">vivre@gmail.com</a>
+                    </li>
+                    <li>
+                        <img width="22px" src="Assets/Images/Icons/phone.png" alt="Phone icon">
+                        <a href="">+3590883600197</a>
+                    </li>
+                </ul>
+            </div>
+    </div>
+    </footer>
     </div>
 </body>
 
