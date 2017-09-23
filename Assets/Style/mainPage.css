@@ -1,8 +1,14 @@
+li{
+    list-style: none;
+}
+ul{
+    padding-left:0px;
+}
+
 body{
     margin:0;
 }
-header{
-}
+
 #topBar{
     padding:0% 15%;
     background-color: #5B305C;
@@ -96,16 +102,15 @@ nav{
     padding:0% 15%;
     background-color:white;
     height:30px;
+    margin-bottom: 8px;
 }
 
 nav>ul{
-    padding-left:0;
     margin-left:0;
     display:flex;
 }
 
 nav>ul>li{
-    list-style: none;
     float:left;
     margin:5px 17px;
     color: #5B305C;
@@ -115,6 +120,33 @@ nav>ul>li{
 nav>ul>li:hover{
     text-decoration: underline;
     text-decoration-color:#D46F00;
+    cursor: pointer;
+}
+
+#furnitureMenu{
+    padding:1% 15%;
+    display: inline-block;
+    border-top:1px solid lightgray;
+    position: absolute;
+    z-index:1;
+    background-color: rgba(255, 255, 255, 0.92);
+    width:100%;
+}
+
+#furnitureMenu>div{
+    margin-right:70px;
+    float:left;
+}
+
+#furnitureMenu h4, li{
+    color:gray;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 3px;
+}
+
+#furnitureMenu h4:hover, li:hover{
+    color:#5B305C;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     cursor: pointer;
 }
 
