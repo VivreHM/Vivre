@@ -3,6 +3,8 @@
     background-color:white;
     text-align: center;
     width: 300px;
+    display: none;
+    z-index: 1;
 }
 
 #logIn h4{
@@ -38,7 +40,17 @@
     border:none;
 }
 
-
+.login-help{
+    margin-bottom: 12px;
+}
+#blackBackground{
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0, 0, 0.6);
+    position: absolute;
+    z-index: 1;
+}
 
 
 
