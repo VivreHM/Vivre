@@ -9,6 +9,7 @@ body{
     margin:0;
 }
 
+/* Top purple bar style */
 #topBar{
     padding:0% 15%;
     background-color: #5B305C;
@@ -73,6 +74,8 @@ body{
     top:4px;
 }
 
+/* The style of the logo and the search bar. */
+
 #searchBar{
     padding:0% 15%;
     display: flex;
@@ -97,6 +100,15 @@ body{
 #searchBox img{
     margin-top:7px;
 }
+
+#searchBox input:focus{
+    border:none;
+    background-color: none;
+    width:400px;
+    outline:none;
+}
+
+/* The style of the store menu */
 
 nav{
     padding:0% 15%;
@@ -123,7 +135,9 @@ nav>ul>li:hover{
     cursor: pointer;
 }
 
-#furnitureMenu{
+/* The style fo the submenus */
+
+.subMenu{
     padding:1% 15%;
     display: inline-block;
     border-top:1px solid lightgray;
@@ -132,30 +146,34 @@ nav>ul>li:hover{
     background-color: rgba(255, 255, 255, 0.92);
     width:100%;
 }
-
-#furnitureMenu>div{
+.subMenu>div{
     margin-right:70px;
     float:left;
 }
 
-#furnitureMenu h4, li{
+.subMenu h4, li{
     color:gray;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-bottom: 3px;
 }
 
-#furnitureMenu h4:hover, li:hover{
+.subMenu h4:hover, li:hover{
     color:#5B305C;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     cursor: pointer;
 }
 
-#searchBox input:focus{
-    border:none;
-    background-color: none;
-    width:400px;
-    outline:none;
+#furnitureMenu,
+#decorationMenu,
+#kitchenMenu,
+#bedroomMenu,
+#lightsMenu,
+#carpetsMenu,
+#bathroomMenu
+{
+    display:none;
 }
+
 
 main{
     background-color:#eee;
