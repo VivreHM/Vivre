@@ -1,7 +1,6 @@
 var loginForm = document.getElementById('logIn');
 var login = document.getElementById('logInButton')
-var isClicked = false;
-console.log(login)
+
 login.addEventListener('click', function displayLogin(event) {
     loginForm.style.display = 'inline-block';
     loginForm.style.position = 'fixed';
@@ -20,6 +19,8 @@ document.addEventListener('keydown', function(event){
     if(event.keyCode == 27){
         document.getElementById('blackBackground').style.display = 'none';
         loginForm.style.display = 'none';
+        document.body.style.overflow = 'scroll';
+        
         
     }
 })
@@ -27,6 +28,8 @@ window.addEventListener('click', function(event){
     if(event.target == document.getElementById('blackBackground') && event.target != login){
         document.getElementById('blackBackground').style.display = 'none';
         loginForm.style.display = 'none';
-        isClicked = true;
+
+        document.body.style.overflow = 'scroll';
+        
     }
 })
