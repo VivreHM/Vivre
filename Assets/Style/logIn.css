@@ -4,6 +4,8 @@
     text-align: center;
     width: 300px;
     box-shadow: 0px 20px 30px -19px rgba(0,0,0,0.22);
+    display: none;
+    z-index: 1;
 }
 
 #logIn h4{
@@ -54,6 +56,17 @@
 }
 
 
+.login-help{
+    margin-bottom: 12px;
+}
+#blackBackground{
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0, 0, 0.6);
+    position: absolute;
+    z-index: 1;
+}
 
 
 
