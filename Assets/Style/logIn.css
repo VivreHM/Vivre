@@ -5,12 +5,8 @@
     width: 300px;
     box-shadow: 0px 20px 30px -19px rgba(0,0,0,0.22);
     display: none;
-<<<<<<< HEAD
-    z-index: 1;
-    border-radius: 7px;
-=======
     z-index: 3;
->>>>>>> 6a971b7daf228d9f8a7876c00f79250982be53e5
+    border-radius: 7px;
 }
 
 #logIn h4{
