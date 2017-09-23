@@ -3,6 +3,7 @@
     background-color:white;
     text-align: center;
     width: 300px;
+    box-shadow: 0px 20px 30px -19px rgba(0,0,0,0.22);
 }
 
 #logIn h4{
@@ -15,13 +16,13 @@
     margin:0;
 }
 
-.logInForm{
+.form{
     padding:8px 12px;
     border-radius:15px;
     width:200px;
     margin:5px;
     border: 1px solid lightgray;
-    font-size: 1em;
+    font-size: 0.8em;
 }
 
 .logInButton:first-of-type{
@@ -30,12 +31,26 @@
 
 .logInButton{
     padding:8px 12px;
-    font-size: 1em;
+    font-size: 0.9em;
     padding:8px 12px;
     margin-bottom:8px;
     border-radius:15px;
     width:250px;
     border:none;
+}
+
+#closeButton{
+    background-color:white;
+    color:darkred;
+    border-radius:50%;
+    display:inline-block;
+    width:22px;
+    height:22px;
+}
+
+#closeButton:hover{
+    border:2px solid darkred;
+    cursor: pointer;
 }
 
 
