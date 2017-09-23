@@ -25,10 +25,9 @@ document.addEventListener('keydown', function(event){
     }
 })
 window.addEventListener('click', function(event){
-    if(event.target == document.getElementById('blackBackground') && event.target != login){
+    if((event.target == document.getElementById('blackBackground') && event.target != login) || event.target == document.getElementById('closeButtonLogin')){
         document.getElementById('blackBackground').style.display = 'none';
         loginForm.style.display = 'none';
-
         document.body.style.overflow = 'scroll';
         
     }

@@ -27,3 +27,21 @@
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
 }
 
+#closeButtonRegister{
+    background-color:white;
+    color:darkred;
+    border-radius:50%;
+    display:inline-block;
+    width:25px;
+    height:25px;
+    font-size: 0.8em;
+    position: absolute;
+    right: 2.3px;
+    top: 1px
+
+}
+
+#closeButtonRegister:hover{
+    border:2px solid darkred;
+    cursor: pointer;
+}
