@@ -1,7 +1,7 @@
 var loginForm = document.getElementById('logIn');
 var login = document.getElementById('logInButton')
 
-login.addEventListener('click', function displayLogin(event) {
+login.addEventListener('click', function (event) {
     loginForm.style.display = 'inline-block';
     loginForm.style.position = 'fixed';
     loginForm.style.top = '50%';
