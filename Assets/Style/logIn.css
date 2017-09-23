@@ -1,0 +1,44 @@
+#logIn{
+    margin:auto;
+    background-color:white;
+    text-align: center;
+    width: 300px;
+}
+
+#logIn h4{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #5B305C;
+    color:white;
+    font-size: 1.5em;
+    font-weight:400;
+    padding:7px;
+    margin:0;
+}
+
+.logInForm{
+    padding:8px 12px;
+    border-radius:15px;
+    width:200px;
+    margin:5px;
+    border: 1px solid lightgray;
+    font-size: 1em;
+}
+
+.logInButton:first-of-type{
+    margin-top:15px;
+}
+
+.logInButton{
+    padding:8px 12px;
+    font-size: 1em;
+    padding:8px 12px;
+    margin-bottom:8px;
+    border-radius:15px;
+    width:250px;
+    border:none;
+}
+
+
+
+
+
