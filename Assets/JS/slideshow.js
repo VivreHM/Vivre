@@ -1,12 +1,48 @@
-var slideIndex = 1;
+var slideIndex = 0;
+var previousArrow = document.getElementById('previousArrow')
+var nextArrow = document.getElementById('nextArrow')
+var isPressed = false;
+var playing = true;
+playSlideShow();
 showSlides(slideIndex);
 
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+    if (slideIndex < 3) {
+        isPressed = true;
+        showSlides(slideIndex += n);
+        pauseSlideShow()
+
+    } else {
+        isPressed = true;
+        slideIndex = 1;
+        showSlides(slideIndex);
+        pauseSlideShow()
+    }
 }
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+function minusSlides() {
+    if (slideIndex > 1) {
+        isPressed = true;
+        timer = 4000;
+        console.log(slideIndex)
+        showSlides(slideIndex -= 1);
+        pauseSlideShow()
+    }
+    else {
+        isPressed = true;
+        timer = 4000
+        slideIndex = 3;
+        showSlides(slideIndex);
+        pauseSlideShow()
+    }
+}
+function pauseSlideShow() {
+    playing = false;
+    clearInterval(showSlides)
+}
+function playSlideShow() {
+    playing = true;
+    setInterval(showSlides, 4000)
 }
 
 // function showSlides(n) {
@@ -27,15 +63,18 @@ function currentSlide(n) {
 
 function showSlides() {
     var i;
-    var slides = document.getElementsByClassName("mySlides");
+    var slides = document.querySelectorAll(".mySlides");
+    var timer = 4000;
     //slides[slideIndex-1].style.display = "block"
     for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; 
+        slides[i].style.display = "none";
     }
-    slideIndex++;
+    if (!isPressed) {
+        slideIndex++;
+    }
     if (slideIndex > slides.length) {
         slideIndex = 1
-    } 
-    slides[slideIndex-1].style.display = "block"; 
-    setTimeout(showSlides, 5000); // Change image every 2 seconds
+    }
+    slides[slideIndex - 1].style.display = "block";
+    isPressed = false; // Change image every 2 seconds
 }
