@@ -1,6 +1,6 @@
 var registerForm = document.getElementById('register');
 var registerButton = document.getElementById('registerButton');
-
+var background = document.getElementById('blackBackground')
 registerButton.addEventListener('click', function (event) {
     registerForm.style.display = 'inline-block';
     registerForm.style.position = 'fixed';
@@ -9,7 +9,9 @@ registerButton.addEventListener('click', function (event) {
     //300X270
     registerForm.style.marginTop = '-150px';
     registerForm.style.marginLeft = '-144px';
-    document.getElementById('blackBackground').style.display = 'inline-block';
+    background.style.width = '100%';
+    background.style.height = '100%';
+    background.style.display = 'inline-block';
     document.body.style.overflow = 'hidden';
 
 })
