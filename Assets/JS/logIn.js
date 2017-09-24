@@ -1,3 +1,5 @@
+var signedUser = null;
+
 document.getElementById("logInFormButton").addEventListener("click",function(event){
     event.preventDefault();
     var userName = document.getElementById("logInUsername").value;
@@ -7,9 +9,11 @@ document.getElementById("logInFormButton").addEventListener("click",function(eve
         if(user.getPassword()=== pass){
             alert("Влезли сте!")
             document.getElementById("signButtons").style.display="none";
-            console.log(user.username);
             document.getElementById("userButton").innerHTML = user.username;
             document.getElementById("userInfo").style.display="inline-block";
+            document.getElementById("potrebitel").textContent = user.username;
+            document.getElementById("userEmail").textContent = user.email;
+            signedUser = user;
         }
     }
     if (user) {

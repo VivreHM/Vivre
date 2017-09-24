@@ -4,6 +4,16 @@ function User(username, password, email) {
     this.username = username;
     var password = password;
     this.email = email;
+    this.address={
+        region:"",
+        city: '',
+        street: '',
+        number: '',
+        block: '',
+        entr: '',
+        floor: '',
+        apartment: ''
+    }
 
     this.getPassword = function () {
         return password;
@@ -24,11 +34,13 @@ function UsersDB() {
 }
 
 var userDB = new UsersDB;
+var admin = new User("hero04", "hero04", "hero04@abv.bg")
+userDB.addUser(admin);
 
 document.getElementById("regButton").addEventListener("click", function (event) {
     event.preventDefault();
     if (!userDB.users.some(a => a.username == document.getElementById("username").value)) {
-        var user = document.getElementById("username").value;
+        var usern = document.getElementById("username").value;
     } else {
         alert("Това потребителско име вече съществува.");
         document.getElementById("username").value = "";
@@ -40,8 +52,8 @@ document.getElementById("regButton").addEventListener("click", function (event) 
         return;
     }
     var email = document.getElementById("email").value;
-    if (user && pass && email) {
-        var user = new User(user, pass, email);
+    if (usern && pass && email) {
+        var user = new User(usern, pass, email);
         userDB.addUser(user);
     }
     if (user) {
