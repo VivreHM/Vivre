@@ -27,11 +27,17 @@
                     <button class="contacts">Контакти</button>
                 </div>
                 <div id="user">
-                    <img width="15px" src="Assets/Images/Icons/padlock.png" alt="Log in">
-                    <button id='logInButton'>Вход</button>
-                    <span>/</span>
-                    <img width="15px" src="Assets/Images/Icons/Sign in.png" alt="Register">
-                    <button id='registerButton'>Регистрация</button>
+                    <div id="signButtons">
+                        <img width="15px" src="Assets/Images/Icons/padlock.png" alt="Log in">
+                        <button id='logInButton'>Вход</button>
+                        <span>/</span>
+                        <img width="15px" src="Assets/Images/Icons/Sign in.png" alt="Register">
+                        <button id='registerButton'>Регистрация</button>
+                    </div>
+                    <div id="userInfo">
+                        <img width="15px" src="Assets/Images/Icons/user.png" alt="User icon">
+                        <button id='userButton'>test</button>
+                    </div>
                 </div>
             </div>
             <div id="searchBar">
@@ -45,14 +51,14 @@
             <nav>
                 <!-- The navigation bar: -->
                 <ul id='Catalog'>
-                    <li  class='navMenu'>Мебели</li>
-                    <li  class='navMenu'id="decorations">Декор</li>
-                    <li  class='navMenu'id="kitchen">Кухня</li>
-                    <li  class='navMenu'id="bedroom">Спалня</li>
-                    <li  class='navMenu'id="lights">Осветителни тела</li>
-                    <li  class='navMenu'id="carpets">Килими</li>
-                    <li  class='navMenu'id="baths">Баня & Организиране</li>
-                    <li  class='navMenu'id="lifestyle">Лайфстайл</li>
+                    <li class='navMenu'>Мебели</li>
+                    <li class='navMenu' id="decorations">Декор</li>
+                    <li class='navMenu' id="kitchen">Кухня</li>
+                    <li class='navMenu' id="bedroom">Спалня</li>
+                    <li class='navMenu' id="lights">Осветителни тела</li>
+                    <li class='navMenu' id="carpets">Килими</li>
+                    <li class='navMenu' id="baths">Баня & Организиране</li>
+                    <li class='navMenu' id="lifestyle">Лайфстайл</li>
                 </ul>
             </nav>
             <!-- Submenus with more options to choose -->
@@ -394,10 +400,10 @@
                 <!-- Log in/Sign in form -->
                 <h4>Вход <span id="closeButtonLogin">&#10006</span></h4><br>
                 <form>
-                    <input type="text" name="user" placeholder="Потребителско име" class="form">
-                    <input type="password" name="pass" placeholder="Парола" class="form">
+                    <input id="logInUsername" type="text" name="user" placeholder="Потребителско име" class="form">
+                    <input id="logInPassword" type="password" name="pass" placeholder="Парола" class="form">
                     <br>
-                    <button class="logInButton">Влез</button>
+                    <button id="logInFormButton" class="logInButton">Влез</button>
                     <br>
                     <button class="logInButton">Регистрация</button>
                 </form>
@@ -410,8 +416,8 @@
                 <h4>Регистрация <span id="closeButtonRegister">&#10006</h4><br>
                 <form>
                     <input id="username" type="text" name="user" placeholder="Потребителско име" class="form" required>
-                    <input id="passowrdFirst" type="password" name="pass" placeholder="Парола" class="form" required minlength="6">
-                    <input id="passowrdSecond"type="password" name="pass" placeholder="Подтвърди паролата" class="form" required>
+                    <input id="passwordFirst" type="password" name="pass" placeholder="Парола" class="form" required minlength="6">
+                    <input id="passwordSecond"type="password" name="pass" placeholder="Подтвърди паролата" class="form" required>
                     <input id="email" type="email" name="pass" placeholder="Емейл" class="form" required>
                     <br>
                     <button id="regButton"class="logInButton">Регистрирай се</button>
@@ -470,7 +476,8 @@
     <script src = 'Assets/JS/displayLogIn.js'></script>
     <script src = 'Assets/JS/displayRegistration.js'></script>
     <script src='Assets/JS/SubMenu.js'></script>
-    <style src="Assets/JS/userRegistration.js"></style>
+    <script src="Assets/JS/userRegistration.js"></script>
+    <script src="Assets/JS/logIn.js"></script>
 </body>
 
 </html>
