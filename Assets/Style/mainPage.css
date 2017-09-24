@@ -16,6 +16,7 @@ body{
     height:40px;
     display: flex;
     justify-content: space-between;
+
 }
 
 #mainNav>button{
@@ -80,6 +81,7 @@ body{
     padding:0% 15%;
     display: flex;
     padding-top:10px;
+
 }
 
 #searchBox{
@@ -139,7 +141,7 @@ nav>ul>li:hover{
 
 .subMenu{
     padding:1% 15%;
-    display: inline-block;
+    display: none;
     border-top:1px solid lightgray;
     position: absolute;
     z-index:1;
