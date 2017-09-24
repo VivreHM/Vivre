@@ -1,3 +1,4 @@
+
 function User(username, password, email){
     this.id = 1;
     this.username = username;
@@ -12,12 +13,15 @@ function User(username, password, email){
     }
 };
 
+
 function UsersDB(){
     this.users = [];
+    this.id = 0;
     this.addUser = function(user){
        this.users.push(user);
+       user.id = this.users.length;
     }
-};
+}
 
 var userDB = new UsersDB;
 
