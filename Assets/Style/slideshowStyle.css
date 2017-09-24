@@ -2,7 +2,7 @@
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 70%;
   position: relative;
   margin: auto;
   animation-name: fadeIn;
