@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="Assets/Style/slideshowStyle.css">
     <link rel="stylesheet" href="Assets/Style/logIn.css">
     <link rel="stylesheet" href="Assets/Style/register.css">
+    <link rel="stylesheet" href="Assets/Style/ShoppingCart.css">
 </head>
 
 <body>
@@ -34,6 +35,9 @@
                         <span>/</span>
                         <img width="15px" src="Assets/Images/Icons/Sign in.png" alt="Register">
                         <button id='registerButton'>Регистрация</button>
+                        <button id="cart">
+                        <img src="Assets\Images\Icons\box-trolley.png" alt="">
+                    </button>
                     </div>
                     <div id="userInfo">
                         <img width="15px" src="Assets/Images/Icons/user.png" alt="User icon">
@@ -360,9 +364,8 @@
                     </ul>
                 </div>
             </div>
-            <!-- <div id="basket">
-                <img src="" alt="">
-            </div> -->
+            <div>
+            </div>
         </header>
         <main>
             <div class="slideshow-container">
@@ -385,7 +388,7 @@
                     <button class="more">Виж повече</button>
                 </div>
 
-                <a class="prev" id='previousArrow'onclick="minusSlides(-1)">&#10094;</a>
+                <a class="prev" id='previousArrow' onclick="minusSlides(-1)">&#10094;</a>
                 <a class="next" id='nextArrow' onclick="plusSlides(1)">&#10095;</a>
 
                 <br>
@@ -424,7 +427,25 @@
                     <button id="regButton"class="logInButton">Регистрирай се</button>
                 </form>
             </div>
+                            <!-- SHOPPING CART -->
+               <div id='CartContainer'>
+                   <div id='cartHeader'>Завършване на поръчката</div>
+                   <div id='cartBody'>
+                   <div class='orderInfo'>Адрес:</div><p></p>
+                   <div id='orderAdress'>Настоящ адрес</div>
+                   <div id='changeAdress'><a href=""> Друг адрес </a></div><br>
+                   <div class='orderInfo'>Начин на плащане:</div>
+                      <input name='plashtane' type="radio"> <label class'radioButtons'> С карта</label>
+                      <img width=26px src="Assets\Images\Icons\withCard.png" alt="">                      
+                      <input name='plashtane' type="radio"> <label class'radioButtons'>Наложен платеж</label> 
+                      <img width=26px src="Assets\Images\Icons\payment-method.png" alt="">    
+                      <div> <br>
+                          <input id='conditions' type="checkbox">Съгласен съм с условията за доставка, гаранция и връщане.
+                      </div> <br>         
+                      <button id='confirmOrder'>Потвърди поръчката</button>
+                    </div>
 
+              </div>
         </main>
         <footer>
             <div id="fastLinks">
@@ -479,6 +500,7 @@
     <script src='Assets/JS/SubMenu.js'></script>
     <script src="Assets/JS/userRegistration.js"></script>
     <script src="Assets/JS/logIn.js"></script>
+    <script src="Assets/JS/ShoppingCart.js"></script>
 </body>
 
 </html>
