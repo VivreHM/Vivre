@@ -8,6 +8,10 @@
     display: none;
     z-index: 3;
     border-radius: 7px;
+    animation-name: fadeIn;
+    animation-duration: 0.45s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
 }
 
 #register h4{

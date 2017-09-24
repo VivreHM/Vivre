@@ -1,3 +1,13 @@
+@keyframes fadeIn {
+    0%   {opacity:0;}
+    100% {opacity:1;}
+}
+
+@keyframes dropDown {
+    0%   {top:160px; opacity:0}
+    100% {top:175px; opacity:1}
+}
+
 li{
     list-style: none;
 }
@@ -7,6 +17,10 @@ ul{
 
 body{
     margin:0;
+    animation-name: dropDown;
+    animation-duration: 0.35s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
 }
 
 /* Top purple bar style */
@@ -14,9 +28,18 @@ body{
     padding:0% 15%;
     background-color: #5B305C;
     height:40px;
-    display: flex;
-    justify-content: space-between;
+    position: fixed;
+    display:inline-block;
+    width:100%;
+    box-sizing: border-box;
+}
 
+#mainNav{
+    float:left;
+}
+
+#user{
+    float:right;
 }
 
 #mainNav>button{
@@ -81,14 +104,14 @@ body{
     padding:0% 15%;
     display: flex;
     padding-top:10px;
-
+    padding-top:52px;
 }
 
 #searchBox{
     padding:5px 8px;
     border-radius:50px;
     border: 1px solid gray;
-    height:30px;
+    height:26px;
     margin-top:30px;
     margin-left:30px;
 }
@@ -100,7 +123,7 @@ body{
 }
 
 #searchBox img{
-    margin-top:7px;
+    margin-top:4px;
 }
 
 #searchBox input:focus{
@@ -129,13 +152,14 @@ nav>ul>li{
     margin:5px 17px;
     color: #5B305C;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height:31px;
 }
 
 nav>ul>li:hover{
-    text-decoration: underline;
-    text-decoration-color:#D46F00;
     cursor: pointer;
 }
+
+
 
 /* The style fo the submenus */
 
@@ -149,6 +173,11 @@ nav>ul>li:hover{
     background-color: rgba(255, 255, 255, 0.96);
     width:100%;
     box-sizing: border-box;
+
+    animation-name: dropDown;
+    animation-duration: 0.35s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
 }
 .subMenu>div{
     margin-right:70px;
@@ -174,7 +203,7 @@ nav>ul>li:hover{
 #lightsMenu,
 #carpetsMenu,
 #bathroomMenu,
-#lifestyle
+#lifestyleMenu
 {
     display:none;
 }
