@@ -8,8 +8,19 @@ document.getElementById("logInFormButton").addEventListener("click",function(eve
             alert("Влезли сте!")
             document.getElementById("signButtons").style.display="none";
             console.log(user.username);
-            document.getElementById("userButton").value = user.username;
+            document.getElementById("userButton").innerHTML = user.username;
             document.getElementById("userInfo").style.display="inline-block";
         }
     }
+    if (user) {
+        document.getElementById('logIn').style.display = 'none';
+        document.getElementById('blackBackground').style.display = 'none';
+        document.body.style.overflow = 'scroll'
+    }
+})
+document.getElementById('registerInLogIn').addEventListener('click',function (event) {
+    event.preventDefault();
+    document.getElementById('logIn').style.display = 'none';
+    document.getElementById('register').style.pposition = 'fixed';
+    document.getElementById('register').style.display = 'inline-block';
 })
