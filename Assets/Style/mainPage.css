@@ -56,8 +56,16 @@ body{
     background: none;
     border:none;
     cursor: pointer;
-    color: #5B305C;
-    background-color: white;
+    animation-name: hover;
+    animation-duration: 0.35s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-fill-mode: forwards
+}
+
+@keyframes hover{
+    0%{background-color: #5B305C; color: white;}
+    100%{background-color: white; color: #5B305C;}
 }
 
 #mainNav>button:focus{
@@ -147,7 +155,9 @@ nav>ul{
 
 nav>ul>li{
     float:left;
-    margin:5px 17px;
+    margin:5px 0px;
+    margin-left:0px;
+    margin-right:40px;
     color: #5B305C;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     height:31px;
@@ -156,8 +166,6 @@ nav>ul>li{
 nav>ul>li:hover{
     cursor: pointer;
 }
-
-
 
 /* The style fo the submenus */
 

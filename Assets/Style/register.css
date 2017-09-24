@@ -14,7 +14,6 @@
     animation-direction: alternate;
 }
 
-
 #register h4{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #5B305C;
@@ -49,6 +48,5 @@
 }
 
 #closeButtonRegister:hover{
-    border:2px solid darkred;
     cursor: pointer;
 }
