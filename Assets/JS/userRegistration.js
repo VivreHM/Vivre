@@ -1,15 +1,3 @@
-function UsersDB() {
-    this.users = [];
-    this.id = 0;
-    this.addUser = function (user) {
-        this.users.push(user);
-        user.id = this.users.length;
-    }
-}
-
-var userDB = new UsersDB;
-var admin = new User("hero04", "hero04", "hero04@abv.bg")
-userDB.addUser(admin);
 
 document.getElementById("regButton").addEventListener("click", function (event) {
     event.preventDefault();

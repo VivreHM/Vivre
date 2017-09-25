@@ -21,3 +21,15 @@ function User(username, password, email) {
         password = newPassword;
     }
 };
+var admin = new User("hero04", "hero04", "hero04@abv.bg")
+function UsersDB() {
+    this.users = [];
+    this.id = 0;
+    this.addUser = function (user) {
+        this.users.push(user);
+        user.id = this.users.length;
+    }
+}
+
+var userDB = new UsersDB;
+userDB.addUser(admin);
