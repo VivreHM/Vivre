@@ -4,13 +4,17 @@ document.getElementById("regButton").addEventListener("click", function (event) 
     if (!userDB.users.some(a => a.username == document.getElementById("username").value)) {
         var usern = document.getElementById("username").value;
     } else {
-        alert("Това потребителско име вече съществува.");
         document.getElementById("username").value = "";
+        document.getElementById("username").style.backgroundColor = '#AA3939';
+        document.getElementById("username").placeholder = 'Това потребителско име вече съществува.'
     }
     if (document.getElementById("passwordFirst").value === document.getElementById("passwordSecond").value) {
         var pass = document.getElementById("passwordFirst").value;
     } else {
-        alert("Въведените пароли са различни.")
+        ///alert("Въведените пароли са различни.")
+        document.getElementById('passwordFirst').style.backgroundColor = '#AA3939';
+        document.getElementById("passwordSecond").style.backgroundColor = '#AA3939';
+        document.getElementById("passwordSecond").placeholder = 'Паролата трябва да е същата като първата';        
         return;
     }
     var email = document.getElementById("email").value;
