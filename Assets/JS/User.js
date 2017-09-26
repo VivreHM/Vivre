@@ -23,6 +23,7 @@ function User(username, password, email) {
         password = newPassword;
     }
 };
+
 var admin = new User("hero04", "hero04", "hero04@abv.bg")
 function UsersDB() {
     this.users = [];

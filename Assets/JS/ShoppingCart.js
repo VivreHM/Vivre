@@ -7,7 +7,6 @@ cart.addEventListener('click', function(event){
     background.style.width = '100%';
     background.style.height = '100%';
     background.style.display = 'inline-block';
-    document.body.style.overflow = 'hidden'
 })
 document.addEventListener('keydown', function (event) {
     if (event.keyCode == 27) {
