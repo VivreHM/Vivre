@@ -2,9 +2,9 @@ var products = document.querySelectorAll('.productsInSlideshow')
 var parent = document.getElementById('productsContainer')
 var productsParent = document.getElementById('insideProductContainer')
 var prevArrow = document.getElementById('previousArrowProducts')
-var nextArrow = document.getElementById('nextArrowProducts')
+var nextArrow = document.getElementById('nextArrowProducts');
 
-var isLastIndex = false;
+///НЕ пипай от ТУК....
 console.log(products)
 var speed = 1;
 var boxSize = products[0].offsetWidth;
@@ -29,8 +29,8 @@ setInterval(function () {
     })
 
 }, 10)
-
-
+////до ТУК!
+//ТУК прави каквото искаш :D 
 products.forEach(function (element) {
     element.addEventListener('mouseover', function () {
         speed = 0;
