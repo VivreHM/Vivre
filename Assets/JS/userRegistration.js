@@ -39,7 +39,7 @@ document.getElementById("regButton").addEventListener("click", function (event) 
     } else {
         document.getElementById("regButton").classList.add("shake1");
     }
-    setTimeout(function () { document.getElementById("regButton").classList.remove("shake1"); }, 2000);
+    setTimeout(function () { document.getElementById("regButton").classList.remove("shake1"); }, 600);
     console.log(userDB.users);
 });
 

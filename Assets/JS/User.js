@@ -13,6 +13,7 @@ function User(username, password, email) {
         floor: '',
         apartment: ''
     }
+    this.phoneNumber="";
 
     this.getPassword = function () {
         return password;

@@ -16,7 +16,8 @@ document.getElementById("logInFormButton").addEventListener("click",function(eve
             signedUser = user;
             document.getElementById('logIn').style.display = 'none';
             document.getElementById('blackBackground').style.display = 'none';
-            document.body.style.overflow = 'scroll'
+            document.getElementById("logInFormButton").classList.remove("shake1"); 
+            document.body.style.overflow = 'scroll';
             document.getElementById("logInPassword").style.backgroundColor = 'white';
         }else{
             document.getElementById("logInPassword").value = "";
@@ -29,7 +30,7 @@ document.getElementById("logInFormButton").addEventListener("click",function(eve
         document.getElementById("logInPassword").style.backgroundColor = '#F3D967';
         document.getElementById("logInFormButton").classList.add("shake1");
     }
-    setTimeout(function () { document.getElementById("logInFormButton").classList.remove("shake1"); }, 2000);
+    setTimeout(function () { document.getElementById("logInFormButton").classList.remove("shake1"); }, 600);
 })
 document.getElementById('registerInLogIn').addEventListener('click',function (event) {
     event.preventDefault();

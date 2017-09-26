@@ -1,9 +1,9 @@
-var inputAdress = document.querySelectorAll('.inputAdress');
+var userDataInputs = document.querySelectorAll('.userDataInputs');
 
 document.getElementById("save").addEventListener('click', function () {
     var isFilled = true;
-    console.log(inputAdress)
-    Array.prototype.forEach.call(inputAdress, function (element) {
+    console.log(userDataInputs)
+    Array.prototype.forEach.call(userDataInputs, function (element) {
         console.log(element);
         if (element.value == '') {
             element.style.backgroundColor = '#F6E79D';
@@ -13,16 +13,24 @@ document.getElementById("save").addEventListener('click', function () {
 
     if (isFilled) {
         var keys = [];
-        for (var userAdress in signedUser.adress) {
+        keys.push("phoneNumber");
+        for (var userAdress in signedUser.address) {
             keys.push(userAdress);
         }
-        Array.prototype.forEach.call(inputAdress, function (element, index) {
-            signedUser.address[keys[index]] = element.value;
-            var newAdress = document.createElement('span');
-            newAdress.textContent = element.value;
-            element.parentNode.replaceChild(newAdress, element)
+        console.log(keys)
+        Array.prototype.forEach.call(userDataInputs, function (element, index) {
+            if (signedUser.hasOwnProperty(keys[index])) {
+                signedUser[keys[index]] = element.value;
+            } else {
+                signedUser.address[keys[index]] = element.value;
+            }
         })
-
+        console.log(signedUser);
+        var newData = document.createElement('span');
+        for (var userAdress in signedUser.address) {
+            newData.textContent += signedUser.address[userAdress] + ", " ;
+        }
+        document.getElementById("userMainInfo").appendChild(newData);
         // signedUser.address.region = document.getElementById("region").value;
         // var newRegion = document.createElement("span")
         // newRegion.textContent = signedUser.address.region;
@@ -62,14 +70,16 @@ document.getElementById("save").addEventListener('click', function () {
         // var newApart = document.createElement("span")
         // newApart.textContent = signedUser.address.apartment;
         // document.getElementById("apartment").parentNode.replaceChild(newApart, document.getElementById("apartment"))
-        document.getElementById("inputs").style.lineHeight = "220%";
+        document.getElementById("inputs").style.lineHeight = "226%";
         document.getElementById("inputs").style.fontFamily = "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif%";
         document.getElementById("inputs").style.paddingTop = "9px";
-        document.getElementById("save").style.display = "none"
+    }else{
+        document.getElementById("save").classList.add("shake1"); 
     }
+    setTimeout(function () { document.getElementById("save").classList.remove("shake1"); }, 600);
 })
 
-Array.prototype.forEach.call(inputAdress, function (element) {
+Array.prototype.forEach.call(userDataInputs, function (element) {
     console.log(element);
     element.addEventListener('change', function (event) {
         if (element.value !== '') {
