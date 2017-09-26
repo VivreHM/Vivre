@@ -1,5 +1,23 @@
 var userDataInputs = document.querySelectorAll('.userDataInputs');
 
+document.getElementById("savePhoneNumber").addEventListener("click", function () {
+    var phone = document.getElementById("userDataPhone").value
+    if (phone.match(/^(08)(\d){8}$/)) {
+        signedUser.phoneNumber = phone;
+        var phoneSpan = document.createElement("span");
+        phoneSpan.textContent = phone;
+        document.getElementById("userDataPhone").parentNode.replaceChild(phoneSpan, document.getElementById("userDataPhone"));
+        document.getElementById("savePhoneNumber").style.display = "none";
+    } else {
+        document.getElementById("savePhoneNumber").classList.add("shake1");
+        document.getElementById("userDataPhone").style.backgroundColor = '#F6E79D';
+    }
+    setTimeout(function () { document.getElementById("savePhoneNumber").classList.remove("shake1"); }, 600);
+})
+document.getElementById("addNew").addEventListener("click", function () {
+    document.getElementById('address').style.display = "inline-block";
+})
+
 document.getElementById("save").addEventListener('click', function () {
     var isFilled = true;
     console.log(userDataInputs)
@@ -13,24 +31,21 @@ document.getElementById("save").addEventListener('click', function () {
 
     if (isFilled) {
         var keys = [];
-        keys.push("phoneNumber");
         for (var userAdress in signedUser.address) {
             keys.push(userAdress);
         }
         console.log(keys)
         Array.prototype.forEach.call(userDataInputs, function (element, index) {
-            if (signedUser.hasOwnProperty(keys[index])) {
-                signedUser[keys[index]] = element.value;
-            } else {
-                signedUser.address[keys[index]] = element.value;
-            }
+            signedUser.address[keys[index]] = element.value;
         })
         console.log(signedUser);
-        var newData = document.createElement('span');
-        for (var userAdress in signedUser.address) {
-            newData.textContent += signedUser.address[userAdress] + ", " ;
-        }
-        document.getElementById("userMainInfo").appendChild(newData);
+        var newData = document.createElement('div');
+        newData.textContent += 'обл. ' + signedUser.address.region +
+            ', гр. ' + signedUser.address.city + ', ул. "' +
+            signedUser.address.street + '", № ' + signedUser.address.number +
+            ', бл. ' + signedUser.address.block + ', вх. ' + signedUser.address.entr
+            + ', ет. ' + signedUser.address.floor + ', ап. ' + signedUser.address.apartment;
+        document.getElementById("availableAddresses").appendChild(newData);
         // signedUser.address.region = document.getElementById("region").value;
         // var newRegion = document.createElement("span")
         // newRegion.textContent = signedUser.address.region;
@@ -70,17 +85,20 @@ document.getElementById("save").addEventListener('click', function () {
         // var newApart = document.createElement("span")
         // newApart.textContent = signedUser.address.apartment;
         // document.getElementById("apartment").parentNode.replaceChild(newApart, document.getElementById("apartment"))
-        document.getElementById("inputs").style.lineHeight = "226%";
         document.getElementById("inputs").style.fontFamily = "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif%";
         document.getElementById("inputs").style.paddingTop = "9px";
-    }else{
-        document.getElementById("save").classList.add("shake1"); 
+        document.getElementById('address').style.display = "none";
+        Array.prototype.forEach.call(userDataInputs, function (element) {
+            element.value = '';
+        })
+    } else {
+        document.getElementById("save").classList.add("shake1");
     }
+    console.log(signedUser)
     setTimeout(function () { document.getElementById("save").classList.remove("shake1"); }, 600);
 })
 
 Array.prototype.forEach.call(userDataInputs, function (element) {
-    console.log(element);
     element.addEventListener('change', function (event) {
         if (element.value !== '') {
             element.style.backgroundColor = 'white';

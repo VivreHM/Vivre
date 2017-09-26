@@ -374,44 +374,48 @@
                 <div id="userMainInfo">
                     <p>Потребителско име: <span id="potrebitel"></span></p>
                     <p>E-mail: <span id="userEmail"></span></p>
-                    <label>Тел. номер: </label> <input type="text" class='userDataPhone'>
+                    <label>Тел. номер: </label> <input type="text" id='userDataPhone'>
                     <button id="savePhoneNumber">Запази Телефонен номер</button>
                 </div>
                 <h4>Адреси за доставка</h4>
+                <div id="availableAddresses">
+                    
+                </div>
                 <hr/>
                 <button id="addNew">Добави нов</button>
-                <div id="address"></div>
-                <h4>Добави адрес за доставка</h4>
-                <hr/>
-                <div style.display="flex">
-                    <div id="addressLabels">
-                        <p>Област:</p>
-                        <p>Град: </p>
-                        <p>Улица: </p>
-                        <p>Номер: </p>
-                        <p>Блок: </p>
-                        <p>Вход: </p>
-                        <p>Етаж: </p>
-                        <p>Апартамент: </p>
-                    </div>
+                <div id="address">
+                    <h4>Добави адрес за доставка</h4>
+                    <hr/>
+                    <div id="addAddress">
+                        <div id="addressLabels">
+                            <p>Област:</p>
+                            <p>Град: </p>
+                            <p>Улица: </p>
+                            <p>Номер: </p>
+                            <p>Блок: </p>
+                            <p>Вход: </p>
+                            <p>Етаж: </p>
+                            <p>Апартамент: </p>
+                        </div>
 
-                    <div id="inputs">
-                        <select id="region" name="regions" value="" class="userDataInputs" required>
+                        <div id="inputs">
+                            <select id="region" name="regions" value="" class="userDataInputs" required>
                                         <option value="София">София</option>
                                         <option value="Ямбол">Ямбол</option>
                                         <option value="Варна">Варна</option>
                                         <option value="Габрово">Габрово</option>
                             </select> <br>
-                        <input type="text" id="city" class='userDataInputs' required><br>
-                        <input type="text" id="street" class='userDataInputs' required><br>
-                        <input type="number" id="number" class='userDataInputs' required><br>
-                        <input type="number" id="block" class='userDataInputs' required><br>
-                        <input type="text" id="еntr" class='userDataInputs' required><br>
-                        <input type="text" id="floor" class='userDataInputs' required><br>
-                        <input type="text" id="apartment" class='userDataInputs' required><br>
+                            <input type="text" id="city" class='userDataInputs' required><br>
+                            <input type="text" id="street" class='userDataInputs' required><br>
+                            <input type="number" id="number" class='userDataInputs' required><br>
+                            <input type="number" id="block" class='userDataInputs' required><br>
+                            <input type="text" id="еntr" class='userDataInputs' required><br>
+                            <input type="text" id="floor" class='userDataInputs' required><br>
+                            <input type="text" id="apartment" class='userDataInputs' required><br>
+                        </div>
                     </div>
+                    <button id="save">Запази промените</button>
                 </div>
-                <button id="save">Запази промените</button>
             </div>
             <div id="slideshow">
                 <div class="slideshow-container">
