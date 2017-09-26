@@ -43,11 +43,20 @@ setInterval(function () {
 ////до ТУК!
 //ТУК прави каквото искаш :D 
 products.forEach(function (element) {
+    var div=document.createElement("div");
     element.addEventListener('mouseover', function () {
         speed = 0;
+        element.appendChild(div);
+        div.classList.add("transparent");
+        element.classList.add("scale");
+        element.classList.remove("scaleD");
+        element.firstElementChild.style.zIndex="-1";
     })
     element.addEventListener('mouseout', function () {
         speed = 1;
+        div.classList.remove("transparent");
+        element.classList.remove("scale");
+        element.classList.add("scaleD");
     })
 })
 

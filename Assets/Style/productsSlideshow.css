@@ -1,24 +1,53 @@
 #productsContainer{ 
     text-align: center;  
     height: 250px;
-    border-bottom: solid black 1px;
-    border-top: solid black 1px;
     width: auto;
     position: static;
-    background-color: grey;
 }
 .productsInSlideshow{   
     box-sizing: border-box; 
     height: 200px;
     width: 180px;
-    margin: 5px;
-    background-color: purple;
+    margin: 5px 12px;
+    background-color: white;
     display: inline-block;
     position: relative;
+    box-shadow: 0px 20px 30px -19px rgba(0,0,0,0.22);
+    border-radius:4px;
 }
+
+.productsInSlideshow img{
+    position:relative;
+
+}
+
+.productsInSlideshow p{
+    position:relative;
+    top:-47px;
+    background-color: orange;
+    color:white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding:10px;
+    text-align: left;
+    font-size: 1.2em;
+    z-index:1;
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
+}
+
+.productsInSlideshow h4{
+    position:absolute;
+    top:100px;
+    color:gray;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: left;
+    padding:10px;
+    z-index:2;
+}
+
 #insideProductContainer{
     box-sizing: border-box;
-    background: white;
+    background: lightgray;
     margin: auto;
     display: inline-block;
     width: 70%;
@@ -46,4 +75,70 @@ border-radius: 0 3px 3px 0;
 }
 #nextArrowProducts{
     float: right;
+}
+
+@keyframes scaleUp {
+    0%   { transform: scale(1,1);}
+    100% {transform: scale(1.10,1.10);}
+}
+
+@keyframes scaleDown {
+    0%   { transform: scale(1.10,1,10);}
+    100% {transform: scale(1,1);}
+}
+
+@keyframes fadeIn2 {
+    0%   {opacity:0;}
+    100% {opacity:0.7;}
+}
+
+.scale{
+    animation-name: scaleUp;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+.scaleD{
+    animation-name: scaleDown;
+    animation-duration: 0.9s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+.transparent{
+    background-color: rgb(91,48,92);
+    opacity:0.7;
+    position:absolute;
+    width:180px;
+    height:200px;
+    top:0px;
+    left:0px;
+    z-index:-1;
+    animation-name: fadeIn2;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    border-radius:4px;
+}
+
+.moreProductSlideShow{
+    position:absolute;
+    top:80px;
+    left:45px;
+    background-color: rgb(91,48,92);
+    color:white;
+    border: none;
+    border-radius: 15px;
+    padding:5px 15px;
+    font-size:1.1em;
+    cursor: pointer;
+    display:none;
+    animation-name: fadeIn;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    border-radius:4px;
 }
