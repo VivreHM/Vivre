@@ -25,6 +25,17 @@ setInterval(function () {
                 //right = -800;
             }
             boxSize -= 194; ///размер на кутията + марджин + default margin from chrome
+        } else {
+            var right = parseInt(element.style.right)
+            var width = 1366 - window.innerWidth
+            element.style.right = right + speed + 'px';
+
+            if (element.offsetLeft < 0) {
+                element.style.right = -productsParent.offsetWidth - width - boxSize + 'px'
+                // element.style.right = '-800px'            
+                //right = -800;
+            }
+            boxSize -= 194; 
         }
     })
 
