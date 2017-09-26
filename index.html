@@ -371,14 +371,20 @@
         <main>
             <div id="userPage">
                 <h4>Потребителски данни</h4>
-                <hr>
+                <hr/>
                 <div id="userMainInfo">
                     <p>Потребителско име: <span id="potrebitel"></span></p>
                     <p>E-mail: <span id="userEmail"></span></p>
+                    <label>Тел. номер: </label> <input type="text" class='userDataPhone'>
+                    <button id="savePhoneNumber">Запази Телефонен номер</button>
                 </div>
-                <h4>Адрес за доставка</h4>
-                <hr>
-                <div id="address" style.display="flex">
+                <h4>Адреси за доставка</h4>
+                <hr/>
+                <button id="addNew">Добави нов</button>
+                <div id="address"></div>
+                <h4>Добави адрес за доставка</h4>
+                <hr/>
+                <div style.display="flex">
                     <div id="addressLabels">
                         <p>Област:</p>
                         <p>Град: </p>
@@ -391,24 +397,23 @@
                     </div>
 
                     <div id="inputs">
-                        <select id="region" name="regions" value="" required>
-                                <option value="София">София</option>
-                                <option value="Ямбол">Ямбол</option>
-                                <option value="Варна">Варна</option>
-                                <option value="Габрово">Габрово</option>
-                    </select> <br>
-                        <input type="text" id="city" class='inputAdress' required><br>
-                        <input type="text" id="street" class='inputAdress' required><br>
-                        <input type="number" id="number" class='inputAdress' required><br>
-                        <input type="number" id="block" class='inputAdress' required><br>
-                        <input type="text" id="еntr" class='inputAdress' required><br>
-                        <input type="text" id="floor" class='inputAdress' required><br>
-                        <input type="text" id="apartment" class='inputAdress' required><br>
+                        <select id="region" name="regions" value="" class="userDataInputs" required>
+                                        <option value="София">София</option>
+                                        <option value="Ямбол">Ямбол</option>
+                                        <option value="Варна">Варна</option>
+                                        <option value="Габрово">Габрово</option>
+                            </select> <br>
+                        <input type="text" id="city" class='userDataInputs' required><br>
+                        <input type="text" id="street" class='userDataInputs' required><br>
+                        <input type="number" id="number" class='userDataInputs' required><br>
+                        <input type="number" id="block" class='userDataInputs' required><br>
+                        <input type="text" id="еntr" class='userDataInputs' required><br>
+                        <input type="text" id="floor" class='userDataInputs' required><br>
+                        <input type="text" id="apartment" class='userDataInputs' required><br>
                     </div>
                 </div>
                 <button id="save">Запази промените</button>
             </div>
-
             <div id="slideshow">
                 <div class="slideshow-container">
                     <!-- Slideshow box -->
@@ -476,35 +481,35 @@
             <div id="register">
                 <!-- Sign up and register form. -->
                 <h4>Регистрация <span id="closeButtonRegister">&#10006</h4><br>
-                <form>
-                    <input id="username" type="text" name="user" placeholder="Потребителско име" class="form" required>
-                    <input id="passwordFirst" type="password" name="pass" placeholder="Парола" class="form" required minlength="6">
-                    <input id="passwordSecond"type="password" name="pass" placeholder="Подтвърди паролата" class="form" required>
-                    <input id="email" type="email" name="pass" placeholder="Емейл" class="form" required>
-                    <br>
-                    <button id="regButton"class="logInButton">Регистрирай се</button>
-                </form>
+            <form>
+                <input id="username" type="text" name="user" placeholder="Потребителско име" class="form" required>
+                <input id="passwordFirst" type="password" name="pass" placeholder="Парола" class="form" required minlength="6">
+                <input id="passwordSecond"type="password" name="pass" placeholder="Подтвърди паролата" class="form" required>
+                <input id="email" type="email" name="pass" placeholder="Имейл" class="form" required>
+                <br>
+                <button id="regButton"class="logInButton">Регистрирай се</button>
+            </form>
+        </div>
+                        <!-- SHOPPING CART -->
+            <div id='CartContainer'>
+                <div id='cartHeader'>Завършване на поръчката</div>
+                <div id='cartBody'>
+                <div class='orderInfo'>Адрес:</div><p></p>
+                <div id='orderAdress'>Настоящ адрес</div>
+                <div id='changeAdress'><a href=""> Друг адрес </a></div><br>
+                <div class='orderInfo'>Начин на плащане:</div>
+                    <input name='plashtane' type="radio"> <label class'radioButtons'> С карта</label>
+                    <img width=26px src="Assets\Images\Icons\withCard.png" alt="">                      
+                    <input name='plashtane' type="radio"> <label class'radioButtons'>Наложен платеж</label> 
+                    <img width=26px src="Assets\Images\Icons\payment-method.png" alt="">    
+                    <div> <br>
+                        <input id='conditions' type="checkbox">Съгласен съм с условията за доставка, гаранция и връщане.
+                    </div> <br>         
+                    <button id='confirmOrder'>Потвърди поръчката</button>
             </div>
-                            <!-- SHOPPING CART -->
-               <div id='CartContainer'>
-                   <div id='cartHeader'>Завършване на поръчката</div>
-                   <div id='cartBody'>
-                   <div class='orderInfo'>Адрес:</div><p></p>
-                   <div id='orderAdress'>Настоящ адрес</div>
-                   <div id='changeAdress'><a href=""> Друг адрес </a></div><br>
-                   <div class='orderInfo'>Начин на плащане:</div>
-                      <input name='plashtane' type="radio"> <label class'radioButtons'> С карта</label>
-                      <img width=26px src="Assets\Images\Icons\withCard.png" alt="">                      
-                      <input name='plashtane' type="radio"> <label class'radioButtons'>Наложен платеж</label> 
-                      <img width=26px src="Assets\Images\Icons\payment-method.png" alt="">    
-                      <div> <br>
-                          <input id='conditions' type="checkbox">Съгласен съм с условията за доставка, гаранция и връщане.
-                      </div> <br>         
-                      <button id='confirmOrder'>Потвърди поръчката</button>
-                    </div>
 
-              </div>
-        </main>
+        </div>
+</main>
         <footer>
             <div id="fastLinks">
                 <h2>Бързи линкове</h2>
