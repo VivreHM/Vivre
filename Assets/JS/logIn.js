@@ -3,11 +3,10 @@ document.getElementById("logInFormButton").addEventListener("click", function (e
     event.preventDefault();
     var userName = document.getElementById("logInUsername").value;
     var pass = document.getElementById("logInPassword").value;
-    document.getElementById("logInUsername").style.backgroundColor = 'white';
     console.log(userDB.login(userName, pass))
     if (userDB.login(userName, pass)) {
         signedUser = userDB._users.find(user => user.username == userName);            
-        
+        document.getElementById("logInUsername").style.backgroundColor = 'white';
         document.getElementById("signButtons").style.display = "none";
         document.getElementById("userButton").innerHTML = userName;
         document.getElementById("userInfo").style.display = "inline-block";
