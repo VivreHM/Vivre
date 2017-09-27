@@ -52,9 +52,8 @@ var userDB = (function () {
             this._users = [new User('hero04', 'hero04', 'hero04@abv.bg')];
             localStorage.setItem('users', JSON.stringify(this._users));
         }
-        console.log(localStorage)
     }
-
+    
     UsersDB.prototype.addUser = function (username, password, email) {
         this._users.push(new User(username, password, email));
         user.id = this._users.length;
@@ -71,6 +70,9 @@ var userDB = (function () {
         });
     }
     var users = new UsersDB();
+    setInterval(function(){
+        localStorage.setItem('users', JSON.stringify(users._users));
+    }, 5000)
     return users;
 })();
 
