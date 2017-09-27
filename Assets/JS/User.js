@@ -49,7 +49,7 @@ var userDB = (function () {
         if (localStorage.getItem('users') != null) {
             this._users = JSON.parse(localStorage.getItem('users'))
         } else {
-            this._users = [];
+            this._users = [new User('hero04', 'hero04', 'hero04@abv.bg')];
             localStorage.setItem('users', JSON.stringify(this._users));
         }
         console.log(localStorage)
@@ -71,7 +71,6 @@ var userDB = (function () {
         });
     }
     var users = new UsersDB();
-    users.addUser('hero04', 'hero04', 'hero04@abv.bg')
     return users;
 })();
 
