@@ -86,6 +86,7 @@ body{
     position: relative;
     left:-15px;
     top:4px;
+    display: none;
 }
 #mainNav{
     float:left;
@@ -168,7 +169,9 @@ body{
 }
 
 #signButtons, #userInfo{
-    padding-top:5px;
+    padding-top:8px;
+    float: right;
+
 }
 
 /* The style of the logo and the search bar. */

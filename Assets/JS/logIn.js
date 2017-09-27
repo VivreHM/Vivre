@@ -1,31 +1,28 @@
 var signedUser = null;
-document.getElementById("logInFormButton").addEventListener("click",function(event){
+document.getElementById("logInFormButton").addEventListener("click", function (event) {
     event.preventDefault();
     var userName = document.getElementById("logInUsername").value;
-    var user = userDB.users.find(a=>a.username==userName)
-    if(user!=undefined){
-        document.getElementById("logInUsername").style.backgroundColor = 'white';
-        var pass = document.getElementById("logInPassword").value;
-        if(user.getPassword() == pass && pass){
-            document.getElementById("signButtons").style.display="none";
-            document.getElementById("userButton").innerHTML = user.username;
-            document.getElementById("userInfo").style.display="inline-block";
-            document.getElementById("potrebitel").textContent = user.username;
-            document.getElementById("userEmail").textContent = user.email;
-            signedUser = user;
-            document.getElementById('logIn').style.display = 'none';
-            document.getElementById('blackBackground').style.display = 'none';
-            document.getElementById("logInFormButton").classList.remove("shake1"); 
-            document.body.style.overflow = 'scroll';
-            document.getElementById("logInPassword").style.backgroundColor = 'white';
-            signedUser.showAddresses(document.getElementById("availableAddressesInCart"));
-            signedUser.showAddresses(document.getElementById("availableAddresses"));
-        }else{
-            document.getElementById("logInPassword").value = "";
-            document.getElementById("logInPassword").style.backgroundColor = '#F3D967';
-            document.getElementById("logInFormButton").classList.add("shake1");
-        }
-    }else{
+    var pass = document.getElementById("logInPassword").value;
+    document.getElementById("logInUsername").style.backgroundColor = 'white';
+    console.log(userDB.login(userName, pass))
+    if (userDB.login(userName, pass)) {
+        signedUser = userDB._users.find(user => user.username == userName);            
+        
+        document.getElementById("signButtons").style.display = "none";
+        document.getElementById("userButton").innerHTML = userName;
+        document.getElementById("userInfo").style.display = "inline-block";
+        document.getElementById("potrebitel").textContent = userName
+        document.getElementById("userEmail").textContent = signedUser.email;
+        document.getElementById('logIn').style.display = 'none';
+        document.getElementById('blackBackground').style.display = 'none';
+        document.getElementById("logInFormButton").classList.remove("shake1");
+        document.getElementById("logInPassword").style.backgroundColor = 'white';
+        signedUser.showAddresses(document.getElementById("availableAddressesInCart"));
+        signedUser.showAddresses(document.getElementById("availableAddresses"));
+    } else {
+        document.getElementById("logInPassword").value = "";
+        document.getElementById("logInPassword").style.backgroundColor = '#F3D967';
+        document.getElementById("logInFormButton").classList.add("shake1");
         document.getElementById("logInUsername").value = "";
         document.getElementById("logInUsername").style.backgroundColor = '#F3D967';
         document.getElementById("logInPassword").style.backgroundColor = '#F3D967';
@@ -33,7 +30,7 @@ document.getElementById("logInFormButton").addEventListener("click",function(eve
     }
     setTimeout(function () { document.getElementById("logInFormButton").classList.remove("shake1"); }, 600);
 })
-document.getElementById('registerInLogIn').addEventListener('click',function (event) {
+document.getElementById('registerInLogIn').addEventListener('click', function (event) {
     event.preventDefault();
     document.getElementById('logIn').style.display = 'none';
     document.getElementById('register').style.pposition = 'fixed';

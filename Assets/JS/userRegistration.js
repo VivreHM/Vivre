@@ -1,8 +1,7 @@
 
 document.getElementById("regButton").addEventListener("click", function (event) {
-    event.preventDefault();
 
-    if (!userDB.users.some(a => a.username == document.getElementById("username").value.trim()) && 
+    if (!userDB._users.some(a => a.username == document.getElementById("username").value.trim()) && 
     document.getElementById("username").value) {
         document.getElementById("username").style.backgroundColor = 'white';
         var usern = document.getElementById("username").value;
@@ -22,24 +21,19 @@ document.getElementById("regButton").addEventListener("click", function (event) 
         //document.getElementById("passwordSecond").placeholder = 'Паролата трябва да е същата като първата';
     }
     if (document.getElementById("email").value && 
-        !userDB.users.some(a => a.email == document.getElementById("email").value.trim())) {
+        !userDB._users.some(a => a.email == document.getElementById("email").value.trim())) {
         var email = document.getElementById("email").value;
         document.getElementById('email').style.backgroundColor = 'white';
     }else{
         document.getElementById('email').style.backgroundColor = '#F3D967';
     }
-    if (usern && pass && email) {
-        var user = new User(usern, pass, email);
-        userDB.addUser(user);
-    }
-    if (user) {
+    if (!(userDB._users.some(user => user.username == usern))) {
+        userDB.addUser(usern, pass, email);
         document.getElementById('register').style.display = 'none';
         document.getElementById('blackBackground').style.display = 'none';
-        document.body.style.overflow = 'scroll'
     } else {
         document.getElementById("regButton").classList.add("shake1");
     }
     setTimeout(function () { document.getElementById("regButton").classList.remove("shake1"); }, 600);
-    console.log(userDB.users);
 });
 
