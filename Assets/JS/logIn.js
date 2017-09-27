@@ -19,6 +19,7 @@ document.getElementById("logInFormButton").addEventListener("click",function(eve
             document.body.style.overflow = 'scroll';
             document.getElementById("logInPassword").style.backgroundColor = 'white';
             signedUser.showAddresses(document.getElementById("availableAddressesInCart"));
+            signedUser.showAddresses(document.getElementById("availableAddresses"));
         }else{
             document.getElementById("logInPassword").value = "";
             document.getElementById("logInPassword").style.backgroundColor = '#F3D967';
