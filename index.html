@@ -36,14 +36,14 @@
                         <span>/</span>
                         <img width="15px" src="Assets/Images/Icons/Sign in.png" alt="Register">
                         <button id='registerButton'>Регистрация</button>
-                        <button id="cart">
-                        <img src="Assets\Images\Icons\box-trolley.png" alt="">
-                    </button>
+                        </button>
                     </div>
                     <div id="userInfo">
                         <img width="15px" src="Assets/Images/Icons/user.png" alt="User icon">
                         <button id='userButton'>test</button>
                     </div>
+                    <button id="cart">
+                    <img src="Assets\Images\Icons\box-trolley.png" alt="">
                 </div>
             </div>
             <!-- TODO -->
@@ -464,43 +464,43 @@
                         <img height="180xp" src="Assets/Images/Products/product1.png" alt="">
                         <h4>Викториански стол</h4>
                         <p>75.99лв.</p>
-                        <button class="moreProductSlideShow">Повече</button>
+                        <!-- <button class="moreProductSlideShow">Повече</button> -->
                     </div>
                     <div class='productsInSlideshow'>
                         <img height="180xp" src="Assets/Images/Products/product2.png" alt="">
                         <h4>Хавлиени кърпи</h4>
                         <p>75.99лв.</p>
-                        <button class="moreProductSlideShow">Повече</button>
+                        <!-- <button class="moreProductSlideShow">Повече</button> -->
                     </div>
                     <div class='productsInSlideshow'>
                         <img height="180xp" src="Assets/Images/Products/product1.png" alt="">
                         <h4>Викториански стол</h4>
                         <p>75.99лв.</p>
-                        <button class="moreProductSlideShow">Повече</button>
+                        <!-- <button class="moreProductSlideShow">Повече</button> -->
                     </div>
                     <div class='productsInSlideshow'>
                         <img height="180xp" src="Assets/Images/Products/product1.png" alt="">
                         <h4>Викториански стол</h4>
                         <p>75.99лв.</p>
-                        <button class="moreProductSlideShow">Повече</button>
+                        <!-- <button class="moreProductSlideShow">Повече</button> -->
                     </div>
                     <div class='productsInSlideshow'>
                         <img height="180px" src="Assets/Images/Products/product1.png" alt="">
                         <h4>Викториански стол</h4>
                         <p>75.99лв.</p>
-                        <button class="moreProductSlideShow">Повече</button>
+                        <!-- <button class="moreProductSlideShow">Повече</button> -->
                     </div>
                     <div class='productsInSlideshow'>
                         <img height="180xp" src="Assets/Images/Products/product1.png" alt="">
                         <h4>Викториански стол</h4>
                         <p>75.99лв.</p>
-                        <button class="moreProductSlideShow">Повече</button>
+                        <!-- <button class="moreProductSlideShow">Повече</button> -->
                     </div>
                     <div class='productsInSlideshow'>
                         <img height="180xp" src="Assets/Images/Products/product1.png" alt="">
                         <h4>Викториански стол</h4>
                         <p>75.99лв.</p>
-                        <button class="moreProductSlideShow">Повече</button>
+                        <!-- <button class="moreProductSlideShow">Повече</button> -->
                     </div>
                 </div>
 
@@ -537,9 +537,10 @@
             <div id='CartContainer'>
                 <div id='cartHeader'>Завършване на поръчката</div>
                 <div id='cartBody'>
-                <div class='orderInfo'>Адрес:</div><p></p>
-                <div id='orderAdress'>Настоящ адрес</div>
-                <div id='changeAdress'><a href=""> Друг адрес </a></div><br>
+                <div class="orderInfo" >Адреси</div>
+                <div id="availableAddressesInCart">
+                </div>
+                <button id="addNewInCart">Добави адрес</button>
                 <div class='orderInfo'>Начин на плащане:</div>
                     <input name='plashtane' type="radio"> <label class'radioButtons'> С карта</label>
                     <img width=26px src="Assets\Images\Icons\withCard.png" alt="">                      

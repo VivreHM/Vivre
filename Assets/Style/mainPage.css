@@ -163,6 +163,14 @@ body{
     top:4px;
 }
 
+#user{
+    display:flex;
+}
+
+#signButtons, #userInfo{
+    padding-top:5px;
+}
+
 /* The style of the logo and the search bar. */
 
 #searchBar{

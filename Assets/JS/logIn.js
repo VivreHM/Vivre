@@ -1,5 +1,4 @@
 var signedUser = null;
-
 document.getElementById("logInFormButton").addEventListener("click",function(event){
     event.preventDefault();
     var userName = document.getElementById("logInUsername").value;
@@ -19,6 +18,7 @@ document.getElementById("logInFormButton").addEventListener("click",function(eve
             document.getElementById("logInFormButton").classList.remove("shake1"); 
             document.body.style.overflow = 'scroll';
             document.getElementById("logInPassword").style.backgroundColor = 'white';
+            signedUser.showAddresses(document.getElementById("availableAddressesInCart"));
         }else{
             document.getElementById("logInPassword").value = "";
             document.getElementById("logInPassword").style.backgroundColor = '#F3D967';

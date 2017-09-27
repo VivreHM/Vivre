@@ -2,6 +2,13 @@ var cart = document.getElementById('cart');
 var cartContainer = document.getElementById('CartContainer');
 var background = document.getElementById('blackBackground');
 
+if(signedUser){
+    signedUser.showAddresses(document.getElementById("availableAddressesInCart"));
+}else{
+    var p = document.createElement("p")
+    p.textContent = "Не сте влезли в профила си. Ако искате да продължите като гост трябва да добавите адрес и телефон за връзка в полето по долу."
+    document.getElementById("availableAddressesInCart").appendChild(p);
+}
 cart.addEventListener('click', function(event){
     cartContainer.style.display = 'inline-block';
     background.style.width = '100%';

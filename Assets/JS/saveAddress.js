@@ -1,5 +1,4 @@
 var userDataInputs = document.querySelectorAll('.userDataInputs');
-
 document.getElementById("savePhoneNumber").addEventListener("click", function () {
     var phone = document.getElementById("userDataPhone").value
     if (phone.match(/^(08)(\d){8}$/)) {
@@ -20,7 +19,6 @@ document.getElementById("addNew").addEventListener("click", function () {
 
 document.getElementById("save").addEventListener('click', function () {
     var isFilled = true;
-    console.log(userDataInputs)
     Array.prototype.forEach.call(userDataInputs, function (element) {
         console.log(element);
         if (element.value == '') {
@@ -30,22 +28,36 @@ document.getElementById("save").addEventListener('click', function () {
     })
 
     if (isFilled) {
-        var keys = [];
-        for (var userAdress in signedUser.address) {
-            keys.push(userAdress);
-        }
-        console.log(keys)
-        Array.prototype.forEach.call(userDataInputs, function (element, index) {
-            signedUser.address[keys[index]] = element.value;
-        })
+        // var keys = [];
+        // for (var userAdress in signedUser.address) {
+        //     keys.push(userAdress);
+        // }
+        // console.log(keys)
+        // Array.prototype.forEach.call(userDataInputs, function (element, index) {
+        //     signedUser.address[keys[index]] = element.value;
+        // })
+
+        // var newData = document.createElement('div');
+        // newData.textContent += 'обл. ' + signedUser.address.region +
+        //     ', гр. ' + signedUser.address.city + ', ул. "' +
+        //     signedUser.address.street + '", № ' + signedUser.address.number +
+        //     ', бл. ' + signedUser.address.block + ', вх. ' + signedUser.address.entr
+        //     + ', ет. ' + signedUser.address.floor + ', ап. ' + signedUser.address.apartment;
+        // document.getElementById("availableAddresses").appendChild(newData);
+
+        var region = document.getElementById("region").value;
+        var city = document.getElementById("city").value;
+        var street = document.getElementById("street").value;
+        var number = document.getElementById("number").value;
+        var block = document.getElementById("block").value;
+        var entr = document.getElementById("еntr").value;
+        var floor = document.getElementById("floor").value;
+        var apart = document.getElementById("apartment").value;
+        signedUser.addAddress(region, city, street, number, block, entr, floor, apart);
         console.log(signedUser);
-        var newData = document.createElement('div');
-        newData.textContent += 'обл. ' + signedUser.address.region +
-            ', гр. ' + signedUser.address.city + ', ул. "' +
-            signedUser.address.street + '", № ' + signedUser.address.number +
-            ', бл. ' + signedUser.address.block + ', вх. ' + signedUser.address.entr
-            + ', ет. ' + signedUser.address.floor + ', ап. ' + signedUser.address.apartment;
-        document.getElementById("availableAddresses").appendChild(newData);
+        signedUser.showAddresses(document.getElementById("availableAddresses"));
+        signedUser.showAddresses(document.getElementById("availableAddressesInCart"));
+
         // signedUser.address.region = document.getElementById("region").value;
         // var newRegion = document.createElement("span")
         // newRegion.textContent = signedUser.address.region;
