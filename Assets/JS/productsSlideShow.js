@@ -3,11 +3,10 @@ var parent = document.getElementById('productsContainer')
 var productsParent = document.getElementById('insideProductContainer')
 var prevArrow = document.getElementById('previousArrowProducts')
 var nextArrow = document.getElementById('nextArrowProducts');
-
 ///НЕ пипай от ТУК....
 console.log(products)
 var speed = 1;
-var boxSize = products[0].offsetWidth;
+var boxSize = 208;
 products.forEach(function (element) {
     element.style.right = 1 + 'px'
 })
@@ -16,15 +15,17 @@ setInterval(function () {
     boxSize = products[0].offsetWidth;
     Array.prototype.forEach.call(products, function (element) {
         if (window.innerWidth > 1365) {
-            var right = parseInt(element.style.right)
-            element.style.right = right + speed + 'px';
-
             if (element.offsetLeft < 0) {
                 element.style.right = -productsParent.offsetWidth - boxSize + 'px'
                 // element.style.right = '-800px'            
                 //right = -800;
             }
-            boxSize -= 194; ///размер на кутията + марджин + default margin from chrome
+
+            var right = parseInt(element.style.right)
+            element.style.right = right + speed + 'px';
+
+
+            boxSize -= 208; ///размер на кутията + марджин + default margin from chrome
         } else {
             var right = parseInt(element.style.right)
             var width = 1366 - window.innerWidth
@@ -35,11 +36,11 @@ setInterval(function () {
                 // element.style.right = '-800px'            
                 //right = -800;
             }
-            boxSize -= 194; 
+            boxSize -= 208; 
         }
     })
 
-}, 10)
+}, 20)
 ////до ТУК!
 //ТУК прави каквото искаш :D 
 products.forEach(function (element) {
