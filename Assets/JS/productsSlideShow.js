@@ -16,7 +16,9 @@ function rightSizig(element) {
     Array.prototype.forEach.call(products, function (element) {
         var right = parseInt(element.style.right)
         var width = 1366 - window.innerWidth
-
+        window.addEventListener('resize', function () {
+            width = 1366 - window.innerWidth
+        });
         element.style.right = right + speed + 'px';
 
         if (element.offsetLeft < 0) {
