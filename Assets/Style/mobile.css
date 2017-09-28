@@ -1,0 +1,286 @@
+@media screen and (max-width: 1000px) and (min-width: 300px) {
+    #productsContainer, #CartContainer, #userPage, #slideshow{
+        display:none;
+    }
+    #vivreLogo{
+        display:none;
+    }
+
+    #responsiveMenu>img{
+        margin:auto;
+        text-align: center;
+        position:relative;
+        top:16px;
+        left:24px;
+    }
+    #responsiveMenu{
+        display:none;
+        background-color: white;
+        width:100%;
+        height:460px;
+        z-index: 3;
+        position:fixed;
+        top:60px;
+        /* padding:10px 20px; */
+        border-bottom:15px solid orange;
+
+        animation-name: fadeIn;
+        animation-duration: 0.45s;
+        animation-timing-function: ease-in-out;
+        animation-direction: alternate;
+    }
+
+    #responsiveMenuButton{
+        position:relative;
+        top:-8px;
+        padding:15px;
+        float:left;
+    }
+
+    #mainNav{
+        display:none;
+    }
+        /* Top purple bar style */
+    #topBar{
+        padding:2% 5%;
+        background-color: rgb(91, 48, 92);
+        height:60px;
+        position: fixed;
+        z-index: 1;
+        display:inline-block;
+        width:100%;
+        box-sizing: border-box;
+        z-index:1;
+    }
+
+    #user button{
+        background:none;
+        border:none;
+        cursor: pointer;
+        color:white;
+        padding:0px 16px;
+        margin:-6px;
+        height:40px;
+        font-size:1.08em;
+    }
+
+    #user button:focus{
+        background: none;
+        border:none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #user span{
+        color:white;
+    }
+
+    #user img{
+        position: relative;
+        left:10px;
+        top:4px;
+    }
+
+    #user{
+        display:flex;
+        float:right;
+    }
+
+    #subMenus{
+        display:none;
+    }
+
+    /* #mainNav>button{
+        background: none;
+        border:none;
+        cursor: pointer;
+        color:white;
+        padding:0px 16px;
+        margin:0px;
+        height:50px;
+    }
+
+    #mainNav>button:hover{
+        background: none;
+        border:none;
+        cursor: pointer;
+        animation-name: hover;
+        animation-duration: 0.35s;
+        animation-timing-function: ease-in-out;
+        animation-direction: alternate;
+        animation-fill-mode: forwards
+    }
+
+
+
+    #mainNav>button:focus{
+        background: none;
+        border:none;
+        outline: none;
+        cursor: pointer;
+        color: #5B305C;
+        background-color: white;
+    } */
+
+
+    nav{
+        margin-top:40px;
+    }
+
+    nav>ul{
+        margin-left:0;
+        padding-left:0;
+        z-index: 10;
+    }
+
+    nav>ul>li{
+        margin-left:0px;
+        /* margin-right:10px; */
+        color: #5B305C;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        height:31px;
+        z-index: 10;
+        font-size: 1.2em;
+        width:100%;
+        padding:5px 30px;
+        font-weight: 600;
+    }
+
+    nav>ul>li:hover{
+        cursor: pointer;
+        color:white;
+        background-color: #5B305C;
+    }
+
+    #cart{
+        position: relative;
+        left:-15px;
+        top:4px;
+        display: none;
+    }
+    #mainNav{
+        float:left;
+    }
+
+    #userInfo{
+        display:none;
+
+    }
+
+    #signButtons, #userInfo{
+        padding-top:8px;
+        float: right;
+    }
+
+    /* The style of the logo and the search bar. */
+
+    #searchBar{
+        display:inline-block;
+        position:relative;
+        top:75px;
+        width:85%;
+        margin:auto;
+
+    }
+
+    #searchBox{
+        display: flex;
+        justify-content: space-between;
+        margin:5px 25px;
+        border-radius:50px;
+        border: 1px solid lightgray;
+        height:40px;
+        width:100%;
+    }
+
+    #searchBox input{
+        border:none;
+        background-color: none;
+        width:80%;
+        margin-left:15px;
+        font-size: 1.2em;
+    }
+
+    #searchBox input:focus{
+        outline:none;
+    }
+
+    
+    #searchBox img{
+        margin-top:4px;
+        height:26px;
+        margin-right:15px;
+    }
+
+    #userPage{
+        padding:1% 15%;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        padding-top:40px;
+        width:320px;
+        color:#5A5A5A;
+        display:none;
+    }
+
+    #address{
+    display:flex;
+    }
+
+    #inputs{
+        /* padding-top:17px; */
+        margin-left:20px;
+    }
+
+    .userDataInputs, #userDataPhone{
+        margin-top:14px;
+        padding:3px 10px;
+        border-radius:10px;
+        border:none;
+    }
+
+    #inputs span{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-bottom:50px;
+    }
+
+    #save, #addNew, #savePhoneNumber{
+        padding:8px 10px;
+        background-color:#5B305C;
+        color:white;
+        border:none;
+        border-radius:15px;
+        margin:10px 0px;
+        font-size:0.9em;
+    }
+
+    #addAddress{
+        display:flex;
+        justify-content: space-between;
+    }
+
+    #address{
+        display:none;
+        animation-name: fadeIn;
+        animation-duration: 0.35s;
+        animation-timing-function: ease-in-out;
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+    }
+
+    #availableAddresses> div{
+        margin:10px 0px;
+        padding:8px 8px;
+        background-color:white;
+        border-top-right-radius:15px;
+        border-bottom-right-radius:15px;
+        border-left:5px solid orange;
+        box-shadow: 0px 20px 30px -19px rgba(0,0,0,0.22);
+    }
+
+    main{
+        background-color:#eee;
+    }
+
+    footer{
+        display:none;
+    }
+}
