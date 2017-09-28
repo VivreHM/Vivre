@@ -1,6 +1,7 @@
 var slideIndex = 0;
 var previousArrow = document.getElementById('previousArrow')
 var nextArrow = document.getElementById('nextArrow')
+var dots = document.querySelectorAll('.dot')
 var isPressed = false;
 var playing = true;
 playSlideShow();
@@ -78,3 +79,9 @@ function showSlides() {
     slides[slideIndex - 1].style.display = "block";
     isPressed = false; // Change image every 2 seconds
 }
+dots.forEach(function (dot, index) {
+    dot.addEventListener('click', function () {
+        slideIndex = index;
+        showSlides();
+    })
+})
