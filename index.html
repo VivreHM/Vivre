@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="Assets/Style/register.css">
     <link rel="stylesheet" href="Assets/Style/ShoppingCart.css">
     <link rel="stylesheet" href="Assets/Style/productsSlideshow.css">
+    <link rel="stylesheet" href="Assets/Style/mobile.css">
 </head>
 
 <body>
@@ -24,6 +25,7 @@
                 <!-- The purple bar on the top with the: 
                 -shop, about us and contact buttons on the left side (id="mainNav")
                 -sign in and sign up buttons on the right side (id="user")-->
+                <img id="responsiveMenuButton" src="Assets/Images/Icons/responsive menu.png" alt="">
                 <div id="mainNav">
                     <button id="store" autofocus>Магазин</button>
                     <button class="forUs">За нас</button>
@@ -46,11 +48,15 @@
                     <img src="Assets\Images\Icons\box-trolley.png" alt="">
                 </div>
             </div>
+            <div id="responsiveMenu">
+                    <script src="Assets/JS/beResponsiveMenu.js"></script> 
+                    <img height=40px src="Assets/Images/logo-vivre.gif" alt="Vivre logo">
+            </div>
             <!-- TODO -->
             <!-- <div id='mainNav'> -->
             <div id="searchBar">
                 <!-- The bar with the logo and the search field (id="searchBox"): -->
-                <img height=70px src="Assets/Images/logo-vivre.gif" alt="Vivre logo">
+                <img height=70px id="vivreLogo" src="Assets/Images/logo-vivre.gif" alt="Vivre logo">
                 <div id="searchBox">
                     <input type="text" name="search" placeholder="Търсене...">
                     <img src="Assets/Images/Icons/magnifying-glass.png" alt="">
@@ -60,315 +66,315 @@
                 <!-- The navigation bar: -->
                 <ul id='Catalog'>
                     <li class='navMenu'>Мебели</li>
-                    <li class='navMenu' id="decorations">Декор</li>
-                    <li class='navMenu' id="kitchen">Кухня</li>
-                    <li class='navMenu' id="bedroom">Спалня</li>
-                    <li class='navMenu' id="lights">Осветителни тела</li>
-                    <li class='navMenu' id="carpets">Килими</li>
-                    <li class='navMenu' id="baths">Баня & Организиране</li>
-                    <li class='navMenu' id="lifestyle">Лайфстайл</li>
+                    <li class='navMenu' class="decorations">Декор</li>
+                    <li class='navMenu' class="kitchen">Кухня</li>
+                    <li class='navMenu' class="bedroom">Спалня</li>
+                    <li class='navMenu' class="lights">Осветителни тела</li>
+                    <li class='navMenu' class="carpets">Килими</li>
+                    <li class='navMenu' class="baths">Баня & Организиране</li>
+                    <li class='navMenu' class="lifestyle">Лайфстайл</li>
                 </ul>
             </nav>
             <!-- Submenus with more options to choose -->
-            <div class="subMenu" id="furnitureMenu">
-                <div>
-                    <h4>Почивка в дневната и спалнята</h4>
-                    <ul>
-                        <li>Канапета & фотьойли</li>
-                        <li>Столове</li>
-                        <li>Легла</li>
-                        <li>Табуретки & пуфове</li>
-                        <li>Пейки</li>
-                    </ul>
-                    <h4>Маси</h4>
-                    <ul>
-                        <li>Маси за трапезария и офис</li>
-                        <li>Масички и конзоли</li>
-                    </ul>
+            <div id="subMenus">
+                <div class="subMenu" id="furnitureMenu">
+                    <div>
+                        <h4>Почивка в дневната и спалнята</h4>
+                        <ul>
+                            <li>Канапета & фотьойли</li>
+                            <li>Столове</li>
+                            <li>Легла</li>
+                            <li>Табуретки & пуфове</li>
+                            <li>Пейки</li>
+                        </ul>
+                        <h4>Маси</h4>
+                        <ul>
+                            <li>Маси за трапезария и офис</li>
+                            <li>Масички и конзоли</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Съхранение</h4>
+                        <ul>
+                            <li>Библиотеки</li>
+                            <li>Шкафове & комоди</li>
+                            <li>Бюфети & витрини</li>
+                            <li>Втажерки & рафтове</li>
+                            <li>Закачаалки & шкафове за обувки</li>
+                        </ul>
+                        <h4>Мебели за градина</h4>
+                        <ul>
+                            <li>Столове и маси за екстериор</li>
+                            <li>Релакс в градината</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Детски</h4>
+                        <ul>
+                            <li>Мебели за новородени</li>
+                            <li>Детски мебели</li>
+                            <li>Съхранение за деца</li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <h4>Съхранение</h4>
-                    <ul>
-                        <li>Библиотеки</li>
-                        <li>Шкафове & комоди</li>
-                        <li>Бюфети & витрини</li>
-                        <li>Втажерки & рафтове</li>
-                        <li>Закачаалки & шкафове за обувки</li>
-                    </ul>
-                    <h4>Мебели за градина</h4>
-                    <ul>
-                        <li>Столове и маси за екстериор</li>
-                        <li>Релакс в градината</li>
-                    </ul>
+                <div class="subMenu" id="decorationMenu">
+                    <div>
+                        <h4>На стената</h4>
+                        <ul>
+                            <li>Часовници</li>
+                            <li>Огледала</li>
+                            <li>Стикери & тапети</li>
+                            <li>Каритни & декорации</li>
+                        </ul>
+                        <h4>За прозореца</h4>
+                        <ul>
+                            <li>Пердета & завеси</li>
+                            <li>Пана & щори</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Декор за трапеза</h4>
+                        <ul>
+                            <li>Декорации</li>
+                            <li>Декоративни кутии & кутии за бижута</li>
+                            <li>Рамки & пана за снимки</li>
+                            <li>Свещи & свещници</li>
+                            <li>Вази & декоративни вази</li>
+                            <li>Направи си сам & парти</li>
+                        </ul>
+                        <h4>Декор за антрето & дневната</h4>
+                        <ul>
+                            <li>Антре & дневна</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>За градината</h4>
+                        <ul>
+                            <li>Саквии & поставки за растения</li>
+                            <li>Декорации & статуетки</li>
+                            <li>Градински аксесоари</li>
+                        </ul>
+                        <h4>Други категории</h4>
+                        <ul>
+                            <li>Камини & аксесоари</li>
+                            <li>Офис & аксесоари</li>
+                            <li>Детски декорации</li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <h4>Детски</h4>
-                    <ul>
-                        <li>Мебели за новородени</li>
-                        <li>Детски мебели</li>
-                        <li>Съхранение за деца</li>
-                    </ul>
+                <div class="subMenu" id="kitchenMenu">
+                    <div>
+                        <h4>Сервиране на трапезата</h4>
+                        <ul>
+                            <li>Чаши</li>
+                            <li>Прибори за хранене</li>
+                            <li>Прибори и сервизи за маса</li>
+                            <li>Аксесоари за сервиране</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Приготвяне на трапезата</h4>
+                        <ul>
+                            <li>Съдове за готвене</li>
+                            <li>Съдове за печене</li>
+                            <li>Прибори & аксеосари за кухнята</li>
+                        </ul>
+                        <h4>Кухненски текстил</h4>
+                        <ul>
+                            <li>Текстил за приготвяне на трапезата</li>
+                            <li>Покривки за маса & аксесоари</li>
+                            <li>Възглавници за седалка</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Съхранение в кухнята</h4>
+                        <ul>
+                            <li>Кутии & съдове</li>
+                            <li>Колички & органайзер</li>
+                        </ul>
+                        <h4>Други категории</h4>
+                        <ul>
+                            <li>Електроуреди</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="subMenu" id="decorationMenu">
-                <div>
-                    <h4>На стената</h4>
-                    <ul>
-                        <li>Часовници</li>
-                        <li>Огледала</li>
-                        <li>Стикери & тапети</li>
-                        <li>Каритни & декорации</li>
-                    </ul>
-                    <h4>За прозореца</h4>
-                    <ul>
-                        <li>Пердета & завеси</li>
-                        <li>Пана & щори</li>
-                    </ul>
+                <div class="subMenu" id="bedroomMenu">
+                    <div>
+                        <h4>Спално бельо</h4>
+                        <ul>
+                            <li>Романтично & флорирано</li>
+                            <li>Модерно</li>
+                            <li>Ориенталско</li>
+                            <li>Едноцветно</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Кувертюри & одеяла</h4>
+                        <ul>
+                            <li>Кувертюри</li>
+                            <li>Одеяла</li>
+                        </ul>
+                        <h4>Всичко нужно за леглото</h4>
+                        <ul>
+                            <li>Матраци</li>
+                            <li>Възглавници & завивки</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Детско спално бельо</h4>
+                        <ul>
+                            <li>Спално бельо и завивки за детско легло</li>
+                            <li>Детско спално бельо и завивки</li>
+                        </ul>
+                        <h4>Други категории</h4>
+                        <ul>
+                            <li>Декоративни възглавници</li>
+                            <li>Спални комплекти и завивки</li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <h4>Декор за трапеза</h4>
-                    <ul>
-                        <li>Декорации</li>
-                        <li>Декоративни кутии & кутии за бижута</li>
-                        <li>Рамки & пана за снимки</li>
-                        <li>Свещи & свещници</li>
-                        <li>Вази & декоративни вази</li>
-                        <li>Направи си сам & парти</li>
-                    </ul>
-                    <h4>Декор за антрето & дневната</h4>
-                    <ul>
-                        <li>Антре & дневна</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>За градината</h4>
-                    <ul>
-                        <li>Саквии & поставки за растения</li>
-                        <li>Декорации & статуетки</li>
-                        <li>Градински аксесоари</li>
-                    </ul>
-                    <h4>Други категории</h4>
-                    <ul>
-                        <li>Камини & аксесоари</li>
-                        <li>Офис & аксесоари</li>
-                        <li>Детски декорации</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="subMenu" id="kitchenMenu">
-                <div>
-                    <h4>Сервиране на трапезата</h4>
-                    <ul>
-                        <li>Чаши</li>
-                        <li>Прибори за хранене</li>
-                        <li>Прибори и сервизи за маса</li>
-                        <li>Аксесоари за сервиране</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Приготвяне на трапезата</h4>
-                    <ul>
-                        <li>Съдове за готвене</li>
-                        <li>Съдове за печене</li>
-                        <li>Прибори & аксеосари за кухнята</li>
-                    </ul>
-                    <h4>Кухненски текстил</h4>
-                    <ul>
-                        <li>Текстил за приготвяне на трапезата</li>
-                        <li>Покривки за маса & аксесоари</li>
-                        <li>Възглавници за седалка</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Съхранение в кухнята</h4>
-                    <ul>
-                        <li>Кутии & съдове</li>
-                        <li>Колички & органайзер</li>
-                    </ul>
-                    <h4>Други категории</h4>
-                    <ul>
-                        <li>Електроуреди</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="subMenu" id="bedroomMenu">
-                <div>
-                    <h4>Спално бельо</h4>
-                    <ul>
-                        <li>Романтично & флорирано</li>
-                        <li>Модерно</li>
-                        <li>Ориенталско</li>
-                        <li>Едноцветно</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Кувертюри & одеяла</h4>
-                    <ul>
-                        <li>Кувертюри</li>
-                        <li>Одеяла</li>
-                    </ul>
-                    <h4>Всичко нужно за леглото</h4>
-                    <ul>
-                        <li>Матраци</li>
-                        <li>Възглавници & завивки</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Детско спално бельо</h4>
-                    <ul>
-                        <li>Спално бельо и завивки за детско легло</li>
-                        <li>Детско спално бельо и завивки</li>
-                    </ul>
-                    <h4>Други категории</h4>
-                    <ul>
-                        <li>Декоративни възглавници</li>
-                        <li>Спални комплекти и завивки</li>
-                    </ul>
-                </div>
-            </div>
 
-            <div class="subMenu" id="lightsMenu">
-                <div>
-                    <h4>За таван & за стена</h4>
-                    <ul>
-                        <li>Полилеи</li>
-                        <li>Класически полилеи</li>
-                        <li>Плафони</li>
-                        <li>Аплици & спот лампи</li>
-                    </ul>
+                <div class="subMenu" id="lightsMenu">
+                    <div>
+                        <h4>За таван & за стена</h4>
+                        <ul>
+                            <li>Полилеи</li>
+                            <li>Класически полилеи</li>
+                            <li>Плафони</li>
+                            <li>Аплици & спот лампи</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>За маса & за под</h4>
+                        <ul>
+                            <li>Нощни лампи</li>
+                            <li>Лампиони</li>
+                        </ul>
+                        <h4>За екстериор</h4>
+                        <ul>
+                            <li>Соларни лампи</li>
+                            <li>Осветителни тела</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Други категории</h4>
+                        <ul>
+                            <li>Аксесоари за осветление</li>
+                            <li>Осветителни тела за детска стая</li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <h4>За маса & за под</h4>
-                    <ul>
-                        <li>Нощни лампи</li>
-                        <li>Лампиони</li>
-                    </ul>
-                    <h4>За екстериор</h4>
-                    <ul>
-                        <li>Соларни лампи</li>
-                        <li>Осветителни тела</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Други категории</h4>
-                    <ul>
-                        <li>Аксесоари за осветление</li>
-                        <li>Осветителни тела за детска стая</li>
-                    </ul>
-                </div>
-            </div>
 
-            <div class="subMenu" id="carpetsMenu">
-                <div>
-                    <h4>Големи килими</h4>
-                    <ul>
-                        <li>Класически</li>
-                        <li>Модерни</li>
-                        <li>Флорални</li>
-                        <li>Едноцветни</li>
-                        <li>Рустик</li>
-                    </ul>
+                <div class="subMenu" id="carpetsMenu">
+                    <div>
+                        <h4>Големи килими</h4>
+                        <ul>
+                            <li>Класически</li>
+                            <li>Модерни</li>
+                            <li>Флорални</li>
+                            <li>Едноцветни</li>
+                            <li>Рустик</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Килими</h4>
+                        <ul>
+                            <li>Килими за баня</li>
+                            <li>Входни изтривалки</li>
+                            <li>Килими тип черга</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Детски Килими</h4>
+                        <ul>
+                            <li>Детски килими</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="subMenu" id="bathroomMenu">
+                    <div>
+                        <h4>Текстил</h4>
+                        <ul>
+                            <li>Кърпи за баня</li>
+                            <li>Халати за баня</li>
+                            <li>Килими за баня</li>
+                            <li>Комплекти и кетскил за баня</li>
+                            <li>Детски текстил за баня</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Грижи за дома</h4>
+                        <ul>
+                            <li>Калъфи за съхранение</li>
+                            <li>Кутии и кошове за съхранение</li>
+                            <li>Органайзери и шкафове</li>
+                            <li>Сушилници и кошове за дрехи</li>
+                            <li>Дъска за гладене</li>
+                            <li>Аксесоари за почистване</li>
+                            <li>Електроуреди</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Аксесоари за баня</h4>
+                        <ul>
+                            <li>Аксесоари и комплекти за баня</li>
+                            <li>Етажерки и поставки</li>
+                            <li>Завеси за баня</li>
+                        </ul>
+                        <h4>Други категории</h4>
+                        <ul>
+                            <li>Мебели за баня</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="subMenu" id="lifestyleMenu">
+                    <div>
+                        <h4>Мода</h4>
+                        <ul>
+                            <li>Чанти, портмонета и аксесоари</li>
+                            <li>Бижута, часовници и слънчеви очила</li>
+                            <li>Облекло и обувки</li>
+                            <li>шапки и шалове</li>
+                        </ul>
+                        <h4>Лична грижа</h4>
+                        <ul>
+                            <li>Козметика и грижа</li>
+                            <li>Фитнес и аеробика</li>
+                            <li>Електроуреди</li>
+                            <li>Ароматерапия</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>На открито & пътуване</h4>
+                        <ul>
+                            <li>Куфари и аксесоари</li>
+                            <li>Дейности на открито</li>
+                            <li>Автомобилни аксесоари</li>
+                        </ul>
+                        <h4>Детски начин на живот</h4>
+                        <ul>
+                            <li>Играчки и игрални пространства</li>
+                            <li>Детска мода</li>
+                            <li>Аксесоари за новородени</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Сезонни продукти</h4>
+                        <ul>
+                            <li>Свети Валентин</li>
+                            <li>Великден</li>
+                            <li>Ученически принадлежности</li>
+                            <li>Коледа</li>
+                            <li>Хелоуин</li>
+                        </ul>
+                        <h4>Други аксесоари</h4>
+                        <ul>
+                            <li>Джаджи & игри</li>
+                            <li>Аксесоари за домашни любимци</li>
+                        </ul>
+                    </div>
                 </div>
                 <div>
-                    <h4>Килими</h4>
-                    <ul>
-                        <li>Килими за баня</li>
-                        <li>Входни изтривалки</li>
-                        <li>Килими тип черга</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Детски Килими</h4>
-                    <ul>
-                        <li>Детски килими</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="subMenu" id="bathroomMenu">
-                <div>
-                    <h4>Текстил</h4>
-                    <ul>
-                        <li>Кърпи за баня</li>
-                        <li>Халати за баня</li>
-                        <li>Килими за баня</li>
-                        <li>Комплекти и кетскил за баня</li>
-                        <li>Детски текстил за баня</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Грижи за дома</h4>
-                    <ul>
-                        <li>Калъфи за съхранение</li>
-                        <li>Кутии и кошове за съхранение</li>
-                        <li>Органайзери и шкафове</li>
-                        <li>Сушилници и кошове за дрехи</li>
-                        <li>Дъска за гладене</li>
-                        <li>Аксесоари за почистване</li>
-                        <li>Електроуреди</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Аксесоари за баня</h4>
-                    <ul>
-                        <li>Аксесоари и комплекти за баня</li>
-                        <li>Етажерки и поставки</li>
-                        <li>Завеси за баня</li>
-                    </ul>
-                    <h4>Други категории</h4>
-                    <ul>
-                        <li>Мебели за баня</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="subMenu" id="lifestyleMenu">
-                <div>
-                    <h4>Мода</h4>
-                    <ul>
-                        <li>Чанти, портмонета и аксесоари</li>
-                        <li>Бижута, часовници и слънчеви очила</li>
-                        <li>Облекло и обувки</li>
-                        <li>шапки и шалове</li>
-                    </ul>
-                    <h4>Лична грижа</h4>
-                    <ul>
-                        <li>Козметика и грижа</li>
-                        <li>Фитнес и аеробика</li>
-                        <li>Електроуреди</li>
-                        <li>Ароматерапия</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>На открито & пътуване</h4>
-                    <ul>
-                        <li>Куфари и аксесоари</li>
-                        <li>Дейности на открито</li>
-                        <li>Автомобилни аксесоари</li>
-                    </ul>
-                    <h4>Детски начин на живот</h4>
-                    <ul>
-                        <li>Играчки и игрални пространства</li>
-                        <li>Детска мода</li>
-                        <li>Аксесоари за новородени</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Сезонни продукти</h4>
-                    <ul>
-                        <li>Свети Валентин</li>
-                        <li>Великден</li>
-                        <li>Ученически принадлежности</li>
-                        <li>Коледа</li>
-                        <li>Хелоуин</li>
-                    </ul>
-                    <h4>Други аксесоари</h4>
-                    <ul>
-                        <li>Джаджи & игри</li>
-                        <li>Аксесоари за домашни любимци</li>
-                    </ul>
-                </div>
-            </div>
-            <div>
-
             </div>
             <!-- </div> -->
         </header>
@@ -458,7 +464,7 @@
             </div>
             <!-- Products Slideshow -->
             <div id='productsContainer'>
-                <a class='arrows' id='previousArrowProducts'>&#10094;</a>
+                <!-- <a class='arrows' id='previousArrowProducts'>&#10094;</a> -->
                 <div id='insideProductContainer'>
                     <div class='productsInSlideshow'>
                         <img height="180xp" src="Assets/Images/Products/product1.png" alt="">
