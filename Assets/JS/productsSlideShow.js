@@ -11,47 +11,39 @@ products.forEach(function (element) {
     element.style.right = 1 + 'px'
 })
 
-setInterval(function () {
+function rightSizig(element) {
     boxSize = products[0].offsetWidth;
     Array.prototype.forEach.call(products, function (element) {
-        if (window.innerWidth > 1365) {
-            if (element.offsetLeft < 0) {
-                element.style.right = -productsParent.offsetWidth - boxSize + 'px'
-                // element.style.right = '-800px'            
-                //right = -800;
-            }
+        var right = parseInt(element.style.right)
+        var width = 1366 - window.innerWidth
 
-            var right = parseInt(element.style.right)
-            element.style.right = right + speed + 'px';
+        element.style.right = right + speed + 'px';
 
-
-            boxSize -= 208; ///размер на кутията + марджин + default margin from chrome
-        } else {
-            var right = parseInt(element.style.right)
-            var width = 1366 - window.innerWidth
-            element.style.right = right + speed + 'px';
-
-            if (element.offsetLeft < 0) {
-                element.style.right = -productsParent.offsetWidth - width - boxSize + 'px'
-                // element.style.right = '-800px'            
-                //right = -800;
-            }
-            boxSize -= 208; 
+        if (element.offsetLeft < 0) {
+            element.style.right = -productsParent.offsetWidth - width - boxSize + 'px'
         }
-    })
+        window.addEventListener('resize', function () {
+            width = 1366 - window.innerWidth
+            element.style.right = -productsParent.offsetWidth - width - boxSize + 'px'            
+        });
 
+        boxSize -= 208;
+    })
+}
+setInterval(function () {
+    rightSizig();
 }, 20)
 ////до ТУК!
 //ТУК прави каквото искаш :D 
 products.forEach(function (element) {
-    var div=document.createElement("div");
+    var div = document.createElement("div");
     element.addEventListener('mouseover', function () {
         speed = 0;
         element.appendChild(div);
         div.classList.add("transparent");
         element.classList.add("scale");
         element.classList.remove("scaleD");
-        element.firstElementChild.style.zIndex="-1";
+        element.firstElementChild.style.zIndex = "-1";
     })
     element.addEventListener('mouseout', function () {
         speed = 1;
