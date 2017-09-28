@@ -53,10 +53,10 @@ document.getElementById("save").addEventListener('click', function () {
         var entr = document.getElementById("еntr").value;
         var floor = document.getElementById("floor").value;
         var apart = document.getElementById("apartment").value;
-        signedUser.addAddress(region, city, street, number, block, entr, floor, apart);
+        userDB.addAddress(signedUser, region, city, street, number, block, entr, floor, apart);
         console.log(signedUser);
-        signedUser.showAddresses(document.getElementById("availableAddresses"));
-        signedUser.showAddresses(document.getElementById("availableAddressesInCart"));
+        userDB.showAddresses(signedUser, document.getElementById("availableAddresses"));
+        userDB.showAddresses(signedUser, document.getElementById("availableAddressesInCart"));
 
         // signedUser.address.region = document.getElementById("region").value;
         // var newRegion = document.createElement("span")

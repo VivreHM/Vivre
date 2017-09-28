@@ -5,7 +5,8 @@ document.getElementById("logInFormButton").addEventListener("click", function (e
     var pass = document.getElementById("logInPassword").value;
     console.log(userDB.login(userName, pass))
     if (userDB.login(userName, pass)) {
-        signedUser = userDB._users.find(user => user.username == userName);            
+        signedUser = userDB._users.find(user => user.username == userName);       
+        console.log(signedUser)     
         document.getElementById("logInUsername").style.backgroundColor = 'white';
         document.getElementById("signButtons").style.display = "none";
         document.getElementById("userButton").innerHTML = userName;
@@ -16,8 +17,8 @@ document.getElementById("logInFormButton").addEventListener("click", function (e
         document.getElementById('blackBackground').style.display = 'none';
         document.getElementById("logInFormButton").classList.remove("shake1");
         document.getElementById("logInPassword").style.backgroundColor = 'white';
-        signedUser.showAddresses(document.getElementById("availableAddressesInCart"));
-        signedUser.showAddresses(document.getElementById("availableAddresses"));
+        userDB.showAddresses(signedUser, document.getElementById("availableAddressesInCart"));
+        userDB.showAddresses(signedUser, document.getElementById("availableAddresses"));
     } else {
         document.getElementById("logInPassword").value = "";
         document.getElementById("logInPassword").style.backgroundColor = '#F3D967';
