@@ -4,6 +4,7 @@ var nextArrow = document.getElementById('nextArrow')
 var dots = document.querySelectorAll('.dot')
 var isPressed = false;
 var playing = true;
+var timer = 4000;
 playSlideShow();
 showSlides(slideIndex);
 
@@ -43,7 +44,7 @@ function pauseSlideShow() {
 }
 function playSlideShow() {
     playing = true;
-    setInterval(showSlides, 4000)
+    setInterval(showSlides, timer)
 }
 
 // function showSlides(n) {
@@ -65,7 +66,6 @@ function playSlideShow() {
 function showSlides() {
     var i;
     var slides = document.querySelectorAll(".mySlides");
-    var timer = 4000;
     //slides[slideIndex-1].style.display = "block"
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
@@ -82,6 +82,7 @@ function showSlides() {
 dots.forEach(function (dot, index) {
     dot.addEventListener('click', function () {
         slideIndex = index;
+        timer = 4000;
         showSlides();
     })
 })
