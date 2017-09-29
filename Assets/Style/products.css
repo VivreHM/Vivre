@@ -3,13 +3,12 @@
     display:flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding:1% 15%;
 }
 #productCard{
     /* margin:5px 5px; */
     position:relative;
     overflow-y: hidden;
-    margin:10px;
+    margin:6px;
 }
 
 #productCard:hover{
@@ -39,7 +38,7 @@
 .imageHolder{
     margin:15px 8px;
     position:relative;
-    background-color: white;
+    background-color: #fcfcfc;
     border-radius:3px;
     width:200px;
     height:200px;

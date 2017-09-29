@@ -2,6 +2,11 @@
     #productsContainer, #CartContainer, #userPage, #slideshow{
         display:none;
     }
+
+    #productsCatalog{
+        padding-top:100px;
+    }
+
     #vivreLogo{
         display:none;
     }
@@ -50,7 +55,7 @@
         display:inline-block;
         width:100%;
         box-sizing: border-box;
-        z-index:1;
+        z-index:100;
     }
 
     #user button{
@@ -156,7 +161,6 @@
         position: relative;
         left:-15px;
         top:4px;
-        display: none;
     }
     #mainNav{
         float:left;
@@ -180,7 +184,6 @@
         top:75px;
         width:85%;
         margin:auto;
-
     }
 
     #searchBox{
@@ -191,6 +194,7 @@
         border: 1px solid lightgray;
         height:40px;
         width:100%;
+        background-color: white;
     }
 
     #searchBox input{
