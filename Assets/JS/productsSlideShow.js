@@ -1,3 +1,4 @@
+const DEFAULT_MARGIN_OF_CHROME = 4;
 var products = document.querySelectorAll('.productsInSlideshow')
 var parent = document.getElementById('productsContainer')
 var productsParent = document.getElementById('insideProductContainer')
@@ -6,7 +7,7 @@ var nextArrow = document.getElementById('nextArrowProducts');
 ///НЕ пипай от ТУК....
 console.log(products)
 var speed = 1;
-var boxSize = 208;
+var boxSize = parseInt(window.getComputedStyle(products[0]).marginLeft)*2 + DEFAULT_MARGIN_OF_CHROME + products[0].offsetWidth;
 products.forEach(function (element) {
     element.style.right = 1 + 'px'
 })
@@ -29,7 +30,7 @@ function rightSizig(element) {
             element.style.right = -productsParent.offsetWidth - width - boxSize + 'px'            
         });
 
-        boxSize -= 208;
+        boxSize -= parseInt(window.getComputedStyle(products[0]).marginLeft)*2 + DEFAULT_MARGIN_OF_CHROME + products[0].offsetWidth;
     })
 }
 setInterval(function () {
