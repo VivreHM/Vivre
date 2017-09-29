@@ -7,8 +7,8 @@
 .productsInSlideshow{   
     box-sizing: border-box; 
     height: 200px;
-    width: 180px;
-    margin: 5px 23px;
+    width: 200px;
+    margin: 5px 13px;
     background-color: white;
     display: inline-block;
     position: relative;
