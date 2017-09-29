@@ -104,7 +104,9 @@ body{
         display:none;
     }
 
-    
+    #mainPage{
+        padding:0% 15%;
+    }
     #topBar{
         padding:0% 15%;
         background-color: #5B305C;
@@ -381,6 +383,48 @@ body{
         box-shadow: 0px 20px 30px -19px rgba(0,0,0,0.22);
     }
 
+    
+
+    /* The product catalog filter*/
+    #productsFilter{
+        padding:20px;
+        box-sizing: border-box;
+        float:left;
+        width:250px;
+        height:440px;
+        background-color: #fcfcfc;
+        border-radius:4px;
+        border:1px solid #eee;
+        margin-right:6px;
+        box-shadow: 0px 20px 30px -19px rgba(0,0,0,0.22);
+    }
+    #productsFilter h4{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color:#444;
+        margin-top:20px;
+        margin-bottom:10px;
+    }
+    #productsFilter select{
+        outline:none;
+        border-radius:15px;
+        padding:5px 8px;
+        border:0.8px solid #ccc
+    }
+
+    #productsFilter label{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color:#444;
+    }
+    #filterButton{
+        outline:none;
+        margin-top:30px;
+        border-radius:15px;
+        padding:8px 8px;
+        background-color: #5B305C;
+        border:none;
+        color:white;
+        width:100%;
+    }
     main{
         background-color:#eee;
     }
