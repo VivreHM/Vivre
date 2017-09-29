@@ -1,6 +1,6 @@
 var userDB = (function () {
     function User(username, password, email) {
-        this.id = 1;
+        this.id = new Date().getTime();
         this.username = username;
         this.password = password;
         this.email = email;
@@ -28,7 +28,6 @@ var userDB = (function () {
     
     UsersDB.prototype.addUser = function (username, password, email) {
         this._users.push(new User(username, password, email));
-        user.id = this._users.length;
         localStorage.setItem('users', JSON.stringify(this._users));
 
     }

@@ -44,14 +44,14 @@ input, button {outline:none;}
     100%{background-color: white; color: #5B305C;}
 }
 ::-webkit-scrollbar{
-    width:12px;
+    width:15px;
     height:9px;
 }
 ::-webkit-scrollbar-button:start:decrement,
 ::-webkit-scrollbar-button:end:increment{
     display:block;
-    height:25px;
-    background-color:#5B305C;
+    height:0;
+    background-color:transparent;
 }
 ::-webkit-scrollbar-track-piece{
     background-color:#FAFAFA;
