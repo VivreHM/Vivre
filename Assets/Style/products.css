@@ -10,12 +10,17 @@
     margin-top:0px;
 }
 
-#typeOfProducts span{
+#typeOfProducts hr{
+    margin-top:15px;
+    border-top:1px solid #ccc;
+}
+
+.labels{
     color:#888;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-right:5px;
     font-size:0.9em;
     font-style:italic;
+    margin-right:15px;
 }
 
 .new{
@@ -24,7 +29,6 @@
     height:15px;
     background-color: lightblue;
     border-radius: 50%;
-    margin-left:10px;
 }
 
 .promo{
@@ -33,7 +37,6 @@
     height:15px;
     background-color: lightcoral;
     border-radius: 50%;
-    margin-left:10px;
 }
 
 .free{
@@ -42,7 +45,6 @@
     height:15px;
     background-color: orange;
     border-radius: 50%;
-    margin-left:10px;
 }
 
 .fast{
@@ -51,7 +53,6 @@
     height:15px;
     background-color: lightgreen;
     border-radius: 50%;
-    margin-left:10px;
 }
 
 .gift{
@@ -60,8 +61,43 @@
     height:15px;
     background-color: lightpink;
     border-radius: 50%;
-    margin-left:10px;
 }
+
+.shortInfo{
+    display:flex;
+    justify-content: space-between;
+    position: absolute;
+    top:175px;
+    width:200px;
+    padding-left:10px;
+    box-sizing: border-box;
+}
+
+.prices{
+    position:relative;
+    top:-26px;
+    margin-right:10px;
+    text-align: right;
+}
+
+.newPrice{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:orangered;
+    font-size:1.6em;
+    font-weight: 600;
+    margin:0;
+}
+
+.oldPrice{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:#888;
+    font-size:0.9em;
+    margin:0;
+    margin-bottom: -4px;
+    padding:0;
+    text-decoration: line-through;
+}
+
 
 .productCard{
     /* margin:5px 5px; */
@@ -97,7 +133,7 @@
 .imageHolder{
     margin:15px 8px;
     position:relative;
-    background-color: #fcfcfc;
+    background-color: white;
     border-radius:3px;
     width:200px;
     height:200px;
@@ -107,10 +143,16 @@
     /* padding:5px; */
 }
 
+.imageHolder img{
+    margin-top:10px;
+    max-width: 180px;
+    max-height: 150px;
+}
+
 .productInformation{
     margin:15px 8px;
     position:absolute;
-    background-color: rgba(255, 204, 0,0.80);
+    background-color: rgba(255, 204, 0,0.90);
     border-radius:3px;
     width:200px;
     height:200px;
@@ -118,8 +160,48 @@
     transform: scale(0.85,0.85);
     z-index:5;
     box-shadow: 0px 20px 30px -19px rgba(0,0,0,0.22);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:white;
+    padding:15px;
+    box-sizing: border-box;
+    /* text-shadow: 4px 4px 17px rgba(152, 150, 150, 0.5); */
+    text-shadow: 2px 2px 2px rgba(152, 150, 150, 0.6);
 
     /* overflow-y: hidden; */
+}
+
+.productInformation h4{
+    margin:0;
+    text-transform:uppercase;
+}
+
+.materials{
+    margin:0;
+    font-style:italic;
+    font-size:0.8em;
+}
+
+.wantedQuantity{
+    width:45px;
+    border-radius:15px;
+    background-color: white;
+    padding:4px 10px;
+    color:#555;
+    border:none;
+}
+
+.productInformation button{
+    border-radius:15px;
+    background-color: #5B305C;
+    padding:4px 10px;
+    color:white;
+    border:none;
+}
+
+.productInformation>div{
+    text-align: center;
+    position:absolute;
+    top:165px;
 }
 
 @keyframes flipCard {
