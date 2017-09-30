@@ -106,6 +106,8 @@ body{
 
     #mainPage{
         padding:0% 15%;
+        padding-top:30px;
+        padding-bottom:30px;
     }
     #topBar{
         padding:0% 15%;
@@ -279,7 +281,7 @@ body{
         display: none;
         border-top:1px solid lightgray;
         position: absolute;
-        z-index:1;
+        z-index:16;
         background-color: rgba(255, 255, 255, 0.96);
         width:100%;
         box-sizing: border-box;
