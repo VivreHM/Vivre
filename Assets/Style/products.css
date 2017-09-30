@@ -4,6 +4,65 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
+#typeOfProducts{
+    width:100%;
+    margin:15px;
+    margin-top:0px;
+}
+
+#typeOfProducts span{
+    color:#888;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-right:5px;
+    font-size:0.9em;
+    font-style:italic;
+}
+
+.new{
+    display:inline-block;
+    width:15px;
+    height:15px;
+    background-color: lightblue;
+    border-radius: 50%;
+    margin-left:10px;
+}
+
+.promo{
+    display:inline-block;
+    width:15px;
+    height:15px;
+    background-color: lightcoral;
+    border-radius: 50%;
+    margin-left:10px;
+}
+
+.free{
+    display:inline-block;
+    width:15px;
+    height:15px;
+    background-color: orange;
+    border-radius: 50%;
+    margin-left:10px;
+}
+
+.fast{
+    display:inline-block;
+    width:15px;
+    height:15px;
+    background-color: lightgreen;
+    border-radius: 50%;
+    margin-left:10px;
+}
+
+.gift{
+    display:inline-block;
+    width:15px;
+    height:15px;
+    background-color: lightpink;
+    border-radius: 50%;
+    margin-left:10px;
+}
+
 .productCard{
     /* margin:5px 5px; */
     position:relative;
