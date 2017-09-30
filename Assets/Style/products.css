@@ -4,14 +4,14 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
-#productCard{
+.productCard{
     /* margin:5px 5px; */
     position:relative;
     overflow-y: hidden;
     margin:6px;
 }
 
-#productCard:hover{
+.productCard:hover{
     cursor: pointer;
     animation-name: scaleUp;
     animation-duration: 0.3s;
