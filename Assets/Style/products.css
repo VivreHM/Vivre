@@ -1,9 +1,10 @@
 #content{
-    position:relative;
-    overflow-y: hidden;
-    margin:6px;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
     display:flex;
     flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-around;
     
 }

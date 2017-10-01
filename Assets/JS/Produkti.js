@@ -5,13 +5,14 @@ var productsDB = (function () {
         this.price = price;
         this.type = type;
         this.description = description;
+        this.oldPrice = (parseInt(price) + parseInt(price)*0.3).toFixed() + 'лв.'
     }
 
     function ProductDB() {
         if (localStorage.getItem('products') != null) {
             this._products = JSON.parse(localStorage.getItem('products'))
         } else {
-            this._products = [new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво'),new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво'),new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво'),new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво'),new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво')];
+            this._products = [new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво'),new Product('Стол', 'Assets/Images/Products/product2.png', '149.90лв', 'стол', 'дъб и дърво'),new Product('Стол', 'Assets/Images/Products/product1.png', '149.90лв', 'стол', 'дъб и дърво'),new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво'),new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво')];
             localStorage.setItem('products', JSON.stringify(this._products));
         }
         this.products = [];
