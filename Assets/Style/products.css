@@ -181,12 +181,14 @@
 .productInformation h4{
     margin:0;
     text-transform:uppercase;
+    background-color: orange;
 }
 
 .materials{
     margin:0;
     font-style:italic;
     font-size:0.8em;
+    background-color: orange;
 }
 
 .wantedQuantity{
