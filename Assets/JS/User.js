@@ -6,13 +6,6 @@ var userDB = (function () {
         this.email = email;
         this.addresses = [];
         this.phoneNumber = "";
-
-        // this.getPassword = function () {
-        //     return password;
-        // }
-        // this.setPassword = function (newPassword) {
-        //     password = newPassword;
-        // }
     };
 
 
