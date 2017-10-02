@@ -108,6 +108,7 @@ body{
         padding:0% 15%;
         padding-top:30px;
         padding-bottom:30px;
+        min-height: 445px;
     }
     #topBar{
         padding:0% 15%;

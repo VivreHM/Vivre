@@ -44,7 +44,7 @@ function cardAnimation() {
     return cardAnimation;
 };
 function changeProductsDisplay() {
-    var productTemplate = document.getElementById('entry-template').innerHTML
+    var productTemplate = document.getElementById('entry-template').innerHTML;
     var template = Handlebars.compile(productTemplate);
     var readyHTML = template(productsDB);
     document.getElementById('content').innerHTML = readyHTML;
@@ -70,7 +70,7 @@ filterByPrice.addEventListener('change', function () {
 })
 checkboxes.forEach(function (element) {
     element.addEventListener('click', function () {
-        productsDB = productsDB.filterByType(productsDB._products, element.nextElementSibling.value);
+        filteredProducts = productsDB.filterByType(productsDB._products, element.nextElementSibling.textContent);
         changeProductsDisplay();
 
     })
