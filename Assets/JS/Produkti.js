@@ -5,36 +5,41 @@ var productsDB = (function () {
         this.price = price;
         this.type = type;
         this.description = description;
-        this.oldPrice = (parseInt(price) + parseInt(price)*0.3).toFixed() + 'лв.'
+        this.secondaryType = [];
+        this.oldPrice = (parseInt(price) + parseInt(price) * 0.3).toFixed() + 'лв.'
     }
 
     function ProductDB() {
         if (localStorage.getItem('products') != null) {
             this._products = JSON.parse(localStorage.getItem('products'))
         } else {
-            this._products = [new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'Мебели', 'дъб и дърво'),new Product('Стол', 'Assets/Images/Products/product2.png', '149.90лв', 'Кухня', 'дъб и дърво'),new Product('Стол', 'Assets/Images/Products/product1.png', '49.90лв', 'стол', 'дъб и дърво'),new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво'),new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво')];
+            this._products = [new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'Мебели', 'дъб и дърво'), new Product('Стол', 'Assets/Images/Products/product2.png', '149.90лв', 'Кухня', 'дъб и дърво'), new Product('Стол', 'Assets/Images/Products/product1.png', '49.90лв', 'стол', 'дъб и дърво'), new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво'), new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво')];
             localStorage.setItem('products', JSON.stringify(this._products));
         }
         this.products = [];
+    }
+    ProductDB.prototype.setStart = function () {
+        return this._products = JSON.parse(localStorage.getItem('products'))
+
     }
 
     ProductDB.prototype.addProduct = function (product) {
         this._products.push(product);
         localStorage.setItem('products', JSON.stringify(this._products));
     }
-    ProductDB.prototype.filterByPriceLowestFirst = function(products){
-        products.sort(function(element1, element2){
+    ProductDB.prototype.filterByPriceLowestFirst = function (products) {
+        products.sort(function (element1, element2) {
             return parseInt(element1.price) - parseInt(element2.price);
         })
     }
-    ProductDB.prototype.filterByPriceHighestFirst = function(products){
-        products.sort(function(element1, element2){
+    ProductDB.prototype.filterByPriceHighestFirst = function (products) {
+        products.sort(function (element1, element2) {
             return parseInt(element2.price) - parseInt(element1.price);
         })
     }
-    ProductDB.prototype.filterByType = function(products, type){
-        console.log('vlazoh tuk')
-       return products.filter(x => x.type == type)
+    ProductDB.prototype.filterByType = function (type) {
+        this._products = this._products.filter(x => x.type == type)
+        return this._products
     }
     var productsDB = new ProductDB;
     return productsDB;

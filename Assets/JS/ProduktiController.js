@@ -52,7 +52,6 @@ function changeProductsDisplay() {
 }
 changeProductsDisplay();
 var filterByPrice = document.getElementById('sortField');
-var filterByType = document.querySelectorAll('.filters');
 var checkboxes = document.querySelectorAll('.checkboxes')
 filterByPrice.addEventListener('change', function () {
     if (filterByPrice.value == '2') {
@@ -69,9 +68,17 @@ filterByPrice.addEventListener('change', function () {
     }
 })
 checkboxes.forEach(function (element) {
-    element.addEventListener('click', function () {
-        filteredProducts = productsDB.filterByType(productsDB._products, element.nextElementSibling.textContent);
-        changeProductsDisplay();
-
+    var productsToShow = [];
+    element.addEventListener('change', function () {
+        if (element == checkboxes[0]) {
+            productsDB.setStart();
+            changeProductsDisplay();
+        } else {
+            if (element.checked) {
+                productsDB.setStart();
+                filteredProducts = productsDB.filterByType(element.nextElementSibling.innerHTML);
+                changeProductsDisplay();
+            }
+        }
     })
 })
