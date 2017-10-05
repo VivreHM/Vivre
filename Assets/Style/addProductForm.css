@@ -1,0 +1,23 @@
+#productForm{
+    background-color:white;
+    text-align: center;
+    padding: 20px;
+    width: 300px;
+    height: 100px;
+    box-shadow: 0px 20px 30px -19px rgba(0,0,0,0.22);
+    display: none;
+    z-index: 25;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -70px;
+    margin-left: -170px;
+    border-radius: 7px;
+    animation-name: fadeIn;
+    animation-duration: 0.45s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+#addProductButton{
+    display: none;
+}

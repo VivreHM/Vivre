@@ -19,6 +19,7 @@ document.getElementById("logInFormButton").addEventListener("click", function (e
         document.getElementById("logInPassword").style.backgroundColor = 'white';
         userDB.showAddresses(signedUser, document.getElementById("availableAddressesInCart"));
         userDB.showAddresses(signedUser, document.getElementById("availableAddresses"));
+        callAdminFunctions();
     } else {
         document.getElementById("logInPassword").value = "";
         document.getElementById("logInPassword").style.backgroundColor = '#F3D967';

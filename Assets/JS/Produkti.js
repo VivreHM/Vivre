@@ -23,8 +23,8 @@ var productsDB = (function () {
 
     }
 
-    ProductDB.prototype.addProduct = function (product) {
-        this._products.push(product);
+    ProductDB.prototype.addProduct = function (name, url, price, type, description) {
+        this._products.push(new Product(name, url, price, type, description));
         localStorage.setItem('products', JSON.stringify(this._products));
     }
     ProductDB.prototype.filterByPriceLowestFirst = function (products) {
