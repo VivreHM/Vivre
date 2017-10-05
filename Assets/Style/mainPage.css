@@ -115,11 +115,10 @@ body{
         background-color: #5B305C;
         height:40px;
         position: fixed;
-        z-index: 1;
+        z-index: 16;
         display:inline-block;
         width:100%;
         box-sizing: border-box;
-        z-index:100;
     }
     #cart{
         position: relative;
