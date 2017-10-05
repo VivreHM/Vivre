@@ -3,14 +3,14 @@
     text-align: center;
     padding: 20px;
     width: 300px;
-    height: 100px;
+    height: 260px;
     box-shadow: 0px 20px 30px -19px rgba(0,0,0,0.22);
     display: none;
     z-index: 25;
     position: fixed;
     top: 50%;
     left: 50%;
-    margin-top: -70px;
+    margin-top: -130px;
     margin-left: -170px;
     border-radius: 7px;
     animation-name: fadeIn;
