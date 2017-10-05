@@ -41,6 +41,16 @@ var productsDB = (function () {
         this._products = this._products.filter(x => x.type == type)
         return this._products
     }
+    ProductDB.prototype.search = function(searchWord){
+        console.log( this._products);
+        this._products = this._products.filter(function(product){
+            searchByName=product.name.toLowerCase().indexOf(searchWord.toLowerCase())!=-1;
+            searchByCategory = product.type.toLowerCase().indexOf(searchWord.toLowerCase())!=-1;
+            searchByDescr = product.description.toLowerCase().indexOf(searchWord.toLowerCase())!=-1;
+            return searchByName||searchByCategory||searchByDescr;
+        })
+        console.log( this._products);
+    }
     var productsDB = new ProductDB;
     return productsDB;
 })();

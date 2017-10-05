@@ -82,3 +82,9 @@ checkboxes.forEach(function (element) {
         }
     })
 })
+
+document.getElementById("searchField").addEventListener("change", function(){
+    search = document.getElementById("searchField").value;
+    productsDB.search(search);
+    changeProductsDisplay();
+})
