@@ -1,11 +1,11 @@
 var productsDB = (function () {
-    function Product(name, url, price, type, description) {
+    function Product(name, url, price, type, description, subtypes) {
         this.name = name;
         this.url = url;
         this.price = price;
         this.type = type;
         this.description = description;
-        this.secondaryType = [];
+        this.secondaryType = subtypes;
         this.oldPrice = (parseInt(price) + parseInt(price) * 0.3).toFixed() + 'лв.'
     }
 
@@ -13,7 +13,13 @@ var productsDB = (function () {
         if (localStorage.getItem('products') != null) {
             this._products = JSON.parse(localStorage.getItem('products'))
         } else {
-            this._products = [new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'Мебели', 'дъб и дърво'), new Product('Стол', 'Assets/Images/Products/product2.png', '149.90лв', 'Кухня', 'дъб и дърво'), new Product('Стол', 'Assets/Images/Products/product1.png', '49.90лв', 'стол', 'дъб и дърво'), new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво'), new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво')];
+            this._products = [
+                new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'Мебели', 'дъб и дърво', [true, true, true, false, false]),
+                new Product('Стол', 'Assets/Images/Products/product2.png', '149.90лв', 'Кухня', 'дъб и дърво', [true, true, true, false, false]),
+                new Product('Стол', 'Assets/Images/Products/product1.png', '49.90лв', 'стол', 'дъб и дърво', [true, true, true, false, false]),
+                new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво', [true, true, true, false, false]),
+                new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво', [true, true, true, false, false])
+            ];
             localStorage.setItem('products', JSON.stringify(this._products));
         }
         this.products = [];
@@ -23,8 +29,8 @@ var productsDB = (function () {
 
     }
 
-    ProductDB.prototype.addProduct = function (name, url, price, type, description) {
-        this._products.push(new Product(name, url, price, type, description));
+    ProductDB.prototype.addProduct = function (name, url, price, type, description, subtypes) {
+        this._products.push(new Product(name, url, price, type, description, subtypes));
         localStorage.setItem('products', JSON.stringify(this._products));
     }
     ProductDB.prototype.filterByPriceLowestFirst = function (products) {
@@ -41,15 +47,13 @@ var productsDB = (function () {
         this._products = this._products.filter(x => x.type == type)
         return this._products
     }
-    ProductDB.prototype.search = function(searchWord){
-        console.log( this._products);
-        this._products = this._products.filter(function(product){
-            searchByName=product.name.toLowerCase().indexOf(searchWord.toLowerCase())!=-1;
-            searchByCategory = product.type.toLowerCase().indexOf(searchWord.toLowerCase())!=-1;
-            searchByDescr = product.description.toLowerCase().indexOf(searchWord.toLowerCase())!=-1;
-            return searchByName||searchByCategory||searchByDescr;
+    ProductDB.prototype.search = function (searchWord) {
+        this._products = this._products.filter(function (product) {
+            searchByName = product.name.toLowerCase().indexOf(searchWord.toLowerCase()) != -1;
+            searchByCategory = product.type.toLowerCase().indexOf(searchWord.toLowerCase()) != -1;
+            searchByDescr = product.description.toLowerCase().indexOf(searchWord.toLowerCase()) != -1;
+            return searchByName || searchByCategory || searchByDescr;
         })
-        console.log( this._products);
     }
     var productsDB = new ProductDB;
     return productsDB;

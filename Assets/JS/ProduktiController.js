@@ -43,6 +43,7 @@ function cardAnimation() {
     })
     return cardAnimation;
 };
+
 function changeProductsDisplay() {
     var productTemplate = document.getElementById('entry-template').innerHTML;
     var template = Handlebars.compile(productTemplate);
@@ -83,8 +84,23 @@ checkboxes.forEach(function (element) {
     })
 })
 
-document.getElementById("searchField").addEventListener("change", function(){
+document.getElementById("searchField").addEventListener("change", function () {
     search = document.getElementById("searchField").value;
     productsDB.search(search);
     changeProductsDisplay();
 })
+
+// function showSubTypes() {
+//     var products = productsDB._products;
+//     var categories = ["new", "promo", "free", "fast", "gift"]
+//     products.forEach(function (product) {
+//         product.secondaryType.forEach(function (type, index) {
+//             if (type == true) {
+//                 var span = document.createElement("span");
+//                 span.classList.add(categories[index]);
+//                 document.getElementById('subTypes').appendChild(span);
+//             }
+//         })
+//     })
+// }
+// showSubTypes();
