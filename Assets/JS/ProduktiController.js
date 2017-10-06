@@ -44,7 +44,7 @@ function cardAnimation() {
     return cardAnimation;
 };
 
-function changeProductsDisplay() {
+var changeProductsDisplay = function () {
     var productTemplate = document.getElementById('entry-template').innerHTML;
     var template = Handlebars.compile(productTemplate);
     var readyHTML = template(productsDB);
@@ -86,8 +86,13 @@ checkboxes.forEach(function (element) {
 
 document.getElementById("searchField").addEventListener("change", function () {
     search = document.getElementById("searchField").value;
-    productsDB.search(search);
+    if (search.length > 1) {
+        productsDB.search(search);
+    } else {
+        productsDB.setStart()
+    }
     changeProductsDisplay();
+    productsDB.setStart();
 })
 
 // function showSubTypes() {

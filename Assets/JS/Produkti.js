@@ -15,7 +15,7 @@ var productsDB = (function () {
         } else {
             this._products = [
                 new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'Мебели', 'дъб и дърво', [true, true, true, false, false]),
-                new Product('Стол', 'Assets/Images/Products/product2.png', '149.90лв', 'Кухня', 'дъб и дърво', [true, true, true, false, false]),
+                new Product('Хавлии', 'Assets/Images/Products/product2.png', '15.90лв', 'Баня', '100% памук', [true, true, true, false, false]),
                 new Product('Стол', 'Assets/Images/Products/product1.png', '49.90лв', 'стол', 'дъб и дърво', [true, true, true, false, false]),
                 new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво', [true, true, true, false, false]),
                 new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво', [true, true, true, false, false])
