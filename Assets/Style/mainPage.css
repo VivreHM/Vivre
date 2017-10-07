@@ -474,6 +474,10 @@ body{
     #orderBar:hover .orderContainer{
         display:block;
     }
+
+    header{
+        background:white;
+    }
 }
 
 #userInfo>button{

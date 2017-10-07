@@ -596,9 +596,9 @@
                             </div>
                             <div class="productInformation">
                                 <h4>{{name}}</h4>
-                                <p class="materials">{{description}} <br>пълнеж: пяна</p>
-                                <p>Размери: 59/58/84 см</p>
-                                <p>Доставка: 02-10 Окт.</p>
+                                <p class="materials">{{description}}</p>
+                                <p>Размери: {{size}}</p>
+                                <p>Доставка: {{delivery}}</p>
                                 <div>
                                     <input class="wantedQuantity" type="number" value="1" min="1">
                                     <button class="addProductToCart">Добави</button>
@@ -693,30 +693,43 @@
                 <input class='productProperties' type="text" placeholder="Име на продукта">
                 <input class='productProperties' type="text" placeholder="Url на снимката">
                 <input class='productProperties' type="text" placeholder="Цена">
-                <input class='productProperties' type="text" placeholder="Категория">
+                <select class='productProperties'  value="">
+                        <option value="Мебели">Мебели</option>
+                        <option value="Декор">Декор</option>
+                        <option value="Кухня">Кухня</option>
+                        <option value="Спалня">Спалня</option>
+                        <option value="Осветителни тела">Осветителни тела</option>
+                        <option value="Килими">Килими</option>
+                        <option value="Баня и организиране">Баня и организиране</option>
+                        <option value="Лайфстайл">Лайфстайл</option>
+                </select> <br>
                 <input class='productProperties' type="text" placeholder="Описание">
+                <input class='productProperties' type="text" placeholder="Доставка">
+                <input class='productProperties' type="text" placeholder="Размери">
                 <div id='checkboxesInAdmin'class='productProperties'>
-                <label class='labelForAdmins' for="">New<input class='subProps' name='subP'type="checkbox"></label>
-                <label class='labelForAdmins' for="">Promo<input class='subProps' name='subP'type="checkbox"></label>
-                <label class='labelForAdmins' for="">Free<input class='subProps' name='subP'type="checkbox"></label>
-                <label class='labelForAdmins' for="">Fast<input class='subProps' name='subP'type="checkbox"></label>
-                <label class='labelForAdmins' for="">Gift<input class='subProps' name='subP'type="checkbox"></label>
-            </div>
+                <label class='labelForAdmins' for="newSubCheck"><input id="newSubCheck" class='subProps' name='subP'type="checkbox" >New<span class="new"></span></label> 
+                <label class='labelForAdmins' for="promoSubCheck"><input id="promoSubCheck" class='subProps' name='subP'type="checkbox">Promo<span class="promo"></span></label> 
+                <label class='labelForAdmins' for="freeSubCheck"><input id="freeSubCheck" class='subProps' name='subP'type="checkbox">Free<span class="free"></span></label> 
+                <label class='labelForAdmins' for="fastSubCheck"><input id="fastSubCheck" class='subProps' name='subP'type="checkbox">Fast<span class="fast"></span></label> 
+                <label class='labelForAdmins' for="giftSubCheck"><input id="giftSubCheck" class='subProps' name='subP'type="checkbox">Gift<span class="gift"></span></label> 
+                </div>
                 <button id='submitProduct' class="logInButton">Добави продукта</button>
             </form>
         </div>
                         <!-- SHOPPING CART -->
             <!-- Add product form -->
-            <div id='productForm'>
-            <form>
-                    <input class='productProperties form' type="text" placeholder="Име на продукта">
-                    <input class='productProperties form' type="text" placeholder="Url на снимката">
-                    <input class='productProperties form' type="text" placeholder="Цена">
-                    <input class='productProperties form' type="text" placeholder="Категория">
-                    <input class='productProperties form' type="text" placeholder="Описание">
+            <!-- <div id='productForm'>
+                <form>
+                    <input class='productProperties' type="text" placeholder="Име на продукта">
+                    <input class='productProperties' type="text" placeholder="Url на снимката">
+                    <input class='productProperties' type="text" placeholder="Цена">
+                    <input class='productProperties' type="text" placeholder="Категория">
+                    <input class='productProperties' type="text" placeholder="Описание">
+                    <input class='productProperties' type="text" placeholder="Доставка">
+                    <input class='productProperties' type="text" placeholder="Размери">
                     <button id='submitProduct' class="logInButton">Добави продукта</button>
                 </form>
-            </div>
+            </div> -->
             <!-- SHOPPING CART -->
             <div id='CartContainer'>
                 <div id='cartHeader'>Завършване на поръчката</div>

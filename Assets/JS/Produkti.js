@@ -1,6 +1,6 @@
 var id = 0;
 var productsDB = (function () {
-    function Product(name, url, price, type, description) {
+    function Product(name, url, price, type, description, delivery, size) {
         this.name = name;
         this.url = url;
         this.price = price;
@@ -9,6 +9,8 @@ var productsDB = (function () {
         this.subtypes = ['new', 'promo'];
         this.oldPrice = (parseInt(price) + parseInt(price) * 0.3).toFixed() + 'лв.'
         this.id = id++;
+        this.delivery = delivery;
+        this.size = size;
     }
 
     function ProductDB() {
@@ -17,11 +19,11 @@ var productsDB = (function () {
             id = this._products.length;
         } else {
             this._products = [
-                new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'Мебели', 'дъб и дърво'),
-                new Product('Хавлии', 'Assets/Images/Products/product2.png', '15.90лв', 'Баня', '100% памук'),
-                new Product('Стол', 'Assets/Images/Products/product1.png', '49.90лв', 'стол', 'дъб и дърво'),
-                new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво'),
-                new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво')
+                new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'Мебели', 'дъб и дърво', "02-10 Окт.","59/58/84 см"),
+                new Product('Хавлии', 'Assets/Images/Products/product2.png', '15.90лв', 'Баня', '100% памук', "02-10 Окт.","59/58/84 см"),
+                new Product('Стол', 'Assets/Images/Products/product1.png', '49.90лв', 'Мебели', 'дъб и дърво', "02-10 Окт.","59/58/84 см"),
+                new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'Мебели', 'дъб и дърво', "02-10 Окт.","59/58/84 см"),
+                new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'Мебели', 'дъб и дърво', "02-10 Окт.","59/58/84 см")
             ];
             id = this._products.length;
             localStorage.setItem('products', JSON.stringify(this._products));
@@ -31,8 +33,8 @@ var productsDB = (function () {
         return this._products = JSON.parse(localStorage.getItem('products'))
 
     }
-    ProductDB.prototype.addProduct = function (name, url, price, type, description) {
-        var product = new Product(name, url, price, type, description)
+    ProductDB.prototype.addProduct = function (name, url, price, type, description, delivery, size) {
+        var product = new Product(name, url, price, type, description, delivery, size)
         this._products.push(product);
         localStorage.setItem('products', JSON.stringify(this._products));
     }

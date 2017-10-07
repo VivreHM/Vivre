@@ -13,7 +13,7 @@ function callAdminFunctions() {
     }
     submitProduct.addEventListener('click', function(){
         event.preventDefault();
-        productsDB.addProduct(inputs[0].value,inputs[1].value,inputs[2].value,inputs[3].value,inputs[4].value);
+        productsDB.addProduct(inputs[0].value,inputs[1].value,inputs[2].value,inputs[3].value,inputs[4].value, inputs[5].value, inputs[6].value);
         background.style.display = 'none';
         productForm.style.display = 'none';
         productsDB.setSubType();

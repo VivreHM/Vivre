@@ -35,7 +35,7 @@
     border-top-right-radius: 7px;
 }
 
-.form{
+.form, .productProperties{
     padding:8px 12px;
     border-radius:15px;
     width:200px;
