@@ -1,4 +1,4 @@
-var cart = document.getElementById('cart');
+var cart = document.getElementById('continueOrder');
 var cartContainer = document.getElementById('CartContainer');
 var background = document.getElementById('blackBackground');
 
