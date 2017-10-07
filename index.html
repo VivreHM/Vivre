@@ -51,13 +51,73 @@
                         <img width="15px" src="Assets/Images/Icons/user.png" alt="User icon">
                         <button id='userButton'>test</button>
                     </div>
-                    <button id="cart">
-                    <img src="Assets\Images\Icons\box-trolley.png" alt="">
+                    <div id="orderBar">
+                        <button id="cart">
+                            <img src="Assets\Images\Icons\box-trolley.png" alt="">
+                        </button>
+                        <div class="orderContainer">
+                            <div class="box pointer--top">
+                                <h4>Поръчка</h4>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <img width="70px" src="Assets/Images/Products/product1.png" alt="">
+                                        </td>
+                                        <td>
+                                            <span class="description">Стол Apollo Taupe</span>
+                                        </td>
+                                        <td>
+                                            <span class="price">79.99 лв</span>
+                                        </td>
+                                        <td>
+                                            <input class="wantedQuantity" type="number" value="1" min="1"> <br>
+                                            <button class="addProductToCart">Промени</button>
+                                        </td>
+                                        <td> <span class="removeFromOrder">&#10006</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img width="70px" src="Assets/Images/Products/product1.png" alt="">
+                                        </td>
+                                        <td>
+                                            <span class="description">Стол Apollo Taupe</span>
+                                        </td>
+                                        <td>
+                                            <span class="price">79.99 лв</span>
+                                        </td>
+                                        <td>
+                                            <input class="wantedQuantity" type="number" value="1" min="1"> <br>
+                                            <button class="addProductToCart">Промени</button>
+                                        </td>
+                                        <td> <span class="removeFromOrder">&#10006</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img width="70px" src="Assets/Images/Products/product1.png" alt="">
+                                        </td>
+                                        <td>
+                                            <span class="description">Стол Apollo Taupe</span>
+                                        </td>
+                                        <td>
+                                            <span class="price">79.99 лв</span>
+                                        </td>
+                                        <td>
+                                            <input class="wantedQuantity" type="number" value="1" min="1"> <br>
+                                            <button class="addProductToCart">Промени</button>
+                                        </td>
+                                        <td> <span class="removeFromOrder">&#10006</span></td>
+                                    </tr>
+                                </table> <br>
+                                <span id="totalPrice"> Общо: 239.97 лв</span>
+                                <button id="continueOrder">Продължи</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="responsiveMenu">
-                    <script src="Assets/JS/beResponsiveMenu.js"></script> 
-                    <img height=40px src="Assets/Images/logo-vivre.gif" alt="Vivre logo">
+                <script src="Assets/JS/beResponsiveMenu.js"></script>
+                <img height=40px src="Assets/Images/logo-vivre.gif" alt="Vivre logo">
             </div>
             <!-- TODO -->
             <!-- <div id='mainNav'> -->
@@ -382,8 +442,8 @@
                     </div>
                 </div>
                 <div>
-            </div>
-            <!-- </div> -->
+                </div>
+                <!-- </div> -->
         </header>
         <main>
             <div id="userPage">
@@ -659,63 +719,7 @@
                 </div>
             </div>
             <!-- Order information window-->
-            <div class="orderContainer">
-                <div class="box pointer--top">
-                    <h4>Поръчка</h4>  
-                    <table>
-                        <tr>
-                            <td>
-                                <img width="70px"src="Assets/Images/Products/product1.png" alt="">
-                            </td>
-                            <td>
-                                <span class="description">Стол Apollo Taupe</span>
-                            </td>
-                            <td>
-                                <span class="price">79.99 лв</span>
-                            </td>
-                            <td>
-                                <input class="wantedQuantity" type="number" value="1" min="1"> <br>
-                                <button class="addProductToCart">Промени</button>
-                            </td>
-                            <td> <span class="removeFromOrder">&#10006</span></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img width="70px"src="Assets/Images/Products/product1.png" alt="">
-                            </td>
-                            <td>
-                                <span class="description">Стол Apollo Taupe</span>
-                            </td>
-                            <td>
-                                <span class="price">79.99 лв</span>
-                            </td>
-                            <td>
-                                <input class="wantedQuantity" type="number" value="1" min="1"> <br>
-                                <button class="addProductToCart">Промени</button>
-                            </td>
-                            <td> <span class="removeFromOrder">&#10006</span></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <img width="70px"src="Assets/Images/Products/product1.png" alt="">
-                            </td>
-                            <td>
-                                <span class="description">Стол Apollo Taupe</span>
-                            </td>
-                            <td>
-                                <span class="price">79.99 лв</span>
-                            </td>
-                            <td>
-                                <input class="wantedQuantity" type="number" value="1" min="1"> <br>
-                                <button class="addProductToCart">Промени</button>
-                            </td>
-                            <td> <span class="removeFromOrder">&#10006</span></td>
-                        </tr>
-                    </table> <br>
-                    <span id="totalPrice"> Общо: 239.97 лв</span>
-                    <button id="continueOrder">Продължи</button>
-                </div>
-            </div>
+
         </main>
             <footer>
                 <div id="fastLinks">

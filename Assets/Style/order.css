@@ -104,6 +104,34 @@ tr{
 .orderContainer{
     position:fixed;
     z-index:20;
-    top:32px;
+    top:30px;
     right:20px;
+    display:none;
+    animation-name: dropDownOrder;
+    animation-duration: 0.35s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
 }
+
+@keyframes dropDownOrder{
+    0%   {top:25px; opacity:0}
+    100% {top:30px; opacity:1}
+}
+
+@keyframes animimate-pointer--top {
+    0% {
+      transform: scale(0.2) rotate(-2deg) translateY(-1px) rotateX(-1deg);
+      opacity: 0;
+    }
+    50% {
+      transform: rotate(2deg) rotateX(2deg);
+      opacity: 1;
+    }
+    70% {
+      transform:rotate(-3deg);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
