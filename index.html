@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="Assets/Style/productsSlideshow.css">
     <link rel="stylesheet" href="Assets/Style/mobile.css">
     <link rel="stylesheet" href="Assets/Style/addProductForm.css">
+    <link rel="stylesheet" href="Assets/Style/order.css">
     <script src='node_modules/handlebars/dist/handlebars.min.js'></script>
 
 </head>
@@ -619,36 +620,34 @@
             <div id="register">
                 <!-- Sign up and register form. -->
                 <h4>Регистрация <span id="closeButtonRegister">&#10006</h4><br>
-            <form>
-                <input id="username" type="text" name="user" placeholder="Потребителско име" class="form" required>
-                <input id="passwordFirst" type="password" name="pass" placeholder="Парола" class="form" required minlength="6">
-                <input id="passwordSecond"type="password" name="pass" placeholder="Подтвърди паролата" class="form" required>
-                <input id="email" type="email" name="pass" placeholder="Имейл" class="form" required>
-                <br>
-                <button id="regButton"class="logInButton">Регистрирай се</button>
-            </form>
-
+                <form>
+                    <input id="username" type="text" name="user" placeholder="Потребителско име" class="form" required>
+                    <input id="passwordFirst" type="password" name="pass" placeholder="Парола" class="form" required minlength="6">
+                    <input id="passwordSecond"type="password" name="pass" placeholder="Подтвърди паролата" class="form" required>
+                    <input id="email" type="email" name="pass" placeholder="Имейл" class="form" required>
+                    <br>
+                    <button id="regButton"class="logInButton">Регистрирай се</button>
+                </form>
            </div>
-        <!-- Add product form -->
-        <div id='productForm'>
-           <form>
-                <input class='productProperties form' type="text" placeholder="Име на продукта">
-                <input class='productProperties form' type="text" placeholder="Url на снимката">
-                <input class='productProperties form' type="text" placeholder="Цена">
-                <input class='productProperties form' type="text" placeholder="Категория">
-                <input class='productProperties form' type="text" placeholder="Описание">
-                <button id='submitProduct' class="logInButton">Добави продукта</button>
-            </form>
-        </div>
-                        <!-- SHOPPING CART -->
+            <!-- Add product form -->
+            <div id='productForm'>
+            <form>
+                    <input class='productProperties form' type="text" placeholder="Име на продукта">
+                    <input class='productProperties form' type="text" placeholder="Url на снимката">
+                    <input class='productProperties form' type="text" placeholder="Цена">
+                    <input class='productProperties form' type="text" placeholder="Категория">
+                    <input class='productProperties form' type="text" placeholder="Описание">
+                    <button id='submitProduct' class="logInButton">Добави продукта</button>
+                </form>
+            </div>
+            <!-- SHOPPING CART -->
             <div id='CartContainer'>
                 <div id='cartHeader'>Завършване на поръчката</div>
-                <div id='cartBody'>
-                <div class="orderInfo" >Адреси</div>
-                <div id="availableAddressesInCart">
-                </div>
-                <button id="addNewInCart">Добави адрес</button>
-                <div class='orderInfo'>Начин на плащане:</div>
+                <div id='cartBody'> 
+                    <div class="orderInfo" >Адреси</div>
+                    <div id="availableAddressesInCart"></div>
+                    <button id="addNewInCart">Добави адрес</button>
+                    <div class='orderInfo'>Начин на плащане:</div>
                     <input name='plashtane' type="radio"> <label class'radioButtons'> С карта</label>
                     <img width=26px src="Assets\Images\Icons\withCard.png" alt="">                      
                     <input name='plashtane' type="radio"> <label class'radioButtons'>Наложен платеж</label> 
@@ -657,77 +656,117 @@
                         <input id='conditions' type="checkbox">Съгласен съм с условията за доставка, гаранция и връщане.
                     </div> <br>         
                     <button id='confirmOrder'>Потвърди поръчката</button>
+                </div>
             </div>
+            <!-- Order information window-->
+            <div class="orderContainer">
+                <div class="box pointer--top">
+                    <h4>Поръчка</h4>  
+                    <table>
+                        <tr>
+                            <td>
+                                <img width="70px"src="Assets/Images/Products/product1.png" alt="">
+                            </td>
+                            <td>
+                                <span class="description">Стол Apollo Taupe</span>
+                            </td>
+                            <td>
+                                <span class="price">79.99 лв</span>
+                            </td>
+                            <td>
+                                <input class="wantedQuantity" type="number" value="1" min="1"> <br>
+                                <button class="addProductToCart">Промени</button>
+                            </td>
+                            <td> <span class="removeFromOrder">&#10006</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img width="70px"src="Assets/Images/Products/product1.png" alt="">
+                            </td>
+                            <td>
+                                <span class="description">Стол Apollo Taupe</span>
+                            </td>
+                            <td>
+                                <span class="price">79.99 лв</span>
+                            </td>
+                            <td>
+                                <input class="wantedQuantity" type="number" value="1" min="1"> <br>
+                                <button class="addProductToCart">Промени</button>
+                            </td>
+                            <td> <span class="removeFromOrder">&#10006</span></td>
+                        </tr>
+                    </table>
+                    <div id="continueOrder">Продължи</div>
+                </div>
+            </div>
+        </main>
+            <footer>
+                <div id="fastLinks">
+                    <h2>Бързи линкове</h2>
+                    <ul>
+                        <li class="forUs">За нас</li>
+                        <li class="contacts">Контакти</li>
+                        <li id="horWorks">Как работи</li>
+                        <li id="">Връщане на продукт</li>
+                        <li id="">Общи условия</li>
+                        <li id="">Политика на поверителност</li>
+                        <li id="odr">ODR</li>
+                    </ul>
+                </div>
+                <div id="downloadApps">
+                    <h2>Свали приложението</h2>
+                    <ul>
+                        <li>
+                            <img width="30px" src="Assets/Images/Icons/appleLogo.png" alt="Apple Logo">
+                            <a href="">APP Store</a>
+                        </li>
+                        <li>
+                            <img width="30px" src="Assets/Images/Icons/android.png" alt="Android Logo">
+                            <a href="">Google Play </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="contactUsFooter">
+                    <h2>Свържи се с нас</h2>
+                    <ul>
+                        <li>
+                            <img width="22px" src="Assets/Images/Icons/facebook.png" alt="Facebook Logo">
+                            <a href="">Следете ни във Facebook</a>
+                        </li>
+                        <li>
+                            <img width="22px" src="Assets/Images/Icons/email.png" alt="Email icon">
+                            <a href="">vivre@gmail.com</a>
+                        </li>
+                        <li>
+                            <img width="22px" src="Assets/Images/Icons/phone.png" alt="Phone icon">
+                            <a href="">+3590883600197</a>
+                        </li>
+                    </ul>
+                </div>
 
-        </div>
-</main>
-        <footer>
-            <div id="fastLinks">
-                <h2>Бързи линкове</h2>
-                <ul>
-                    <li class="forUs">За нас</li>
-                    <li class="contacts">Контакти</li>
-                    <li id="horWorks">Как работи</li>
-                    <li id="">Връщане на продукт</li>
-                    <li id="">Общи условия</li>
-                    <li id="">Политика на поверителност</li>
-                    <li id="odr">ODR</li>
-                </ul>
-            </div>
-            <div id="downloadApps">
-                <h2>Свали приложението</h2>
-                <ul>
-                    <li>
-                        <img width="30px" src="Assets/Images/Icons/appleLogo.png" alt="Apple Logo">
-                        <a href="">APP Store</a>
-                    </li>
-                    <li>
-                        <img width="30px" src="Assets/Images/Icons/android.png" alt="Android Logo">
-                        <a href="">Google Play </a>
-                    </li>
-                </ul>
-            </div>
-            <div id="contactUsFooter">
-                <h2>Свържи се с нас</h2>
-                <ul>
-                    <li>
-                        <img width="22px" src="Assets/Images/Icons/facebook.png" alt="Facebook Logo">
-                        <a href="">Следете ни във Facebook</a>
-                    </li>
-                    <li>
-                        <img width="22px" src="Assets/Images/Icons/email.png" alt="Email icon">
-                        <a href="">vivre@gmail.com</a>
-                    </li>
-                    <li>
-                        <img width="22px" src="Assets/Images/Icons/phone.png" alt="Phone icon">
-                        <a href="">+3590883600197</a>
-                    </li>
-                </ul>
-            </div>
-        </footer>
+            </footer>
     </div>
-    </footer>
-    </div>
-    <script src= 'Assets/JS/mainPageDisplay.js'></script>
-    <script src= 'Assets/JS/navMenu.js'></script>
+
+    <script src='Assets/JS/mainPageDisplay.js'></script>
+    <script src='Assets/JS/navMenu.js'></script>
     <script src='Assets/JS/displayLogIn.js'></script>
-    <script src = 'Assets/JS/displayLogIn.js'></script>
-    <script src = 'Assets/JS/displayRegistration.js'></script>
+    <script src='Assets/JS/displayLogIn.js'></script>
+    <script src='Assets/JS/displayRegistration.js'></script>
     <script src='Assets/JS/SubMenu.js'></script>
     <script src="Assets/JS/userRegistration.js"></script>
-    <script src="Assets/JS/User.js"></script>    
+    <script src="Assets/JS/User.js"></script>
     <script src="Assets/JS/logIn.js"></script>
     <script src="Assets/JS/userInfo.js"></script>
     <script src="Assets/JS/saveAddress.js"></script>
     <script src="Assets/JS/ShoppingCart.js"></script>
     <script src="Assets/JS/productsSlideShow.js"></script>
-    <script src= 'Assets/JS/Produkti.js'></script>
-    <script src= 'Assets/JS/ProduktiController.js'></script>
-    <script src="Assets/JS/productClickEffect.js"></script>    
-    <script src="Assets/JS/adminFunctions.js"></script>        
+    <script src='Assets/JS/Produkti.js'></script>
+    <script src='Assets/JS/ProduktiController.js'></script>
+    <script src="Assets/JS/productClickEffect.js"></script>
+    <script src="Assets/JS/adminFunctions.js"></script>
     <link rel="stylesheet" href="Assets/Style/products.css">
-    
-    
+
+
 </body>
 
 </html>
