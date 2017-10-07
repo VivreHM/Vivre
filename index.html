@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="Assets/Style/productsSlideshow.css">
     <link rel="stylesheet" href="Assets/Style/mobile.css">
     <link rel="stylesheet" href="Assets/Style/addProductForm.css">
+    <script src='node_modules/jquery/dist/jquery.min.js'></script>
     <script src='node_modules/handlebars/dist/handlebars.min.js'></script>
 
 </head>
@@ -524,10 +525,7 @@
                             <div class="imageHolder">
                                 <img src="{{url}}" alt="">
                                 <div class="shortInfo">
-                                    <div id="subTypes">
-                                        <!-- <span class="new"></span>
-                                        <span class="promo"></span>
-                                        <span class="free"></span> -->
+                                    <div id="{{id}}">
                                     </div>
                                     <div class="prices">
                                         <p class='oldPrice'>{{oldPrice}}</p>
@@ -632,11 +630,18 @@
         <!-- Add product form -->
         <div id='productForm'>
            <form>
-                <input class='productProperties form' type="text" placeholder="Име на продукта">
-                <input class='productProperties form' type="text" placeholder="Url на снимката">
-                <input class='productProperties form' type="text" placeholder="Цена">
-                <input class='productProperties form' type="text" placeholder="Категория">
-                <input class='productProperties form' type="text" placeholder="Описание">
+                <input class='productProperties' type="text" placeholder="Име на продукта">
+                <input class='productProperties' type="text" placeholder="Url на снимката">
+                <input class='productProperties' type="text" placeholder="Цена">
+                <input class='productProperties' type="text" placeholder="Категория">
+                <input class='productProperties' type="text" placeholder="Описание">
+                <div id='checkboxesInAdmin'class='productProperties'>
+                <label class='labelForAdmins' for="">New<input class='subProps' name='subP'type="checkbox"></label>
+                <label class='labelForAdmins' for="">Promo<input class='subProps' name='subP'type="checkbox"></label>
+                <label class='labelForAdmins' for="">Free<input class='subProps' name='subP'type="checkbox"></label>
+                <label class='labelForAdmins' for="">Fast<input class='subProps' name='subP'type="checkbox"></label>
+                <label class='labelForAdmins' for="">Gift<input class='subProps' name='subP'type="checkbox"></label>
+            </div>
                 <button id='submitProduct' class="logInButton">Добави продукта</button>
             </form>
         </div>

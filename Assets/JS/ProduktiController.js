@@ -50,8 +50,22 @@ var changeProductsDisplay = function () {
     var readyHTML = template(productsDB);
     document.getElementById('content').innerHTML = readyHTML;
     cardAnimation();
+    checkForSubTypes();    
 }
 changeProductsDisplay();
+function checkForSubTypes() {
+    productsDB._products.forEach(function (product) {
+        if (product.subtypes.length > 0) {
+            product.subtypes.forEach(function (subType) {
+                if (product.subtypes.indexOf(subType) == product.subtypes.lastIndexOf(subType)) {
+                    var span = document.createElement("span");
+                    span.classList.add(subType.toLowerCase())
+                    document.getElementById(product.id).appendChild(span);
+                }
+            })
+        }
+    })
+}
 var filterByPrice = document.getElementById('sortField');
 var checkboxes = document.querySelectorAll('.checkboxes')
 filterByPrice.addEventListener('change', function () {
@@ -94,6 +108,7 @@ document.getElementById("searchField").addEventListener("change", function () {
     changeProductsDisplay();
     productsDB.setStart();
 })
+
 
 // function showSubTypes() {
 //     var products = productsDB._products;

@@ -21,3 +21,9 @@
 #addProductButton{
     display: none;
 }
+#checkboxesInAdmin{
+    text-align: left;
+}
+#checkboxesInAdmin label{
+    display: block;
+}

@@ -1,10 +1,10 @@
 {
   "name": "vivre",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
-    "handlebars": "^4.0.10"
+    "handlebars": "^4.0.10",
+    "jquery": "^3.2.1"
   },
   "devDependencies": {},
   "scripts": {
@@ -19,5 +19,6 @@
   "bugs": {
     "url": "https://github.com/VivreHM/Vivre/issues"
   },
-  "homepage": "https://github.com/VivreHM/Vivre#readme"
+  "homepage": "https://github.com/VivreHM/Vivre#readme",
+  "description": ""
 }

@@ -1,36 +1,39 @@
+var id = 0;
 var productsDB = (function () {
-    function Product(name, url, price, type, description, subtypes) {
+    function Product(name, url, price, type, description) {
         this.name = name;
         this.url = url;
         this.price = price;
         this.type = type;
         this.description = description;
-        this.secondaryType = subtypes;
+        this.subtypes = ['new', 'promo'];
         this.oldPrice = (parseInt(price) + parseInt(price) * 0.3).toFixed() + 'лв.'
+        this.id = id++;
     }
 
     function ProductDB() {
         if (localStorage.getItem('products') != null) {
             this._products = JSON.parse(localStorage.getItem('products'))
+            id = this._products.length;
         } else {
             this._products = [
-                new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'Мебели', 'дъб и дърво', [true, true, true, false, false]),
-                new Product('Хавлии', 'Assets/Images/Products/product2.png', '15.90лв', 'Баня', '100% памук', [true, true, true, false, false]),
-                new Product('Стол', 'Assets/Images/Products/product1.png', '49.90лв', 'стол', 'дъб и дърво', [true, true, true, false, false]),
-                new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво', [true, true, true, false, false]),
-                new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво', [true, true, true, false, false])
+                new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'Мебели', 'дъб и дърво'),
+                new Product('Хавлии', 'Assets/Images/Products/product2.png', '15.90лв', 'Баня', '100% памук'),
+                new Product('Стол', 'Assets/Images/Products/product1.png', '49.90лв', 'стол', 'дъб и дърво'),
+                new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво'),
+                new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'стол', 'дъб и дърво')
             ];
+            id = this._products.length;
             localStorage.setItem('products', JSON.stringify(this._products));
         }
-        this.products = [];
     }
     ProductDB.prototype.setStart = function () {
         return this._products = JSON.parse(localStorage.getItem('products'))
 
     }
-
-    ProductDB.prototype.addProduct = function (name, url, price, type, description, subtypes) {
-        this._products.push(new Product(name, url, price, type, description, subtypes));
+    ProductDB.prototype.addProduct = function (name, url, price, type, description) {
+        var product = new Product(name, url, price, type, description)
+        this._products.push(product);
         localStorage.setItem('products', JSON.stringify(this._products));
     }
     ProductDB.prototype.filterByPriceLowestFirst = function (products) {
@@ -54,6 +57,20 @@ var productsDB = (function () {
             searchByDescr = product.description.toLowerCase().indexOf(searchWord.toLowerCase()) != -1;
             return searchByName || searchByCategory || searchByDescr;
         })
+    }
+    ProductDB.prototype.getElementById = function (id) {
+        return product = this._products.filter(x => x.id == id)
+    }
+    ProductDB.prototype.setSubType = function () {
+        var self = this;
+        self._products[self._products.length - 1].subtypes = [];        
+        $('input[name="subP"]:checked').each(function () {
+            if (this.value == 'on') {
+                self._products[self._products.length - 1].subtypes.push($(this).parent('.labelForAdmins').text());
+                console.log(self._products[self._products.length - 1].subtypes);
+            };
+        });
+        localStorage.setItem('products', JSON.stringify(this._products));
     }
     var productsDB = new ProductDB;
     return productsDB;

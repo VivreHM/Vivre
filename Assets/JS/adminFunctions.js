@@ -16,6 +16,7 @@ function callAdminFunctions() {
         productsDB.addProduct(inputs[0].value,inputs[1].value,inputs[2].value,inputs[3].value,inputs[4].value);
         background.style.display = 'none';
         productForm.style.display = 'none';
+        productsDB.setSubType();
         changeProductsDisplay()
     })
 
