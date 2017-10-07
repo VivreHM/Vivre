@@ -6,7 +6,7 @@
     box-shadow: 0px 20px 30px -19px rgba(0,0,0,0.22);
     display: none;
     border-radius: 7px;
-    z-index: 25;
+    z-index: 30;
 
     animation-name: fadeIn;
     animation-duration: 0.45s;
@@ -83,7 +83,7 @@
     display: none;
     background-color: rgba(0,0, 0, 0.6);
     position: fixed;
-    z-index: 20;
+    z-index: 25;
     animation-name: fadeIn;
     animation-duration: 0.45s;
     animation-timing-function: ease-in-out;

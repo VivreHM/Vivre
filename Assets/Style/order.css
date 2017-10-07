@@ -1,0 +1,137 @@
+.box {
+    margin-left: 0.46296%;
+    margin-right: 0.46296%;
+    position: relative;
+    background: #fcfcfc;
+    padding: 8px 20px;
+    margin: 5%;
+    white-space: nowrap;
+    border-radius: 5px;
+    width:480px;
+    height:380px;
+    /* box-shadow: 0px 20px 30px -19px rgba(0,0,0,0.22); */
+    box-shadow: 0px 21px 69px -22px rgba(0,0,0,0.37);
+  }
+  .box:after {
+    content: " ";
+    position: absolute;
+    height: 0;
+    width: 0;
+    border: solid transparent;
+    pointer-events: none;
+    border-width: 16px;
+  }
+
+  .pointer--top {
+    animation: animimate-pointer--top 500ms ease-in-out;
+    transform-origin: top center;
+  }
+  .pointer--top:after {
+    margin-left: -16px;
+    border-bottom-color: #fcfcfc;
+    top: -32px;
+    left: 50%;
+  }
+  
+  .box>h4{
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size:1.2em;
+      color:#666;
+      margin-top:10px;
+  }
+
+tr{
+    display:block;
+      margin-bottom:10px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      border-bottom:2.5px solid orange;
+      border-radius:10px;
+      background-color:#fff;
+  }
+
+  td{
+    border:none;
+    padding:6px 11px;
+  }
+
+
+  .removeFromOrder{
+      display:inline-block;
+      color:darkred;
+      background-color: #fcfcfc;
+      border-radius:50%;
+      width:25px;
+      height:25px;
+      text-align: center;
+      border:1px solid #ccc;
+  }
+
+  table .addProductToCart{
+      margin:10px 0px;
+  }
+
+  table{
+      display:inline-block;
+      height:250px;
+      overflow-y: scroll;
+  }
+
+#continueOrder{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius:15px;
+    background-color: #5B305C;
+    padding:6px 10px;
+    color:white;
+    border:none; 
+    width:100px;
+    text-align: center;
+    float:right;
+    font-size:1.05em;
+    margin:10px;
+}
+
+.box button:hover, .removeFromOrder:hover{
+    cursor: pointer;
+}
+
+#totalPrice{
+    float:left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:1.1em;
+    margin:15px;
+}
+
+.orderContainer{
+    position:fixed;
+    z-index:20;
+    top:30px;
+    right:20px;
+    display:none;
+    animation-name: dropDownOrder;
+    animation-duration: 0.35s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+@keyframes dropDownOrder{
+    0%   {top:25px; opacity:0}
+    100% {top:30px; opacity:1}
+}
+
+@keyframes animimate-pointer--top {
+    0% {
+      transform: scale(0.2) rotate(-2deg) translateY(-1px) rotateX(-1deg);
+      opacity: 0;
+    }
+    50% {
+      transform: rotate(2deg) rotateX(2deg);
+      opacity: 1;
+    }
+    70% {
+      transform:rotate(-3deg);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
