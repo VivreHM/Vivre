@@ -73,14 +73,13 @@
                                                 <span class="price">{{price}}</span>
                                             </td>
                                             <td>
-                                                <input class="wantedQuantity" type="number" value="1" min="1"> <br>
-                                                <button class="addProductToCart">Промени</button>
+                                                <input class="changeQuantityBut wantedQuantity" type="number" value="1" min="1">
+                                
                                             </td>
 
-                                            <td> <span class="removeFromOrder {{id}}" id='removeFromOrder{{id}}'>&#10006</span></td>
+                                            <td> <span class="removeFromOrder" id='removeFromOrder{{id}}'>&#10006</span></td>
                                         </tr>
                                         <br> {{/each}}
-
                                         </tr>
                                     </script>
                                 </table>

@@ -9,12 +9,10 @@ var ordersDB = (function () {
     }
 
     Order.prototype.calculateTotalPrice = function () {
-        if (this.products.length > 0) {
+        if (this.products.length >= 0) {
             var totalSum = 0;
             this.products.forEach(function (product, index) {
-                console.log(product);
                 totalSum += parseFloat(product.price) * parseFloat(this.productsQuantities[index]);
-                console.log(totalSum);
             },this)
             totalSum.toFixed(2);
             this.totalPrice = totalSum;
@@ -30,6 +28,7 @@ var ordersDB = (function () {
     Order.prototype.removeProduct = function (index) {
         this.products.splice(index, 1);
         this.productsQuantities.splice(index, 1);
+        console.log(this.products)
         this.calculateTotalPrice();
     }
 

@@ -4,7 +4,6 @@ var background = document.getElementById('blackBackground');
 var addButtonsOnProduct = document.querySelectorAll('.addProductToCart');
 var cartTemplate = document.getElementById('cart-template').innerHTML;
 var quantites = document.querySelectorAll(".wantedQuantity");
-var removeButton = document.querySelectorAll('.removeFromOrder');
 // addButtonsOnProduct.forEach(function (button) {
 //     button.addEventListener('click', function () {
 //         var id = button.className.slice(-1);
@@ -39,7 +38,7 @@ var removeButton = document.querySelectorAll('.removeFromOrder');
 //             var value = parseInt(document.getElementById(wantedQuantity).value);
 //             totalPrice = ((parseFloat(product.price) * value) + parseFloat(totalPrice)).toFixed(2);
 //             document.getElementById('totalPrice').innerHTML = parseFloat(totalPrice).toFixed(2);
-            
+
 //         })
 //     })
 // }
@@ -68,28 +67,40 @@ var removeButton = document.querySelectorAll('.removeFromOrder');
 
 // }
 
-var currentOrder = ordersDB.orders[ordersDB.orders.length-1];
+var currentOrder = ordersDB.orders[ordersDB.orders.length - 1];
 var addToCart = function (product) {
     var template = Handlebars.compile(cartTemplate);
     var readyHTML = template(product);
     document.getElementById('cartTable').innerHTML = readyHTML;
+    var removeButtons = document.querySelectorAll('.removeFromOrder');
+    var changeQuantityButtons = document.querySelectorAll(".changeQuantityBut");
+    removeButtons.forEach(function (button, index) {
+        button.addEventListener('click', function () {
+            currentOrder.removeProduct(index);
+            addToCart(currentOrder);
+            document.getElementById('totalPrice').innerHTML = currentOrder.totalPrice;
+        })
+    })
+    changeQuantityButtons.forEach(function(button, index){
+        button.value = currentOrder.productsQuantities[index];
+        button.addEventListener("blur", function(){
+            currentOrder.productsQuantities[index] = button.value;
+            currentOrder.calculateTotalPrice();
+            document.getElementById('totalPrice').innerHTML = currentOrder.totalPrice;
+        })
+    })
 }
 
-addButtonsOnProduct.forEach(function(button, index){
-    button.addEventListener("click", function(){
-        currentOrder.addProduct(productsDB._products[index],quantites[index].value);
+addButtonsOnProduct.forEach(function (button, index) {
+    button.addEventListener("click", function () {
+        currentOrder.addProduct(productsDB._products[index], quantites[index].value);
         addToCart(currentOrder);
         document.getElementById('totalPrice').innerHTML = currentOrder.totalPrice;
     })
+
 })
 
-removeButton.forEach(function(button){
-    button.addEventListener('click', function(index){
-        currentOrder.removeProduct(index);
-        addToCart(currentOrder);
-        document.getElementById('totalPrice').innerHTML = currentOrder.totalPrice;
-    })
-})
+
 
 
 
