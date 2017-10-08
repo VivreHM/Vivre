@@ -65,9 +65,9 @@ input, button {outline:none;}
     -webkit-border-radius:8px;
 }
 
-::-webkit-scrollbar{
+/* ::-webkit-scrollbar{
     display:none;
-}
+} */
 .fadeOut1{
     animation-name: fadeOut1;
     animation-duration: 0.35s;
@@ -398,7 +398,7 @@ body{
         padding:20px;
         box-sizing: border-box;
         float:left;
-        width:250px;
+        width:240px;
         height:440px;
         background-color: #fcfcfc;
         border-radius:4px;
