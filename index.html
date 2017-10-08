@@ -61,6 +61,7 @@
                                 <h4>Поръчка</h4>
                                 <table id='cartTable'>
                                     <script id="cart-template" type="text/x-handlebars-template">
+                                        {{#each products}}
                                         <tr class='rowOfCartTable' id='rowOfCartTable{{id}}'>
                                             <td>
                                                 <img width="70px" src="{{url}}" alt="">
@@ -76,6 +77,9 @@
                                                 <button class="addProductToCart">Промени</button>
                                             </td>
                                             <td> <span class="removeFromOrder">&#10006</span></td>
+                                        </tr> 
+                                        <br>
+                                        {{/each}}
                                         </tr>
                                     </script>
                                 </table>
@@ -769,7 +773,7 @@
 
         </footer>
     </div>
-
+    <script src="Assets/JS/orderService.js"></script>
     <script src='Assets/JS/mainPageDisplay.js'></script>
     <script src='Assets/JS/navMenu.js'></script>
     <script src='Assets/JS/displayLogIn.js'></script>
