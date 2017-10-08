@@ -61,7 +61,11 @@
                                 <h4>Поръчка</h4>
                                 <table id='cartTable'>
                                     <script id="cart-template" type="text/x-handlebars-template">
+<<<<<<< HEAD
                                         <tr class='rowOfCartTable'>
+=======
+                                        <tr class='rowOfCartTable' id='rowOfCartTable{{id}}'>
+>>>>>>> ce47e4c0fbde2249d8abdcd3ca174b4b6c7ccabc
                                             <td>
                                                 <img width="70px" src="{{url}}" alt="">
                                             </td>
@@ -72,11 +76,20 @@
                                                 <span class="price">{{price}}</span>
                                             </td>
                                             <td>
+<<<<<<< HEAD
                                                 <input class="wantedQuantity" type="number" value="1" min="1"> <br>
                                                 <button class="addProductToCart">Промени</button>
                                             </td>
                                             <td> <span class="removeFromOrder">&#10006</span></td>
                                         </tr>
+=======
+                                                <input class='wantedQuantityInCart' id="wantedQuantity{{id}}" type="number" value="1" min="1">                                                <br>
+                                                <button class="addProductToCart">Промени</button>
+                                            </td>
+                                            <td> <span class="removeFromOrder {{id}}" id='removeFromOrder{{id}}'>&#10006</span></td>
+                                        </tr>
+                                        <p></p>
+>>>>>>> ce47e4c0fbde2249d8abdcd3ca174b4b6c7ccabc
                                     </script>
                                 </table>
                                     <span class='lvspan'>Общо:</span><span id="totalPrice"></span> <span class='lvspan'>лв.</span>
@@ -571,7 +584,7 @@
                                 <p>Размери: {{size}}</p>
                                 <p>Доставка: {{delivery}}</p>
                                 <div>
-                                    <input class="wantedQuantity" type="number" value="1" min="1">
+                                    <input class="wantedQuantity" id='wantedQuantityInProduct{{id}}' type="number" value="1" min="1">
                                     <button class="addProductToCart {{id}}">Добави</button>
                                     <button class="moreInformation">...</button>
                                 </div>

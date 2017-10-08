@@ -61,7 +61,7 @@ var productsDB = (function () {
         })
     }
     ProductDB.prototype.getElementById = function (id) {
-        return product = this._products.filter(x => x.id == id)
+        return product = this._products.find(x => x.id == id)
     }
     ProductDB.prototype.setSubType = function () {
         var self = this;
