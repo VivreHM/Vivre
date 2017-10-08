@@ -68,7 +68,7 @@ var productsDB = (function () {
         self._products[self._products.length - 1].subtypes = [];        
         $('input[name="subP"]:checked').each(function () {
             if (this.value == 'on') {
-                self._products[self._products.length - 1].subtypes.push($(this).parent('.labelForAdmins').text());
+                self._products[self._products.length - 1].subtypes.push($(this).parent('.labelForAdmins').text().toLowerCase());
                 console.log(self._products[self._products.length - 1].subtypes);
             };
         });

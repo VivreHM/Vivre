@@ -41,12 +41,13 @@
   }
 
 tr{
-    display:block;
-      margin-bottom:10px;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      border-bottom:2.5px solid orange;
-      border-radius:10px;
-      background-color:#fff;
+    display:inline-block;
+    margin-bottom:4px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-bottom:2.5px solid orange;
+    border-radius:10px;
+    background-color:#fff;
+    width:440px;
   }
 
   td{
@@ -118,6 +119,16 @@ tr{
     animation-timing-function: ease-in-out;
     animation-direction: alternate;
     animation-fill-mode: forwards;
+}
+
+.description{
+    display:inline-block;
+    width:80px;
+}
+
+.price{
+    display:inline-block;
+    width:55px;
 }
 
 @keyframes dropDownOrder{

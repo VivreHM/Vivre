@@ -50,7 +50,7 @@ var changeProductsDisplay = function () {
     var readyHTML = template(productsDB);
     document.getElementById('content').innerHTML = readyHTML;
     cardAnimation();
-    checkForSubTypes();    
+    checkForSubTypes();  
 }
 changeProductsDisplay();
 function checkForSubTypes() {
