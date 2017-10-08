@@ -4,6 +4,10 @@ var background = document.getElementById('blackBackground');
 var addButtonsOnProduct = document.querySelectorAll('.addProductToCart');
 var cartTemplate = document.getElementById('cart-template').innerHTML;
 var quantites = document.querySelectorAll(".wantedQuantity");
+<<<<<<< HEAD
+=======
+
+>>>>>>> fa5459af3eb631c889ac5d38cd30e8b9c23fdbea
 // addButtonsOnProduct.forEach(function (button) {
 //     button.addEventListener('click', function () {
 //         var id = button.className.slice(-1);
@@ -72,6 +76,7 @@ var addToCart = function (product) {
     var template = Handlebars.compile(cartTemplate);
     var readyHTML = template(product);
     document.getElementById('cartTable').innerHTML = readyHTML;
+<<<<<<< HEAD
     var removeButtons = document.querySelectorAll('.removeFromOrder');
     var changeQuantityButtons = document.querySelectorAll(".changeQuantityBut");
     removeButtons.forEach(function (button, index) {
@@ -89,6 +94,10 @@ var addToCart = function (product) {
             document.getElementById('totalPrice').innerHTML = currentOrder.totalPrice;
         })
     })
+=======
+    removeButtonFunc();    
+    
+>>>>>>> fa5459af3eb631c889ac5d38cd30e8b9c23fdbea
 }
 
 addButtonsOnProduct.forEach(function (button, index) {
@@ -98,8 +107,21 @@ addButtonsOnProduct.forEach(function (button, index) {
         document.getElementById('totalPrice').innerHTML = currentOrder.totalPrice;
     })
 
+<<<<<<< HEAD
 })
 
+=======
+var removeButtonFunc = function () {
+    var removeButton = document.querySelectorAll('.removeFromOrder');
+    removeButton.forEach(function (button, index) {
+        button.addEventListener('click', function () {
+            currentOrder.removeProduct(index);
+            addToCart(currentOrder);
+            document.getElementById('totalPrice').innerHTML = currentOrder.totalPrice;
+        })
+    })
+}  
+>>>>>>> fa5459af3eb631c889ac5d38cd30e8b9c23fdbea
 
 
 

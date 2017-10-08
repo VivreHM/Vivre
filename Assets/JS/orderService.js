@@ -14,8 +14,9 @@ var ordersDB = (function () {
             this.products.forEach(function (product, index) {
                 totalSum += parseFloat(product.price) * parseFloat(this.productsQuantities[index]);
             },this)
-            totalSum.toFixed(2);
-            this.totalPrice = totalSum;
+            this.totalPrice = totalSum.toFixed(2);
+        } else {
+            this.totalPrice = 0;
         }
     }
     
