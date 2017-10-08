@@ -81,9 +81,9 @@ var addToCart = function (product) {
             document.getElementById('totalPrice').innerHTML = currentOrder.totalPrice;
         })
     })
-    changeQuantityButtons.forEach(function(button, index){
+    changeQuantityButtons.forEach(function (button, index) {
         button.value = currentOrder.productsQuantities[index];
-        button.addEventListener("change", function(){
+        button.addEventListener("change", function () {
             currentOrder.productsQuantities[index] = button.value;
             currentOrder.calculateTotalPrice();
             document.getElementById('totalPrice').innerHTML = currentOrder.totalPrice;
@@ -129,6 +129,44 @@ window.addEventListener('click', function (event) {
         document.body.style.overflow = 'scroll';
     }
 })
-document.getElementById('confirmOrder').addEventListener('click', function(){
-    userDB.addOrderToHistory(signedUser, ordersDB.orders)
+
+var displayOrders = function (order) {
+    var userOrders = document.getElementById('user-orders').innerHTML;
+    var template = Handlebars.compile(userOrders);
+    var readyHTML = template(order);
+    console.log(readyHTML);
+    document.getElementById('userOrdersHistory').innerHTML+=readyHTML;
+}
+
+function chooseAddress(){
+    var addresses=document.querySelectorAll("#availableAddressesInCart>div");
+    console.log(addresses);
+    addresses.forEach(function(address){
+        address.addEventListener("click", function(){
+            if(!address.hasAttribute("checked")){
+                address.setAttribute("checked", "true");
+            }else{
+                if(address.getAttribute("checked")=="true"){
+                    address.setAttribute("checked", "false");
+                }
+                if(address.getAttribute("checked")=="false"){
+                    address.setAttribute("checked", "true");
+                }
+            }
+        })
+    })
+}
+
+document.getElementById('confirmOrder').addEventListener('click', function () {
+    if (userDB._users.indexOf(signedUser)!=-1) {
+        if(signedUser.historyOrder.indexOf(currentOrder)==-1){
+            var card = document.getElementById("withCard");
+            var delivered = document.getElementById("whenDelivered");
+            if(card.checked) currentOrder.payMethod = "С карта";
+            if(delivered.checked) currentOrder.payMethod = "Наложен платеж"
+            userDB.addOrderToHistory(signedUser, currentOrder);
+            displayOrders(currentOrder);
+        }
+    }
+    
 })

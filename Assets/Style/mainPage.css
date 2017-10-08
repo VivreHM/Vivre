@@ -331,9 +331,16 @@ body{
         padding:1% 15%;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         padding-top:40px;
-        width:320px;
         color:#5A5A5A;
         display:none;
+    }
+
+    #userInformation{
+        width:280px;
+    }
+
+    #userOrders{
+        margin-left:20px;
     }
 
     #address{

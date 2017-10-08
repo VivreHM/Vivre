@@ -5,6 +5,9 @@ var ordersDB = (function () {
         this.products = [];
         this.productsQuantities = [];
         this.totalPrice = 0;
+        this.date=new Date().toDateString();
+        this.payMethod = "";
+        this.status = "Активна";
     }
 
 

@@ -19,6 +19,7 @@ document.getElementById("logInFormButton").addEventListener("click", function (e
         ordersDB.assignUser();
         userDB.showAddresses(signedUser, document.getElementById("availableAddressesInCart"));
         userDB.showAddresses(signedUser, document.getElementById("availableAddresses"));
+        chooseAddress();
         callAdminFunctions();
     } else {
         document.getElementById("logInPassword").value = "";
