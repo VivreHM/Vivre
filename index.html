@@ -59,57 +59,28 @@
                         <div class="orderContainer">
                             <div class="box pointer--top">
                                 <h4>Поръчка</h4>
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <img width="70px" src="Assets/Images/Products/product1.png" alt="">
-                                        </td>
-                                        <td>
-                                            <span class="description">Стол Apollo Taupe</span>
-                                        </td>
-                                        <td>
-                                            <span class="price">79.99 лв</span>
-                                        </td>
-                                        <td>
-                                            <input class="wantedQuantity" type="number" value="1" min="1"> <br>
-                                            <button class="addProductToCart">Промени</button>
-                                        </td>
-                                        <td> <span class="removeFromOrder">&#10006</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img width="70px" src="Assets/Images/Products/product1.png" alt="">
-                                        </td>
-                                        <td>
-                                            <span class="description">Стол Apollo Taupe</span>
-                                        </td>
-                                        <td>
-                                            <span class="price">79.99 лв</span>
-                                        </td>
-                                        <td>
-                                            <input class="wantedQuantity" type="number" value="1" min="1"> <br>
-                                            <button class="addProductToCart">Промени</button>
-                                        </td>
-                                        <td> <span class="removeFromOrder">&#10006</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <img width="70px" src="Assets/Images/Products/product1.png" alt="">
-                                        </td>
-                                        <td>
-                                            <span class="description">Стол Apollo Taupe</span>
-                                        </td>
-                                        <td>
-                                            <span class="price">79.99 лв</span>
-                                        </td>
-                                        <td>
-                                            <input class="wantedQuantity" type="number" value="1" min="1"> <br>
-                                            <button class="addProductToCart">Промени</button>
-                                        </td>
-                                        <td> <span class="removeFromOrder">&#10006</span></td>
-                                    </tr>
-                                </table> <br>
-                                <span id="totalPrice"> Общо: 239.97 лв</span>
+                                <table id='cartTable'>
+                                        <script id="cart-template" type="text/x-handlebars-template">
+                                            <tr class='rowOfCartTable'>
+                                                <td>
+                                                    <img width="70px" src="{{url}}" alt="">
+                                                </td>
+                                                <td>
+                                                    <span class="description">{{name}}</span>
+                                                </td>
+                                                <td>
+                                                    <span class="price">{{price}}</span>
+                                                </td>
+                                                <td>
+                                                    <input class="wantedQuantity" type="number" value="1" min="1"> <br>
+                                                    <button class="addProductToCart">Промени</button>
+                                                </td>
+                                                <td> <span class="removeFromOrder">&#10006</span></td>
+                                            </tr>
+                                            <p></p>
+                                        </script>
+                                </table>
+                                <span class='lvspan'>Общо:</span><span id="totalPrice"></span> <span class='lvspan'>лв.</span>
                                 <button id="continueOrder">Продължи</button>
                             </div>
                         </div>
@@ -601,7 +572,7 @@
                                 <p>Доставка: {{delivery}}</p>
                                 <div>
                                     <input class="wantedQuantity" type="number" value="1" min="1">
-                                    <button class="addProductToCart">Добави</button>
+                                    <button class="addProductToCart {{id}}">Добави</button>
                                     <button class="moreInformation">...</button>
                                 </div>
                             </div>
@@ -707,16 +678,16 @@
                 <input class='productProperties' type="text" placeholder="Доставка">
                 <input class='productProperties' type="text" placeholder="Размери">
                 <div id='checkboxesInAdmin'class='productProperties'>
-                <label class='labelForAdmins' for="newSubCheck"><input id="newSubCheck" class='subProps' name='subP'type="checkbox" >New<span class="new"></span></label> 
-                <label class='labelForAdmins' for="promoSubCheck"><input id="promoSubCheck" class='subProps' name='subP'type="checkbox">Promo<span class="promo"></span></label> 
-                <label class='labelForAdmins' for="freeSubCheck"><input id="freeSubCheck" class='subProps' name='subP'type="checkbox">Free<span class="free"></span></label> 
-                <label class='labelForAdmins' for="fastSubCheck"><input id="fastSubCheck" class='subProps' name='subP'type="checkbox">Fast<span class="fast"></span></label> 
-                <label class='labelForAdmins' for="giftSubCheck"><input id="giftSubCheck" class='subProps' name='subP'type="checkbox">Gift<span class="gift"></span></label> 
-                </div>
-                <button id='submitProduct' class="logInButton">Добави продукта</button>
+                <label class='labelForAdmins' for="newSubCheck"><input id="newSubCheck" class='subProps' name='subP'type="checkbox" >New<span class="new"></span></label>
+                    <label class='labelForAdmins' for="promoSubCheck"><input id="promoSubCheck" class='subProps' name='subP'type="checkbox">Promo<span class="promo"></span></label>
+                    <label class='labelForAdmins' for="freeSubCheck"><input id="freeSubCheck" class='subProps' name='subP'type="checkbox">Free<span class="free"></span></label>
+                    <label class='labelForAdmins' for="fastSubCheck"><input id="fastSubCheck" class='subProps' name='subP'type="checkbox">Fast<span class="fast"></span></label>
+                    <label class='labelForAdmins' for="giftSubCheck"><input id="giftSubCheck" class='subProps' name='subP'type="checkbox">Gift<span class="gift"></span></label>
+            </div>
+            <button id='submitProduct' class="logInButton">Добави продукта</button>
             </form>
-        </div>
-                        <!-- SHOPPING CART -->
+            </div>
+            <!-- SHOPPING CART -->
             <!-- Add product form -->
             <!-- <div id='productForm'>
                 <form>
@@ -733,69 +704,69 @@
             <!-- SHOPPING CART -->
             <div id='CartContainer'>
                 <div id='cartHeader'>Завършване на поръчката</div>
-                <div id='cartBody'> 
-                    <div class="orderInfo" >Адреси</div>
+                <div id='cartBody'>
+                    <div class="orderInfo">Адреси</div>
                     <div id="availableAddressesInCart"></div>
                     <button id="addNewInCart">Добави адрес</button>
                     <div class='orderInfo'>Начин на плащане:</div>
-                    <input name='plashtane' type="radio"> <label class'radioButtons'> С карта</label>
-                    <img width=26px src="Assets\Images\Icons\withCard.png" alt="">                      
-                    <input name='plashtane' type="radio"> <label class'radioButtons'>Наложен платеж</label> 
-                    <img width=26px src="Assets\Images\Icons\payment-method.png" alt="">    
+                    <input name='plashtane' type="radio"> <label class 'radioButtons'> С карта</label>
+                    <img width=26px src="Assets\Images\Icons\withCard.png" alt="">
+                    <input name='plashtane' type="radio"> <label class 'radioButtons'>Наложен платеж</label>
+                    <img width=26px src="Assets\Images\Icons\payment-method.png" alt="">
                     <div> <br>
                         <input id='conditions' type="checkbox">Съгласен съм с условията за доставка, гаранция и връщане.
-                    </div> <br>         
+                    </div> <br>
                     <button id='confirmOrder'>Потвърди поръчката</button>
                 </div>
             </div>
             <!-- Order information window-->
 
         </main>
-            <footer>
-                <div id="fastLinks">
-                    <h2>Бързи линкове</h2>
-                    <ul>
-                        <li class="forUs">За нас</li>
-                        <li class="contacts">Контакти</li>
-                        <li id="horWorks">Как работи</li>
-                        <li id="">Връщане на продукт</li>
-                        <li id="">Общи условия</li>
-                        <li id="">Политика на поверителност</li>
-                        <li id="odr">ODR</li>
-                    </ul>
-                </div>
-                <div id="downloadApps">
-                    <h2>Свали приложението</h2>
-                    <ul>
-                        <li>
-                            <img width="30px" src="Assets/Images/Icons/appleLogo.png" alt="Apple Logo">
-                            <a href="">APP Store</a>
-                        </li>
-                        <li>
-                            <img width="30px" src="Assets/Images/Icons/android.png" alt="Android Logo">
-                            <a href="">Google Play </a>
-                        </li>
-                    </ul>
-                </div>
-                <div id="contactUsFooter">
-                    <h2>Свържи се с нас</h2>
-                    <ul>
-                        <li>
-                            <img width="22px" src="Assets/Images/Icons/facebook.png" alt="Facebook Logo">
-                            <a href="">Следете ни във Facebook</a>
-                        </li>
-                        <li>
-                            <img width="22px" src="Assets/Images/Icons/email.png" alt="Email icon">
-                            <a href="">vivre@gmail.com</a>
-                        </li>
-                        <li>
-                            <img width="22px" src="Assets/Images/Icons/phone.png" alt="Phone icon">
-                            <a href="">+3590883600197</a>
-                        </li>
-                    </ul>
-                </div>
+        <footer>
+            <div id="fastLinks">
+                <h2>Бързи линкове</h2>
+                <ul>
+                    <li class="forUs">За нас</li>
+                    <li class="contacts">Контакти</li>
+                    <li id="horWorks">Как работи</li>
+                    <li id="">Връщане на продукт</li>
+                    <li id="">Общи условия</li>
+                    <li id="">Политика на поверителност</li>
+                    <li id="odr">ODR</li>
+                </ul>
+            </div>
+            <div id="downloadApps">
+                <h2>Свали приложението</h2>
+                <ul>
+                    <li>
+                        <img width="30px" src="Assets/Images/Icons/appleLogo.png" alt="Apple Logo">
+                        <a href="">APP Store</a>
+                    </li>
+                    <li>
+                        <img width="30px" src="Assets/Images/Icons/android.png" alt="Android Logo">
+                        <a href="">Google Play </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="contactUsFooter">
+                <h2>Свържи се с нас</h2>
+                <ul>
+                    <li>
+                        <img width="22px" src="Assets/Images/Icons/facebook.png" alt="Facebook Logo">
+                        <a href="">Следете ни във Facebook</a>
+                    </li>
+                    <li>
+                        <img width="22px" src="Assets/Images/Icons/email.png" alt="Email icon">
+                        <a href="">vivre@gmail.com</a>
+                    </li>
+                    <li>
+                        <img width="22px" src="Assets/Images/Icons/phone.png" alt="Phone icon">
+                        <a href="">+3590883600197</a>
+                    </li>
+                </ul>
+            </div>
 
-            </footer>
+        </footer>
     </div>
 
     <script src='Assets/JS/mainPageDisplay.js'></script>
@@ -809,11 +780,11 @@
     <script src="Assets/JS/logIn.js"></script>
     <script src="Assets/JS/userInfo.js"></script>
     <script src="Assets/JS/saveAddress.js"></script>
-    <script src="Assets/JS/ShoppingCart.js"></script>
     <script src="Assets/JS/productsSlideShow.js"></script>
     <script src='Assets/JS/Produkti.js'></script>
     <script src='Assets/JS/ProduktiController.js'></script>
     <script src="Assets/JS/productClickEffect.js"></script>
+    <script src="Assets/JS/ShoppingCart.js"></script>
     <script src="Assets/JS/adminFunctions.js"></script>
     <link rel="stylesheet" href="Assets/Style/products.css">
 

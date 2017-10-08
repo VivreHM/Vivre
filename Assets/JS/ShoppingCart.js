@@ -1,6 +1,27 @@
 var cart = document.getElementById('continueOrder');
 var cartContainer = document.getElementById('CartContainer');
 var background = document.getElementById('blackBackground');
+var addButtonsOnProduct = document.querySelectorAll('.addProductToCart');
+var cartTemplate = document.getElementById('cart-template').innerHTML;
+var totalPrice = 0;
+addButtonsOnProduct.forEach(function(button){
+    button.addEventListener('click', function(){
+        var id = button.className.slice(-1);
+        var product = productsDB.getElementById(id);
+        console.log(product)
+        addToCart(product[0]); 
+        totalPrice = (parseFloat(product[0].price) + parseFloat(totalPrice)).toFixed(2);
+        console.log(product[0].price + 'cena na produkta')
+        console.log(totalPrice)
+        document.getElementById('totalPrice').innerHTML = parseFloat(totalPrice).toFixed(2);
+        
+    })
+})
+var addToCart = function (product) {
+    var template = Handlebars.compile(cartTemplate);
+    var readyHTML = template(product);
+    document.getElementById('cartTable').innerHTML += readyHTML;
+}
 
 if(signedUser){
     signedUser.showAddresses(document.getElementById("availableAddressesInCart"));
