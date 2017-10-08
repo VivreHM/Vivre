@@ -72,17 +72,22 @@
                                                 <span class="price">{{price}}</span>
                                             </td>
                                             <td>
-                                                <input class='wantedQuantityInCart' id="wantedQuantity{{id}}" type="number" value="1" min="1">                                                <br>
+                                                <input class="wantedQuantity" type="number" value="1" min="1"> <br>
                                                 <button class="addProductToCart">Промени</button>
                                             </td>
+<<<<<<< HEAD
                                             <td> <span class="removeFromOrder {{id}}" id='removeFromOrder{{id}}'>&#10006</span></td>
                                             <p></p>
                                         </tr>
                                         
+=======
+                                            <td> <span class="removeFromOrder">&#10006</span></td>
+                                        </tr>
+>>>>>>> 1078989b92556f36bbef344829ce4492417cc78e
                                     </script>
                                 </table>
-                                <span class='lvspan'>Общо:</span><span id="totalPrice"></span> <span class='lvspan'>лв.</span>
-                                <button id="continueOrder">Продължи</button>
+                                    <span class='lvspan'>Общо:</span><span id="totalPrice"></span> <span class='lvspan'>лв.</span>
+                                    <button id="continueOrder">Продължи</button>
                             </div>
                         </div>
                     </div>
@@ -549,6 +554,7 @@
 
                         <span class="gift"></span>
                         <span class='labels'>С подарък</span>
+                        <span class="editProductButton1">&#9998</span>
                         <hr>
                     </div>
                     <div id='content'></div>
@@ -565,6 +571,7 @@
                                         <p class='newPrice'>{{price}}.</p>
                                     </div>
                                 </div>
+                                <span class="editProductButton">&#9998</span>
                             </div>
                             <div class="productInformation">
                                 <h4>{{name}}</h4>

@@ -5,10 +5,7 @@ document.getElementById("logInFormButton").addEventListener("click", function (e
     var pass = document.getElementById("logInPassword").value;
     console.log(userDB.login(userName, pass))
     if (userDB.login(userName, pass)) {
-        signedUser = userDB._users.find(user => user.username == userName);
-        if(userName=="hero04") {
-            document.getElementById("orderBar").style.display="none";
-        }          
+        signedUser = userDB._users.find(user => user.username == userName);       
         document.getElementById("logInUsername").style.backgroundColor = 'white';
         document.getElementById("signButtons").style.display = "none";
         document.getElementById("userButton").innerHTML = userName;
