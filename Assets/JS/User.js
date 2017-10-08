@@ -6,6 +6,7 @@ var userDB = (function () {
         this.email = email;
         this.addresses = [];
         this.phoneNumber = "";
+        this.historyOrder = [];
     };
 
 
@@ -63,6 +64,10 @@ var userDB = (function () {
                 parentElement.appendChild(newData);
             })
         }
+    }
+    UsersDB.prototype.addOrderToHistory = function(user, order){
+        var userToAdd = this._users.find(x => x.username == user.username)
+        userToAdd.historyOrder.push(order);
     }
     var users = new UsersDB();
     setInterval(function(){

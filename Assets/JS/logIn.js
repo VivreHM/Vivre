@@ -16,6 +16,7 @@ document.getElementById("logInFormButton").addEventListener("click", function (e
         document.getElementById('blackBackground').style.display = 'none';
         document.getElementById("logInFormButton").classList.remove("shake1");
         document.getElementById("logInPassword").style.backgroundColor = 'white';
+        ordersDB.assignUser();
         userDB.showAddresses(signedUser, document.getElementById("availableAddressesInCart"));
         userDB.showAddresses(signedUser, document.getElementById("availableAddresses"));
         callAdminFunctions();

@@ -83,7 +83,7 @@ var addToCart = function (product) {
     })
     changeQuantityButtons.forEach(function(button, index){
         button.value = currentOrder.productsQuantities[index];
-        button.addEventListener("blur", function(){
+        button.addEventListener("change", function(){
             currentOrder.productsQuantities[index] = button.value;
             currentOrder.calculateTotalPrice();
             document.getElementById('totalPrice').innerHTML = currentOrder.totalPrice;
@@ -128,4 +128,7 @@ window.addEventListener('click', function (event) {
         cartContainer.style.display = 'none';
         document.body.style.overflow = 'scroll';
     }
+})
+document.getElementById('confirmOrder').addEventListener('click', function(){
+    userDB.addOrderToHistory(signedUser, ordersDB.orders)
 })

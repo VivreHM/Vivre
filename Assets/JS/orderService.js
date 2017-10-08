@@ -5,21 +5,20 @@ var ordersDB = (function () {
         this.products = [];
         this.productsQuantities = [];
         this.totalPrice = 0;
-        this.user = null;
     }
+
 
     Order.prototype.calculateTotalPrice = function () {
         if (this.products.length >= 0) {
             var totalSum = 0;
             this.products.forEach(function (product, index) {
                 totalSum += parseFloat(product.price) * parseFloat(this.productsQuantities[index]);
-            },this)
+            }, this)
             this.totalPrice = totalSum.toFixed(2);
         } else {
             this.totalPrice = 0;
         }
     }
-    
     Order.prototype.addProduct = function (product, quantity) {
         this.products.push(product);
         this.productsQuantities.push(quantity);
@@ -33,12 +32,16 @@ var ordersDB = (function () {
         this.calculateTotalPrice();
     }
 
-    function OrderDB(){
+    function OrderDB() {
         this.orders = [new Order()];
+        this.user = null;
     }
 
-    OrderDB.prototype.addNewOrder=function(){
+    OrderDB.prototype.addNewOrder = function () {
         this.orders.push(newOrder);
+    }
+    OrderDB.prototype.assignUser = function () {
+        this.user = signedUser;
     }
 
     return new OrderDB();
