@@ -12,12 +12,11 @@ var ordersDB = (function () {
         if (this.products.length > 0) {
             var totalSum = 0;
             this.products.forEach(function (product, index) {
-                console.log(product);
                 totalSum += parseFloat(product.price) * parseFloat(this.productsQuantities[index]);
-                console.log(totalSum);
             },this)
-            totalSum.toFixed(2);
-            this.totalPrice = totalSum;
+            this.totalPrice = totalSum.toFixed(2);
+        } else {
+            this.totalPrice = 0;
         }
     }
     

@@ -4,7 +4,7 @@ var background = document.getElementById('blackBackground');
 var addButtonsOnProduct = document.querySelectorAll('.addProductToCart');
 var cartTemplate = document.getElementById('cart-template').innerHTML;
 var quantites = document.querySelectorAll(".wantedQuantity");
-var removeButton = document.querySelectorAll('.removeFromOrder');
+
 // addButtonsOnProduct.forEach(function (button) {
 //     button.addEventListener('click', function () {
 //         var id = button.className.slice(-1);
@@ -39,7 +39,7 @@ var removeButton = document.querySelectorAll('.removeFromOrder');
 //             var value = parseInt(document.getElementById(wantedQuantity).value);
 //             totalPrice = ((parseFloat(product.price) * value) + parseFloat(totalPrice)).toFixed(2);
 //             document.getElementById('totalPrice').innerHTML = parseFloat(totalPrice).toFixed(2);
-            
+
 //         })
 //     })
 // }
@@ -68,29 +68,33 @@ var removeButton = document.querySelectorAll('.removeFromOrder');
 
 // }
 
-var currentOrder = ordersDB.orders[ordersDB.orders.length-1];
+var currentOrder = ordersDB.orders[ordersDB.orders.length - 1];
 var addToCart = function (product) {
     var template = Handlebars.compile(cartTemplate);
     var readyHTML = template(product);
     document.getElementById('cartTable').innerHTML = readyHTML;
+    removeButtonFunc();    
+    
 }
 
-addButtonsOnProduct.forEach(function(button, index){
-    button.addEventListener("click", function(){
-        currentOrder.addProduct(productsDB._products[index],quantites[index].value);
+addButtonsOnProduct.forEach(function (button, index) {
+    button.addEventListener("click", function () {
+        currentOrder.addProduct(productsDB._products[index], quantites[index].value);
         addToCart(currentOrder);
         document.getElementById('totalPrice').innerHTML = currentOrder.totalPrice;
     })
 })
 
-removeButton.forEach(function(button){
-    button.addEventListener('click', function(index){
-        currentOrder.removeProduct(index);
-        addToCart(currentOrder);
-        document.getElementById('totalPrice').innerHTML = currentOrder.totalPrice;
+var removeButtonFunc = function () {
+    var removeButton = document.querySelectorAll('.removeFromOrder');
+    removeButton.forEach(function (button, index) {
+        button.addEventListener('click', function () {
+            currentOrder.removeProduct(index);
+            addToCart(currentOrder);
+            document.getElementById('totalPrice').innerHTML = currentOrder.totalPrice;
+        })
     })
-})
-
+}  
 
 
 if (signedUser) {
