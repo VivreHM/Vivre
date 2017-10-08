@@ -129,27 +129,24 @@ window.addEventListener('click', function (event) {
         document.body.style.overflow = 'scroll';
     }
 })
-
-var displayOrders = function (order) {
-    var userOrders = document.getElementById('user-orders').innerHTML;
+var displayOrders = function () {
+    var userOrders = document.getElementById('user-orders').innerHTML;    
     var template = Handlebars.compile(userOrders);
-    var readyHTML = template(order);
-    console.log(readyHTML);
-    document.getElementById('userOrdersHistory').innerHTML+=readyHTML;
+    var readyHTML = template(ordersDB.user);
+    document.getElementById('userOrdersHistory').innerHTML = readyHTML;
 }
 
-function chooseAddress(){
-    var addresses=document.querySelectorAll("#availableAddressesInCart>div");
-    console.log(addresses);
-    addresses.forEach(function(address){
-        address.addEventListener("click", function(){
-            if(!address.hasAttribute("checked")){
+function chooseAddress() {
+    var addresses = document.querySelectorAll("#availableAddressesInCart>div");
+    addresses.forEach(function (address) {
+        address.addEventListener("click", function () {
+            if (!address.hasAttribute("checked")) {
                 address.setAttribute("checked", "true");
-            }else{
-                if(address.getAttribute("checked")=="true"){
+            } else {
+                if (address.getAttribute("checked") == "true") {
                     address.setAttribute("checked", "false");
                 }
-                if(address.getAttribute("checked")=="false"){
+                if (address.getAttribute("checked") == "false") {
                     address.setAttribute("checked", "true");
                 }
             }
@@ -158,15 +155,17 @@ function chooseAddress(){
 }
 
 document.getElementById('confirmOrder').addEventListener('click', function () {
-    if (userDB._users.indexOf(signedUser)!=-1) {
-        if(signedUser.historyOrder.indexOf(currentOrder)==-1){
-            var card = document.getElementById("withCard");
-            var delivered = document.getElementById("whenDelivered");
-            if(card.checked) currentOrder.payMethod = "С карта";
-            if(delivered.checked) currentOrder.payMethod = "Наложен платеж"
-            userDB.addOrderToHistory(signedUser, currentOrder);
-            displayOrders(currentOrder);
-        }
+    if (userDB._users.indexOf(signedUser) != -1 &&
+        signedUser.addresses.length > 0 &&
+        signedUser.phoneNumber.length > 0 && currentOrder.products.length > 0) {
+        var card = document.getElementById("withCard");
+        var delivered = document.getElementById("whenDelivered");
+        if (card.checked) currentOrder.payMethod = "С карта";
+        if (delivered.checked) currentOrder.payMethod = "Наложен платеж"
+        userDB.addOrderToHistory(signedUser, currentOrder);
+        displayOrders();
+    } else {
+        alert('Попълни всички полета')
     }
-    
+
 })

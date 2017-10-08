@@ -3,7 +3,6 @@ document.getElementById("logInFormButton").addEventListener("click", function (e
     event.preventDefault();
     var userName = document.getElementById("logInUsername").value;
     var pass = document.getElementById("logInPassword").value;
-    console.log(userDB.login(userName, pass))
     if (userDB.login(userName, pass)) {
         signedUser = userDB._users.find(user => user.username == userName);       
         document.getElementById("logInUsername").style.backgroundColor = 'white';
@@ -17,6 +16,7 @@ document.getElementById("logInFormButton").addEventListener("click", function (e
         document.getElementById("logInFormButton").classList.remove("shake1");
         document.getElementById("logInPassword").style.backgroundColor = 'white';
         ordersDB.assignUser();
+        displayOrders();
         userDB.showAddresses(signedUser, document.getElementById("availableAddressesInCart"));
         userDB.showAddresses(signedUser, document.getElementById("availableAddresses"));
         chooseAddress();

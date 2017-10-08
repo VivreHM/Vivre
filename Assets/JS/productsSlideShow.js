@@ -5,7 +5,6 @@ var productsParent = document.getElementById('insideProductContainer')
 var prevArrow = document.getElementById('previousArrowProducts')
 var nextArrow = document.getElementById('nextArrowProducts');
 ///НЕ пипай от ТУК....
-console.log(products)
 var speed = 1;
 var boxSize = parseInt(window.getComputedStyle(products[0]).marginLeft)*2 + DEFAULT_MARGIN_OF_CHROME + products[0].offsetWidth;
 products.forEach(function (element) {

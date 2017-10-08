@@ -473,7 +473,7 @@
                 </div>
                 <div id="userOrders">
                     <h4>История с поръчките</h4>
-                    <table id="userOrdersHistory">
+                    <table>
                         <tr>
                             <th>Номер</th>
                             <th>Дата на поръчката</th>
@@ -482,7 +482,10 @@
                             <th>Цена</th>
                             <th>Статус</th>
                         </tr>
-                        <script id="user-orders"  type="text/x-handlebars-template">
+                        <tbody id="userOrdersHistory"></tbody>
+                    </table>
+                    <script id="user-orders" type="text/x-handlebars-template">
+                        {{#each historyOrder}}
                         <tr>
                             <td>{{id}}</td>
                             <td>{{date}}</td>
@@ -491,8 +494,8 @@
                             <td>{{totalPrice}}</td>
                             <td>{{status}}</td>
                         </tr>
-                        </script>
-                    </table>
+                        {{/each}}
+                    </script>
                 </div>
             </div>
             <div id='mainPage'>
@@ -739,9 +742,9 @@
                     <div id="availableAddressesInCart"></div>
                     <button id="addNewInCart">Добави адрес</button>
                     <div class='orderInfo'>Начин на плащане:</div>
-                    <input name='plashtane' id="withCard" type="radio"> <label class ='radioButtons'> С карта</label>
+                    <input name='plashtane' id="withCard" type="radio"> <label class='radioButtons'> С карта</label>
                     <img width=26px src="Assets\Images\Icons\withCard.png" alt="">
-                    <input name='plashtane' id="whenDelivered" type="radio"> <label class ='radioButtons'>Наложен платеж</label>
+                    <input name='plashtane' id="whenDelivered" type="radio"> <label class='radioButtons'>Наложен платеж</label>
                     <img width=26px src="Assets\Images\Icons\payment-method.png" alt="">
                     <div> <br>
                         <input id='conditions' type="checkbox">Съгласен съм с условията за доставка, гаранция и връщане.

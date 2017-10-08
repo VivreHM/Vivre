@@ -26,10 +26,7 @@ var userDB = (function () {
 
     }
     UsersDB.prototype.login = function (username, password) {
-        console.log(username)
-        console.log(password)
         return this._users.some(user => {
-            console.log(user.username + "-------" + user.password)
             return user.username == username && user.password == password;
 
         });
@@ -68,6 +65,7 @@ var userDB = (function () {
     UsersDB.prototype.addOrderToHistory = function(user, order){
         var userToAdd = this._users.find(x => x.username == user.username)
         userToAdd.historyOrder.push(order);
+        localStorage.setItem('users', JSON.stringify(users._users));        
     }
     var users = new UsersDB();
     setInterval(function(){
