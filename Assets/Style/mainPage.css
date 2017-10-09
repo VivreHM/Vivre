@@ -336,11 +336,18 @@ body{
     }
 
     #userInformation{
-        width:280px;
+        width:370px;
     }
 
     #userOrders{
         margin-left:20px;
+    }
+
+    #userOrders>table{
+        width:100%;
+    }
+    #userOrders tr{
+        width:100%;
     }
 
     #address{
@@ -388,7 +395,7 @@ body{
         animation-fill-mode: forwards;
     }
 
-    #availableAddresses> div{
+    #availableAddresses div{
         margin:10px 0px;
         padding:8px 8px;
         background-color:white;
@@ -396,6 +403,10 @@ body{
         border-bottom-right-radius:15px;
         border-left:5px solid orange;
         box-shadow: 0px 20px 30px -19px rgba(0,0,0,0.22);
+    }
+
+    #availableAddresses input[type="radio"]:checked+label{
+        background-color: lightgreen;
     }
 
     

@@ -138,19 +138,11 @@ var displayOrders = function () {
 
 function chooseAddress() {
     var addresses = document.querySelectorAll("#availableAddressesInCart>div");
-    addresses.forEach(function (address) {
-        address.addEventListener("click", function () {
-            if (!address.hasAttribute("checked")) {
-                address.setAttribute("checked", "true");
-            } else {
-                if (address.getAttribute("checked") == "true") {
-                    address.setAttribute("checked", "false");
-                }
-                if (address.getAttribute("checked") == "false") {
-                    address.setAttribute("checked", "true");
-                }
-            }
-        })
+    var radios = document.querySelectorAll("#availableAddressesInCart input")
+    radios.forEach(function(radio, index){
+        if(radio.checked){
+            currentOrder.address = addresses[index].innerText;
+        }
     })
 }
 
@@ -163,6 +155,7 @@ document.getElementById('confirmOrder').addEventListener('click', function () {
         if (card.checked) currentOrder.payMethod = "С карта";
         if (delivered.checked) currentOrder.payMethod = "Наложен платеж"
         userDB.addOrderToHistory(signedUser, currentOrder);
+        chooseAddress();
         displayOrders();
     } else {
         alert('Попълни всички полета')

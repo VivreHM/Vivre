@@ -51,14 +51,26 @@ var userDB = (function () {
             parentElement.innerHTML = "Нямате добавени адреси. За да се възползвате от доставка до вашия вход моля натиснете бутона <strong> Добави нов адрес </strong> отдолу, за да добавите нов адрес."
         } else {
             parentElement.innerHTML = "";
-            user.addresses.forEach(function (address) {
-                var newData = document.createElement('div');
+            user.addresses.forEach(function (address, index) {
+                var div = document.createElement("div");
+                div.classList.add("addressContainer")
+                var radioInput = document.createElement('input');
+                radioInput.setAttribute('type', 'radio');
+                radioInput.setAttribute('name', 'address');
+                radioInput.setAttribute('id', ''+parentElement.getAttribute("id") + index);
+                var newData = document.createElement("label");
+                newData.setAttribute('name', 'address');
+                newData.setAttribute('for',  ''+parentElement.getAttribute("id") + index);
+                div.setAttribute('for',  ''+parentElement.getAttribute("id") + index);
                 newData.textContent += 'обл. ' + address.region +
                     ', гр. ' + address.city + ', ул. "' +
                     address.street + '", № ' + address.number +
                     ', бл. ' + address.block + ', вх. ' + address.entr
                     + ', ет. ' + address.floor + ', ап. ' + address.apartment;
-                parentElement.appendChild(newData);
+                // radioInput.style.display = "none";
+                div.appendChild(radioInput);
+                div.appendChild(newData);
+                parentElement.appendChild(div);
             })
         }
     }

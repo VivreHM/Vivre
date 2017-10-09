@@ -1,13 +1,13 @@
 var ordersDB = (function () {
-    var id = 0;
     function Order() {
-        this.id = id++;
+        this.id = new Date().getTime();
         this.products = [];
         this.productsQuantities = [];
         this.totalPrice = 0;
         this.date=new Date().toDateString();
         this.payMethod = "";
         this.status = "Активна";
+        this.address = "";
     }
 
 
