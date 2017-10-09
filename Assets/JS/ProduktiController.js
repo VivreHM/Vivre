@@ -51,6 +51,16 @@ var changeProductsDisplay = function () {
     document.getElementById('content').innerHTML = readyHTML;
     cardAnimation();
     checkForSubTypes();  
+    var currentOrder = ordersDB.orders[ordersDB.orders.length - 1];
+    var quantites = document.querySelectorAll(".wantedQuantity");
+    var addButtonsOnProduct = document.querySelectorAll('.addProductToCart');
+    addButtonsOnProduct.forEach(function (button, index) {
+        button.addEventListener("click", function () {
+            currentOrder.addProduct(productsDB._products[index], quantites[index].value);
+            addToCart(currentOrder);
+            document.getElementById('totalPrice').innerHTML = currentOrder.totalPrice;
+        })
+    })
 }
 changeProductsDisplay();
 function checkForSubTypes() {

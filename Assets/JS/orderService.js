@@ -41,7 +41,7 @@ var ordersDB = (function () {
     }
 
     OrderDB.prototype.addNewOrder = function () {
-        this.orders.push(newOrder);
+        this.orders.push(new Order);
     }
     OrderDB.prototype.assignUser = function () {
         this.user = signedUser;

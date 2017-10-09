@@ -260,8 +260,8 @@ body{
 
     nav>ul{
         margin-left:0;
-        display:flex;
-        justify-content: space-around;
+        /* display:flex;
+        justify-content: space-around; */
     }
 
     nav>ul>li{

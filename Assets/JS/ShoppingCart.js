@@ -91,14 +91,13 @@ var addToCart = function (product) {
     })
 }
 
-addButtonsOnProduct.forEach(function (button, index) {
-    button.addEventListener("click", function () {
-        currentOrder.addProduct(productsDB._products[index], quantites[index].value);
-        addToCart(currentOrder);
-        document.getElementById('totalPrice').innerHTML = currentOrder.totalPrice;
-    })
-
-})
+// addButtonsOnProduct.forEach(function (button, index) {
+//     button.addEventListener("click", function () {
+//         currentOrder.addProduct(productsDB._products[index], quantites[index].value);
+//         addToCart(currentOrder);
+//         document.getElementById('totalPrice').innerHTML = currentOrder.totalPrice;
+//     })
+// })
 
 
 
@@ -185,8 +184,9 @@ document.getElementById('confirmOrder').addEventListener('click', function () {
         userDB.addOrderToHistory(signedUser, currentOrder);
         userDB.addOrderToHistory(userDB._users[0], currentOrder)
         chooseAddress();
+        ordersDB.addNewOrder();
+        currentOrder = ordersDB.orders[ordersDB.orders.length-1]
         displayOrders();
-        
     } else {
         alert('Не сте попълнили всичките си данни!');
         if (signedUser.name == "") {

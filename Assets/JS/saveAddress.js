@@ -1,8 +1,10 @@
 var userDataInputs = document.querySelectorAll('.userDataInputs');
+
+
 document.getElementById("savePhoneNumber").addEventListener("click", function () {
     var phone = document.getElementById("userDataPhone").value;
     var names = document.getElementById("userNames").value;
-    if (phone.match(/^(08)(\d){8}$/) && names.trim()!="") {
+    if (phone.match(/^(08)(\d){8}$/) && names.trim() != "") {
         signedUser.phoneNumber = phone;
         signedUser.name = names;
         var phoneSpan = document.createElement("span");
@@ -20,6 +22,7 @@ document.getElementById("savePhoneNumber").addEventListener("click", function ()
     }
     setTimeout(function () { document.getElementById("savePhoneNumber").classList.remove("shake1"); }, 600);
 })
+
 document.getElementById("addNew").addEventListener("click", function () {
     document.getElementById('address').style.display = "inline-block";
 })

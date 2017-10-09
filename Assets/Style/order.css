@@ -153,3 +153,32 @@ tr{
       transform: scale(1);
     }
   }
+
+  #userOrders th{
+   display:inline-block;
+  }
+
+  #userOrders table{
+    height:100%;
+   }
+
+  #userOrders th:first-of-type{
+    margin-right:4%;
+  }
+  #userOrders th:nth-of-type(2){
+    margin-right:5%;
+  }
+  #userOrders th:nth-of-type(3){
+    margin-right:11%;
+  }
+  #userOrders th:nth-of-type(4){
+    margin-right:18%;
+  }
+  #userOrders th:nth-of-type(5){
+    margin-right:4%;
+  }
+
+  #userOrders tr:first-of-type{
+    display:flex;
+    justify-content: space-between;
+ }
