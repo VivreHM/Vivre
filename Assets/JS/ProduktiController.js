@@ -109,6 +109,7 @@ document.getElementById("searchField").addEventListener("change", function () {
             var readyHTML = template(order);
             document.getElementById('orderPage').innerHTML = readyHTML;
             document.getElementById('orderPage').style.display = 'block'
+            document.getElementById("mainPage").style.display = "none";
         }else{
             productsDB.search(search);
         }

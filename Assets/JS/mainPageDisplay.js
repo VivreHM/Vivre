@@ -8,4 +8,5 @@ function mainPageDisplay(old){
     document.getElementById("searchBar").style.display="flex";
     document.querySelector("nav").style.display="block";
     document.getElementById('mainPage').style.display = 'block'
+    document.getElementById('orderPage').style.display="none";
 };

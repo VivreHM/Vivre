@@ -620,6 +620,7 @@
             <div id="orderPage">
                 <script id="order-page" type="text/x-handlebars-template">
                     <h4>Поръчка номер: {{id}}</h4>
+                    <hr/>
                     <p><strong>Цена:</strong> {{totalPrice}}</p>
                     <p><strong>Метод на плащане:</strong> {{payMethod}}</p>
                     <p><strong>Статус: </strong> {{status}}</p>
@@ -627,6 +628,7 @@
                     <!-- <p>Телефонен номер: </p> -->
                     <p><strong>Адрес: </strong></p>
                     <p>{{address}}</p>
+                    <p><strong>Продукти: </strong></p>
                     <table>
                         {{#each products}}
                         <tr class='rowOfCartTable' id='rowOfCartTable{{id}}'>

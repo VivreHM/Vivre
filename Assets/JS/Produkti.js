@@ -19,11 +19,15 @@ var productsDB = (function () {
             id = this._products.length;
         } else {
             this._products = [
-                new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'Мебели', 'дъб и дърво', "02-10 Окт.","59/58/84 см"),
-                new Product('Хавлии', 'Assets/Images/Products/product2.png', '15.90лв', 'Баня', '100% памук', "02-10 Окт.","59/58/84 см"),
-                new Product('Стол', 'Assets/Images/Products/product1.png', '49.90лв', 'Мебели', 'дъб и дърво', "02-10 Окт.","59/58/84 см"),
-                new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'Мебели', 'дъб и дърво', "02-10 Окт.","59/58/84 см"),
-                new Product('Стол', 'Assets/Images/Products/product1.jpg', '149.90лв', 'Мебели', 'дъб и дърво', "02-10 Окт.","59/58/84 см")
+                new Product('Фотьойл Gala Black', 'Assets/Images/Products/Фотьойл Gala Black.jpg', '470лв', 'Мебели', 'труктура от масивен бук и дъб, тапицерия от полиестерно кадифе, пълнеж от пяна', "10-16 Окт.","66/64/85 см"),
+                new Product('Двуместно канапе Irina Cream', 'Assets/Images/Products/Двуместно канапе Irina Cream.jpg', '1200лв', 'Мебели', 'Продуктът е проектиран в Париж и е концепция на Jalouse Maison. ', "10-16 Окт.","168/92/88 см"),
+                new Product('Двуместно канапе Ives Turq', 'Assets/Images/Products/Двуместно канапе Ives Turquoise.jpg', '613лв', 'Мебели', 'Декоративната възглавница е включена.', "10-16 Окт.","59/58/84 см"),
+                new Product('Фотьойл Lagos Turquoise', 'Assets/Images/Products/Фотьойл Lagos Turquoise.jpg', '479.90лв', 'Мебели', 'Декоративната възглавница не е включена.', "10-16 Окт.","85/73/79 см"),
+                new Product('Шкафче Verena Blue', 'Assets/Images/Products/Шкафче Verena Blue.jpg', '225лв', 'Мебели', 'С 2 вратички и 1 чекмедже.', "10-16 Окт.","45/26/69 см"),
+                new Product('Стол Apollo Taupe', 'Assets/Images/Products/Стол Apollo Taupe.jpg', '391лв', 'структура от масивен бор и бук и плоча от дървени частици.', "10-16 Окт.","65/63/96 см"),
+                new Product('Стол Patas White', 'Assets/Images/Products/Стол Patas White.jpg', '391лв', 'PVC (поливинилхлорид), бор, текстил, пълнеж от пяна.', '10-16 Окт.','59/58/75 см'),
+                new Product('Полилей Bebe', 'Assets/Images/Products/Полилей Bebe.jpg', '48лв', 'Функционира с 3 крушки тип Е27, макс. 60W', '10-16 Окт.','вис 40/диа 60 см'),
+                new Product('Лампа Edna', 'Assets/Images/Products/Лампа Edna.jpg', '280лв', 'Функционира с крушка тип E27, макс. 60W', '10-16 Окт.','вис 64/диа 40 см')
             ];
             id = this._products.length;
             localStorage.setItem('products', JSON.stringify(this._products));

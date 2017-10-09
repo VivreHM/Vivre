@@ -53,6 +53,7 @@ tr{
   td{
     border:none;
     padding:6px 11px;
+    overflow-x:hidden;
   }
 
 
