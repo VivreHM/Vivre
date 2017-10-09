@@ -616,7 +616,7 @@
                 </div>
             </div>
 
-            
+
             <div id="orderPage">
                 <script id="order-page" type="text/x-handlebars-template">
                     <h4>Поръчка номер: {{id}}</h4>
@@ -640,7 +640,7 @@
                                 <span class="price">{{price}}</span>
                             </td>
                             <td>
-                                {{wantedQuantity[index]}}
+                                {{lookup ../productsQuantities @index}}
                             </td>
                         </tr>
                         <br> {{/each}}

@@ -103,6 +103,12 @@ document.getElementById("searchField").addEventListener("change", function () {
     if (search.length > 1) {
         if(!isNaN(search) && search.length==13){
             //Тук трябва да може да търси поръчки по номер на поръчка и да показва информация в началния екран.
+            var order = userDB.findOrderByID(signedUser, search)
+            var orderTemplate = document.getElementById('order-page').innerHTML;
+            var template = Handlebars.compile(orderTemplate);
+            var readyHTML = template(order);
+            document.getElementById('orderPage').innerHTML = readyHTML;
+            document.getElementById('orderPage').style.display = 'block'
         }else{
             productsDB.search(search);
         }

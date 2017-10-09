@@ -84,6 +84,9 @@ var userDB = (function () {
         userToAdd.historyOrder.push(order);
         localStorage.setItem('users', JSON.stringify(users._users));        
     }
+    UsersDB.prototype.findOrderByID = function(user, id){
+        return user.historyOrder.find(x=> x.id == id);
+    }
     var users = new UsersDB();
     setInterval(function(){
         localStorage.setItem('users', JSON.stringify(users._users));

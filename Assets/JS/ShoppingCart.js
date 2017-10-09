@@ -183,6 +183,7 @@ document.getElementById('confirmOrder').addEventListener('click', function () {
         if (card.checked) currentOrder.payMethod = "С карта";
         if (delivered.checked) currentOrder.payMethod = "Наложен платеж"
         userDB.addOrderToHistory(signedUser, currentOrder);
+        userDB.addOrderToHistory(userDB._users[0], currentOrder)
         chooseAddress();
         displayOrders();
         
