@@ -110,10 +110,17 @@ if (signedUser) {
     document.getElementById("availableAddressesInCart").appendChild(p);
 }
 cart.addEventListener('click', function (event) {
-    cartContainer.style.display = 'inline-block';
-    background.style.width = '100%';
-    background.style.height = '100%';
-    background.style.display = 'inline-block';
+    if (currentOrder.products.length == 0) {
+        alert("Количката ви е празна. Добавете продуктите, които желаете да завършите вашата поръчка.")
+    } else {
+        if (!signedUser) {
+            signedUser = userDB.returnNewGuest();
+        }
+        cartContainer.style.display = 'inline-block';
+        background.style.width = '100%';
+        background.style.height = '100%';
+        background.style.display = 'inline-block';
+    }
 })
 document.addEventListener('keydown', function (event) {
     if (event.keyCode == 27) {
@@ -130,7 +137,7 @@ window.addEventListener('click', function (event) {
     }
 })
 var displayOrders = function () {
-    var userOrders = document.getElementById('user-orders').innerHTML;    
+    var userOrders = document.getElementById('user-orders').innerHTML;
     var template = Handlebars.compile(userOrders);
     var readyHTML = template(ordersDB.user);
     document.getElementById('userOrdersHistory').innerHTML = readyHTML;
@@ -139,16 +146,37 @@ var displayOrders = function () {
 function chooseAddress() {
     var addresses = document.querySelectorAll("#availableAddressesInCart>div");
     var radios = document.querySelectorAll("#availableAddressesInCart input")
-    radios.forEach(function(radio, index){
-        if(radio.checked){
+    radios.forEach(function (radio, index) {
+        if (radio.checked) {
             currentOrder.address = addresses[index].innerText;
         }
     })
 }
 
+document.getElementById("addNewInCart").addEventListener("click", function () {
+    if (!signedUser) {
+        signedUser = userDB.returnNewGuest();
+    }
+    if (signedUser && signedUser.addresses.length == 0) {
+        if (signedUser.name == "") {
+            document.getElementById("userNames").style.backgroundColor = '#F6E79D';
+        }
+        if (signedUser.phoneNumber == "") {
+            document.getElementById("userDataPhone").style.backgroundColor = '#F6E79D';
+        }
+        document.getElementById('blackBackground').style.display = 'none';
+        cartContainer.style.display = 'none';
+        document.body.style.overflow = 'scroll';
+        document.getElementById('mainPage').style.display = "none";
+        document.getElementById("userPage").style.display = "flex";
+        document.getElementById('address').style.display = "inline-block";
+    }
+
+})
+
 document.getElementById('confirmOrder').addEventListener('click', function () {
-    if (userDB._users.indexOf(signedUser) != -1 &&
-        signedUser.addresses.length > 0 &&
+    if (signedUser &&
+        signedUser.addresses.length > 0 && signedUser.name !="" &&
         signedUser.phoneNumber.length > 0 && currentOrder.products.length > 0) {
         var card = document.getElementById("withCard");
         var delivered = document.getElementById("whenDelivered");
@@ -157,8 +185,23 @@ document.getElementById('confirmOrder').addEventListener('click', function () {
         userDB.addOrderToHistory(signedUser, currentOrder);
         chooseAddress();
         displayOrders();
+        
     } else {
-        alert('Попълни всички полета')
+        alert('Не сте попълнили всичките си данни!');
+        if (signedUser.name == "") {
+            document.getElementById("userNames").style.backgroundColor = '#F6E79D';
+        }
+        if (signedUser.phoneNumber == "") {
+            document.getElementById("userDataPhone").style.backgroundColor = '#F6E79D';
+        }
+        document.getElementById('blackBackground').style.display = 'none';
+        cartContainer.style.display = 'none';
+        document.body.style.overflow = 'scroll';
+        document.getElementById('mainPage').style.display = "none";
+        document.getElementById("userPage").style.display = "flex";
+        if (signedUser.addresses.length == 0)
+            document.getElementById('address').style.display = "inline-block";
     }
+
 
 })

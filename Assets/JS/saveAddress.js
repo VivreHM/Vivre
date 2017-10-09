@@ -1,11 +1,18 @@
 var userDataInputs = document.querySelectorAll('.userDataInputs');
 document.getElementById("savePhoneNumber").addEventListener("click", function () {
-    var phone = document.getElementById("userDataPhone").value
-    if (phone.match(/^(08)(\d){8}$/)) {
+    var phone = document.getElementById("userDataPhone").value;
+    var names = document.getElementById("userNames").value;
+    if (phone.match(/^(08)(\d){8}$/) && names.trim()!="") {
         signedUser.phoneNumber = phone;
+        signedUser.name = names;
         var phoneSpan = document.createElement("span");
         phoneSpan.textContent = phone;
         document.getElementById("userDataPhone").parentNode.replaceChild(phoneSpan, document.getElementById("userDataPhone"));
+
+        var nameSpan = document.createElement("span");
+        nameSpan.textContent = names;
+        document.getElementById("userNames").parentNode.replaceChild(nameSpan, document.getElementById("userNames"));
+
         document.getElementById("savePhoneNumber").style.display = "none";
     } else {
         document.getElementById("savePhoneNumber").classList.add("shake1");

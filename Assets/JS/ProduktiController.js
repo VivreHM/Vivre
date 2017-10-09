@@ -101,7 +101,11 @@ checkboxes.forEach(function (element) {
 document.getElementById("searchField").addEventListener("change", function () {
     search = document.getElementById("searchField").value;
     if (search.length > 1) {
-        productsDB.search(search);
+        if(!isNaN(search) && search.length==13){
+            //Тук трябва да може да търси поръчки по номер на поръчка и да показва информация в началния екран.
+        }else{
+            productsDB.search(search);
+        }
     } else {
         productsDB.setStart()
     }

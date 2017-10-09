@@ -336,11 +336,12 @@ body{
     }
 
     #userInformation{
-        width:370px;
+        width:480px;
     }
 
     #userOrders{
         margin-left:20px;
+        width:100%;
     }
 
     #userOrders>table{
@@ -359,7 +360,7 @@ body{
         margin-left:20px;
     }
 
-    .userDataInputs, #userDataPhone{
+    .userDataInputs, #userDataPhone, #userNames{
         margin-top:14px;
         padding:3px 10px;
         border-radius:10px;

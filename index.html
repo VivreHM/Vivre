@@ -428,8 +428,9 @@
                     <div id="userMainInfo">
                         <p>Потребителско име: <span id="potrebitel"></span></p>
                         <p>E-mail: <span id="userEmail"></span></p>
-                        <label>Тел. номер: </label> <input type="text" id='userDataPhone'>
-                        <button id="savePhoneNumber">Запази Телефонен номер</button>
+                        <label>Тел. номер: </label> <input type="text" id='userDataPhone'> <br>
+                        <label>Име и фамилия: </label> <input type="text" id='userNames'>
+                        <button id="savePhoneNumber">Запази промените</button>
                     </div>
                     <h4>Адреси за доставка</h4>
                     <div id="availableAddresses">
@@ -476,7 +477,7 @@
                     <table>
                         <tr>
                             <th>Номер</th>
-                            <th>Дата на поръчката</th>
+                            <th>Дата</th>
                             <th>Платеж</th>
                             <th>Адрес</th>
                             <th>Цена</th>
@@ -614,6 +615,38 @@
                     </script>
                 </div>
             </div>
+
+            
+            <div id="orderPage">
+                <script id="order-page" type="text/x-handlebars-template">
+                    <h4>Поръчка номер: {{id}}</h4>
+                    <p><strong>Цена:</strong> {{totalPrice}}</p>
+                    <p><strong>Метод на плащане:</strong> {{payMethod}}</p>
+                    <p><strong>Статус: </strong> {{status}}</p>
+                    <!-- <p>На: {{customer}}</p> -->
+                    <!-- <p>Телефонен номер: </p> -->
+                    <p><strong>Адрес: </strong></p>
+                    <p>{{address}}</p>
+                    <table>
+                        {{#each products}}
+                        <tr class='rowOfCartTable' id='rowOfCartTable{{id}}'>
+                            <td>
+                                <img width="70px" src="{{url}}" alt="">
+                            </td>
+                            <td>
+                                <span class="description">{{name}}</span>
+                            </td>
+                            <td>
+                                <span class="price">{{price}}</span>
+                            </td>
+                            <td>
+                                {{wantedQuantity[index]}}
+                            </td>
+                        </tr>
+                        <br> {{/each}}
+                    </table>
+                </script>
+            </div>
             <!-- Products Slideshow -->
             <div id='productsContainer'>
                 <!-- <a class='arrows' id='previousArrowProducts'>&#10094;</a> -->
@@ -738,9 +771,9 @@
             <div id='CartContainer'>
                 <div id='cartHeader'>Завършване на поръчката</div>
                 <div id='cartBody'>
-                    <div class="orderInfo">Адреси</div>
+                    <div class="orderInfo">Данни</div>
                     <div id="availableAddressesInCart"></div>
-                    <button id="addNewInCart">Добави адрес</button>
+                    <button id="addNewInCart">Добави</button>
                     <div class='orderInfo'>Начин на плащане:</div>
                     <input name='plashtane' id="withCard" type="radio"> <label class='radioButtons'> С карта</label>
                     <img width=26px src="Assets\Images\Icons\withCard.png" alt="">
@@ -753,7 +786,6 @@
                 </div>
             </div>
             <!-- Order information window-->
-
         </main>
         <footer>
             <div id="fastLinks">
