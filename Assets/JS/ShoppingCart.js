@@ -182,7 +182,8 @@ document.getElementById('confirmOrder').addEventListener('click', function () {
         if (card.checked) currentOrder.payMethod = "С карта";
         if (delivered.checked) currentOrder.payMethod = "Наложен платеж"
         userDB.addOrderToHistory(signedUser, currentOrder);
-        userDB.addOrderToHistory(userDB._users[0], currentOrder)
+        userDB.addOrderToHistory(userDB._users[0], currentOrder);
+        alert("Честито. Вашата поръчка е с номер " + currentOrder.id + ". Запазети този номер. Можете да проверите информацията за нея и нейния статус като потърсите с този номер в търсачката в саайта.")
         chooseAddress();
         ordersDB.addNewOrder();
         currentOrder = ordersDB.orders[ordersDB.orders.length-1]

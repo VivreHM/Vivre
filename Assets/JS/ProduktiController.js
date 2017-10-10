@@ -60,7 +60,8 @@ var changeProductsDisplay = function () {
             addToCart(currentOrder);
             document.getElementById('totalPrice').innerHTML = currentOrder.totalPrice;
         })
-    })
+    });
+    // callAdminFunctions();
 }
 changeProductsDisplay();
 function checkForSubTypes() {
